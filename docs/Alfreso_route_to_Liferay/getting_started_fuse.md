@@ -19,9 +19,17 @@ We will set up a Fuse Integration Project with Eclipse and start building our ro
 The messages holds the Alfresco document ID (of type whitepaper) and the action that we finally want to perform in Liferay.
 
 ## A new Fuse Integration Project
-Before reading on start your Eclipse IDE and create a new Fuse Integration Project in the workspace. 
+Start your Eclipse IDE and create a new Fuse Integration Project in the workspace.
+
 ![New Fuse Integration Project](img/new_fuse_integration_project.png)
-Better do it directly because this takes quitle long.
+
+Clich "Next" give the project a name of your choice and click "Next" again. Now this step is important.
+
+![New Fuse Integration Project](img/new_fuse_integration_project2.png)
+
+Note the selections I made:
+Red Had offers you to deploy the Projekt to their Kubernetes / Openshift platform. This is surely a cool thing, but let's run it **standalone**.
+
 
 
 
