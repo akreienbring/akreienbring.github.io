@@ -131,8 +131,8 @@ Looks rather easy... but have a look at the *Broker* Class that does some import
 As ActiveMQ is a separate Server (that by default listens to incoming messages on the TCP port 61616) the Broker will set up a connection to it, create a Queue named *liferay* and, even more important, reuse things to save our ressources. 
 If you look into the code, you will see that Connection, Session and MessageProducer can be reused when sending messages.
 
-### Time for a fist Test
-At this point, after you did implement the code above, let's get a taste of the fruits we're raising.
+### Time for a first Test
+At this point, after you implemented the above code, let's get a taste of the fruits we're raising.
 You know what you need to do:
 - Deploy the Alfresco Repository Module
 - Fire up your server(s) 
