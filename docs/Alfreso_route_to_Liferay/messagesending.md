@@ -70,7 +70,8 @@ What is done here is rather simple. We create a JSON message depending on the st
 	"action":"create"
 }
 ```
-And then we send it to ActiveMQ with the Sender class.
+where *alfrescoID* is the unique ID of the whitepaper and the *action* is the action we want to perform in Liferay.
+And finally we send this JSON to ActiveMQ with the Sender class.
 
 ### The ActiveMQ Sender
 On the top of the JAVA file I import the Sender class. So let's see what that is.
