@@ -4,14 +4,14 @@ Thinking in business prozesses with human and automatic tasks while information 
 
 Then this place is for you.
 
-##Digging deeper
+## Digging deeper
 Looking deeper in some oh-so-fantastic new technology often leaves you with only a few unsatisfying hits doing an internet search when you try to find out how things really work or need to solve an error.
 So I though documenting my experiences and achivements here could help others.
 
-###Alfreso - Liferay integration based on Camel / Fuse
-Let's start with a little Tutorial that extends the [Alfresco Developer Series)](https://ecmarchitect.com/alfresco-developer-series) from Jeff Potts which is an essential start if you try to dig into the Alfresco Customization / Developer world.
+### Alfreso - Liferay integration based on Camel / Fuse
+Let's start with a little Tutorial that extends the [Alfresco Developer Series](https://ecmarchitect.com/alfresco-developer-series) from Jeff Potts which is an essential start if you try to dig into the Alfresco Customization / Developer world.
 
-In that series Jeff builds a scenario where a company called SomCo, publishes whitepapers, stored in Alfresco, to an external website. He explains and realizes all the necessary steps on the Alfresco site without actually transporting /managing documents to / in the external repository.
+In that series Jeff builds a scenario where a company called SomCo publishes whitepapers, stored in Alfresco, to an external website. He explains and realizes all the necessary steps on the Alfresco site without actually transporting /managing documents to / in the external repository.
 
 
 
