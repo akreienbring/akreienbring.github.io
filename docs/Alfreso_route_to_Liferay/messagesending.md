@@ -61,7 +61,7 @@ if (activeFlag) {
 Sender.send(message);
 ```
 
-Don't let irritate you because I used different namespaces when I did the tutorial. It's always a good practice when you want to set them back to the SomeCo originals. The same is true for the package names. 
+Don't let confuse you because I used different namespaces when I did the tutorial. It's always a good practice when you want to set them back to the SomeCo originals. The same is true for the package names. 
 
 What is done here is rather simple. We create a JSON message depending on the state of the isActive Web Flag.
 And then we send it to ActiveMQ with the Sender class.
