@@ -32,7 +32,7 @@ Red Had offers you to deploy the Projekt to their Kubernetes / Openshift platfor
 
 For this tutorial, as described in the [Software Stack](softwarestack.md), I'll choose *Wildfly*
 
-Red Hat requires you to *verify* the settings. After that you can click on *finish*. Now sit back and wait or get yoursels a drink of your choice. Creating the project takes quite a while.
+Red Hat requires you to *verify* the settings. After that you can click on *finish*. Now sit back and wait or get yourself a drink of your choice. Creating the project takes quite a while.
 
 
 [Back to tutorial overwiew](index.md)<br> 
