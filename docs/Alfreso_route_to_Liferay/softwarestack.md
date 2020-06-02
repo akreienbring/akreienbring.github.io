@@ -25,7 +25,7 @@ Until you realize that...
 ## Red Hat Fuse
 ...supports only Camel 2.21.0 as of the day I'm writing this. Let me save you some time, admitting that I tried and failed because Camel 3+ has breaking changes regarding the syntax of the XML routes.
 
-Red Hat Fuse is basically a visual designer for camel routes. Again here are more than on option to use it. I went with Eclipse 2020-3 by installing it from the latest [Red Hat Codeready Studio (formerly Developer Studio)](https://marketplace.eclipse.org/content/red-hat-codeready-studio-formerly-developer-studio).
+Red Hat Fuse is basically a visual designer for camel routes. Again here are more than one option to use it. I went with Eclipse 2020-3 by installing it from the latest [Red Hat Codeready Studio (formerly Developer Studio)](https://marketplace.eclipse.org/content/red-hat-codeready-studio-formerly-developer-studio).
 
 ## Finally
 Now you should be ready to go. Despite of the Version Hell!
