@@ -4,7 +4,7 @@ André Kreienbring, Cologne, June 2020
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit [http://creativecommons.org/licenses/by-sa/3.0/](http://creativecommons.org/licenses/by-sa/3.0/) or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
 [Back to the top](../index.md)<br>
-[Back to tutorial overwiew](index.md)
+[Back to tutorial overview](index.md)
 
 ## Chapter 3.: Getting started with Fuse
 In the previous chapter we learned how we make Alfreso send messages to an ActiveMQ Queue. Now they are  waiting for further processing by Camel / Fuse.
@@ -54,5 +54,5 @@ Click on the remaining blue route on the canvas and edit it's properties underne
 Change the id of the route to *_routeLiferay*, save the *jboss-context-xml*  and you're ready for the next chapter
 
 
-[Back to tutorial overwiew](index.md)<br> 
+[Back to tutorial overview](index.md)<br> 
 [Back to the top](../index.md)
