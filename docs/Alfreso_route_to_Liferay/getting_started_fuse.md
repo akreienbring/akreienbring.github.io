@@ -18,7 +18,7 @@ We will set up a Fuse Integration Project with Eclipse and start building our ro
 ```
 The messages holds the Alfresco document ID (of type whitepaper) and the action that we finally want to perform in Liferay.
 
-## A new Fuse Integration Project
+### A new Fuse Integration Project
 Start your Eclipse IDE and create a new Fuse Integration Project in the workspace.
 
 ![New Fuse Integration Project](img/new_fuse_integration_project.png)
