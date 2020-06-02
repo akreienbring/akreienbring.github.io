@@ -32,7 +32,7 @@ At a minimum go, get and install the tutorial code from [his github repo](https:
 
 At the very first I will give you an overview over all the main software I used in the process. Needless to say that I guarantee nothing. Nor do I support the things we will create here. It is allways a good idea to checkout the respective Community Forum if you get stuck.
 
-[A bunch of tools we need to get up and running](softwarestack.md)
+[Chapter 1.: A bunch of tools we need to get up and running](softwarestack.md)
 
 ### Extending the Alfreso SomeCo Module with an ActiveMQ message sender
 Now you mastered the *Open Source Version Hell* you've earned a first preview to the route to Liferay.
@@ -43,6 +43,6 @@ We will get back to the details later, but note the ActiveMQ Camel Component at 
 This all means that Alfresco has to be able to send such a message.
 
 Follow on with:<br>
-[Sending an ActiveMQ message from Alfresco](messagesending.md)
+[Chapter 2.: Sending an ActiveMQ message from Alfresco](messagesending.md)
 
 [Back to the top](../index.md)
