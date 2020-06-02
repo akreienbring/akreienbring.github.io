@@ -35,3 +35,11 @@ At the very first I will give you an overview over all the main software I used 
 Now you mastered the *Open Source Version Hell* you've earned a first preview to the route to Liferay.
 
 ![The Start of the route](img/start_of_route.jpg)
+
+We will get back to the details later, but note the ActiveMQ Camel Component at the beginning. That's the entry point to our middleware, to our integration frameworl. Also note that some properties are extracted from the incoming message. 
+This all means that Alfresco has to be able to send such a message.
+
+Follow on with:<br>
+[Sending an ActiveMQ message from Alfresco](messagesending.md)
+
+[Back to the top](../index.md)
