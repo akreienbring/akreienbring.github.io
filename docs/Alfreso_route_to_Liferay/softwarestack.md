@@ -31,5 +31,5 @@ Red Hat Fuse is basically a visual designer for camel routes. Again here are mor
 ## Finally
 Now you should be ready to go. Despite of the Version Hell!
 
-[Back to tutorial overwiew](index.md)
-[Back to the top](../index.md)<br>
+[Back to tutorial overwiew](index.md)<br>
+[Back to the top](../index.md)
