@@ -62,4 +62,7 @@ Now on to Fuse! We will set up a *Fuse Integration Project* with Eclipse and sta
 ```
 which was created by Alfresco and send to ActiveMQ. The messages holds the Alfresco document ID (of type whitepaper) and the action that we finally want to perform in Liferay.
 
+[Chapter 3.: Getting started with Fuse](getting_started_fuse.md)
+
+
 [Back to the top](../index.md)
