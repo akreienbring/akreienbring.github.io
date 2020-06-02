@@ -33,6 +33,30 @@ Until you realize that...
 
 Red Hat Fuse is basically a visual designer for camel routes. Again here are more than one option to use it. I went with Eclipse 2020-3 by installing it from the latest [Red Hat Codeready Studio (formerly Developer Studio)](https://marketplace.eclipse.org/content/red-hat-codeready-studio-formerly-developer-studio).
 
+## Get the correct Wildfly Runtime Environment
+Red Hat provides different Eclipse Runtime Environments for their Wildfly Server Versions.
+
+Add the Server View to your Eclipse Workspace and add a new Server to it. If you can, select the Wildfly 18.0.1 Runtime. If not select another Wildfly Runtime.
+
+Doubleclick on the Server in the Server view.
+
+![Eclipse Server view](img/servers_view.png)
+
+You'll see something like this.
+
+![Eclipse Server view](img/wildfly_server_configuration.png)
+
+Click on *Runtime Environment* and you'll get
+
+![Eclipse Server view](img/wildfly_server_environment_settings.png)
+
+Here you can install the *Wildfly 18.0.1 Runtime* if it's missing on your system.
+
+## A word on the JAVA Version
+The most basic thing to have for everything we do here.
+I worked with OpenJDK 1.8 and 11 and had no noteable problems.
+Alfresco 6.2 officially [requires JAVA 11](https://docs.alfresco.com/6.2/concepts/supported-platforms-ACS.html) and Liferay claims that [it can run on both platforms](https://help.liferay.com/hc/en-us/articles/360028982631-Liferay-DXP-7-3-Compatibility-Matrix).
+
 ## Finally
 Now you should be ready to go. Despite of the Version Hell!
 
