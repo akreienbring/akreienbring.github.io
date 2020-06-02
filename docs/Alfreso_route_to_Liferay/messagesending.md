@@ -26,38 +26,38 @@ As you can download the code from this repository, I will not post the whole cod
 
 **SetWebFlag.java class**
 ```Java			
-      if (activeFlag) {
-				// set the bi:published property to now
-				properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, BInformedModel.PROP_PUBLISHED), justNow);
+if (activeFlag) {
+	// set the bi:published property to now
+	properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
+		BInformedModel.PROP_PUBLISHED), justNow);
 				
-				if(lastPublished == null && liferayID == 0) {
-					crud = "create";
-				}else {
-					crud = "update";
-				}
+	//Crate a activemq message
+	message = 
+		"{\r\n" + 
+		"	\"alfrescoID\":\"" + actionedUponNodeRef.getId() + "\",\r\n" +
+		"	\"action\":\"create\"\r\n" +
+		"}";
+}else {
+	// reset the properties
+	properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
+		BInformedModel.PROP_PUBLISHED), null);
+	properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
+		BInformedModel.PROP_EXTERNALID), 0);
 				
-				//Crate a activemq message
-				message = 
-						"{\r\n" + 
-						"	\"alfrescoID\":\"" + actionedUponNodeRef.getId() + "\",\r\n" +
-						"	\"liferayID\":"+ liferayID + ",\r\n" +
-						"	\"action\":\""+ crud + "\"\r\n" +
-						"}";
-			}else {
-				// reset the properties
-				properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, BInformedModel.PROP_PUBLISHED), null);
-				properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, BInformedModel.PROP_EXTERNALID), 0);
-				
-				message = 
-						"{\r\n" + 
-						"	\"alfrescoID\":\"" + actionedUponNodeRef.getId() + "\",\r\n" +
-						"	\"liferayID\":\""+ liferayID + "\",\r\n" +
-						"	\"action\":\"delete\"\r\n" +
-						"}";
-			}
+	message = 
+		"{\r\n" + 
+		"	\"alfrescoID\":\"" + actionedUponNodeRef.getId() + "\",\r\n" +
+		"	\"action\":\"delete\"\r\n" +
+		"}";
+}
 			
-			Sender.send(message);
+Sender.send(message);
 ```
+
+Don't let irritate you because I used different namespaces when I did the tutorial. It's always a good practice when you want to set them back to the SomeCo originals.
+
+What is done here is rather simple. We create a JSON message depending on the state of the isActive Web Flag.
+And the we send it to ActiveMQ with the Sender class.
 
 [Back to tutorial overwiew](index.md)<br> 
 [Back to the top](../index.md)
