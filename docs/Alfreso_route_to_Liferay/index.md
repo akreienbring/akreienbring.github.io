@@ -27,7 +27,7 @@ At a minimum go get and install the tutorial code from [his github repo](https:/
 
 ... Welcome back! 
 
-At the very first I will give you an overview over all the main software I used in the process. Needless to say that I guarantee anything. Nor do I support the things we will create here. It is allways a good idea to checkout the respective Community Forum if you get stuck.
+At the very first I will give you an overview over all the main software I used in the process. Needless to say that I guarantee nothing. Nor do I support the things we will create here. It is allways a good idea to checkout the respective Community Forum if you get stuck.
 
 [A bunch of tools we need to get up and running](softwarestack.md)
 
