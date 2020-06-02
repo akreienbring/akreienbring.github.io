@@ -6,7 +6,7 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 [Back to the top](../index.md)<br>
 [Back to tutorial overwiew](index.md)
 
-## Sending a message from Alfreso to ActiveMQ
+## Chapter 2.: Sending a message from Alfreso to ActiveMQ
 Our route to Liferay starts when the Camel middleware receives a ActiveMQ message. More on the route later...
 ![The Start of the route](img/start_of_route.jpg)
 
