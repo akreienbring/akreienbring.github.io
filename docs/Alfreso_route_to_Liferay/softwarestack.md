@@ -52,6 +52,8 @@ Click on *Runtime Environment* and you'll get
 
 Here you can install the *Wildfly 18.0.1 Runtime* if it's missing on your system.
 
+Note the *Configuration File* setting. *standalone-camel.xml* came with the mentioned *Wildfly-Camel subsystem* and must be selected here.
+
 ## A word on the JAVA Version
 The most basic thing to have for everything we do here.
 I worked with OpenJDK 1.8 and 11 and had no noteable problems.
