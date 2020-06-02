@@ -12,7 +12,7 @@ It doesn't matter for the tutorial, but I installed Alfresco on PostGres 11.7.2.
 
 ## Liferay and what Application Server to use
 As the time of this writing I've installed [Liferay 7.3.2 GA3](https://sourceforge.net/projects/lportal/files/Liferay%20Portal/7.3.2%20GA3/). This version is compatible with Tomcat 9. And it was **not** a good idea to run Alfresco on Tomcat 9. (Took me hours to find out, that it is simply not working...)
-Liferay 7.3.2 is also compatibe with Wildfly 16.0.0. Being bravehearded I installed it on [Wildfly 18.0.1](https://wildfly.org/downloads/) and luckily until now it did not complain.
+Liferay 7.3.2 is also compatible with Wildfly 16.0.0. Being bravehearded I installed it on [Wildfly 18.0.1](https://wildfly.org/downloads/) and luckily until now it did not complain.
 BTW: I'm running Liferay on MySQL 8.
 
 ## Wildfly-Camel Subsystem
