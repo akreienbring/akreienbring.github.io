@@ -136,7 +136,7 @@ At this point, after you implemented the above code, let's get a taste of the fr
 You know what you need to do:
 - Deploy the Alfresco Repository Module
 - Fire up your server(s) 
-and then point your Browser to your ActiveMQ Webinterface (In my case that is the default: http://localhost:8161/)
+and then point your Browser to your ActiveMQ Webinterface (In my case that is the default: `http://localhost:8161`)
 
 Navigate to the Queues View. It will probably look like this:
 
