@@ -21,7 +21,10 @@ So I decided to have a closer look...
 ### About this work
 Although the solution that will be build in this tutorial is finally working, it is far from being production ready and might not even be always done in the perfect way. So, if you find anything that can be done better for any reason, don't hesitate to let me know. For example you could raise an [issue](https://github.com/akreienbring/akreienbring.github.io/issues) to start a discussion.
 
-### Now let's start working
+During this turorial you will 
+**2DO Brief description of all sections**
+
+### Now let's start working steb by step
 We will first check what we need for the tutorial to work out. As I said it absolutely depends on Jeffs [SomeCo tutorial](https://ecmarchitect.com/alfresco-developer-series). If you haven't done it, I recommend starting there and come back later. 
 At a minimum go, get and install the tutorial code from [his github repo](https://github.com/jpotts/alfresco-developer-series).
 
