@@ -4,7 +4,7 @@ André Kreienbring, Cologne, June 2020
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit [http://creativecommons.org/licenses/by-sa/3.0/](http://creativecommons.org/licenses/by-sa/3.0/) or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
 [Back to the top](../index.md)<br>
-[Back to tutorial overwiew](index.md)
+[Back to tutorial overview](index.md)
 
 ## Chapter 1.: The Software Stack
 
@@ -63,5 +63,5 @@ Alfresco 6.2 officially [requires JAVA 11](https://docs.alfresco.com/6.2/concept
 Now you should be ready to go. Despite of the Version Hell!
 
 [-> Chapter 2.: Sending an ActiveMQ message from Alfresco](messagesending.md)<br>
-[<- Back to tutorial overwiew](index.md)<br>
+[<- Back to tutorial overview](index.md)<br>
 [<-- Back to the top](../index.md)
