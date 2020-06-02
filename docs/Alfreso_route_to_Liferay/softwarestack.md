@@ -7,7 +7,7 @@
 Believe me, I suffered a lot when I was thinking *Hey, cool, a newer version is available. Let's use that one.* On the other hand: if you find out that things are still working or might even improve, be sure to let me know!
 
 ## Alfresco
-Following Jeffs tutorial, at this point you have already installed Alfresco 6.2 (probably on Tomcat 8.5) and the Alfresco SDK 4.1.0 (based on Maven, which is verion 3.6.3 for me).
+Following Jeffs tutorial, at this point you have already installed Alfresco 6.2 (probably on Tomcat 8.5) and the Alfresco SDK 4.1.0 (based on Maven, which is version 3.6.3 for me).
 As Alfresco needs ActiveMQ, we don't need to talk about it. I'm running ActiveMQ 5.15.12.
 It doesn't matter for the tutorial, but I installed Alfresco on PostGres 11.7.2.
 
