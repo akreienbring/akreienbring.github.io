@@ -24,7 +24,7 @@ Although the solution that will be build in this tutorial is finally working, it
 During this turorial you will 
 **2DO Brief description of all sections**
 
-### Now let's start working steb by step
+### Chapter 1: Now let's start working steb by step
 We will first check what we need for the tutorial to work out. As I said it absolutely depends on Jeffs [SomeCo tutorial](https://ecmarchitect.com/alfresco-developer-series). If you haven't done it, I recommend starting there and come back later. 
 At a minimum go, get and install the tutorial code from [his github repo](https://github.com/jpotts/alfresco-developer-series).
 
@@ -34,7 +34,7 @@ At the very first I will give you an overview over all the main software I used 
 
 [Chapter 1.: A bunch of tools we need to get up and running](softwarestack.md)
 
-### Extending the Alfreso SomeCo Module with an ActiveMQ message sender
+### Chapter 2: Extending the Alfreso SomeCo Module with an ActiveMQ message sender
 Now you mastered the *Open Source Version Hell* you've earned a first preview to the route to Liferay.
 
 ![The Start of the route](img/start_of_route.jpg)
