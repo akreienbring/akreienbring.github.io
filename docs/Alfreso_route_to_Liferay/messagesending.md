@@ -76,6 +76,52 @@ And finally we send this JSON to ActiveMQ with the Sender class.
 ### The ActiveMQ Sender
 On the top of the JAVA file I import the Sender class. So let's see what that is.
 
+ActiveMQ is receives, stores and transports messages using various protocols, but that is a different tutorial. The important thing here is that are two different concepts:
+
+#### The Queue
+When you send a message to an ActiveMQ Queue, then it is directed to a message consumer that listens to that Queue (one-to-one)
+
+#### Topic
+When you send a message to an ActiveMQ Topic, then it may be consumed by all consumers that subcribed to the topic (publish-subscribe or one-to-many)
+
+I hope you allready now get an idea of the potential of this pattern over the one-to-one REST approach we discussed in the beginning.
+
+However, we will use a Queue for our purpose and have a look on the 
+
+**Sender.java class**
+```
+package com.binformed.platform.activemq;
+
+import javax.jms.Session;
+import javax.jms.TextMessage;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import javax.jms.MessageProducer;
+import javax.jms.JMSException;
+ 
+public class Sender {
+     private static Log logger = LogFactory.getLog(Sender.class);
+     public static void send(String messageToSend) throws JMSException {        
+	try {
+
+		Session session = Broker.getSession();
+		MessageProducer producer = Broker.getMessageProducer();  
+
+		TextMessage message = session.createTextMessage(messageToSend);
+
+		// Here we are sending our message!
+		producer.send(message);
+
+		logger.info("Sent '" + message.getText() + "'");
+	} catch (Exception e) {
+		logger.error("Couln't send a message to ActiveMQ");
+		e.printStackTrace();
+	}
+    }
+}
+```
 
 [Back to tutorial overwiew](index.md)<br> 
 [Back to the top](../index.md)
