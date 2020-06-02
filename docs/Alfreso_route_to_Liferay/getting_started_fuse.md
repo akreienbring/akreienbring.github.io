@@ -49,7 +49,7 @@ Simply hover over the two enlosed Camel components, and delete them mercilessly.
 
 Click on the remaining blue route on the canvas and edit it's properties underneath the designer.
 
-![Camel route properties](img/route_properties.png)route_properties.png
+![Camel route properties](img/route_properties.png)
 
 Now change the id of the route to *_routeLiferay* and you're ready for the next chapter
 
