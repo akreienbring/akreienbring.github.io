@@ -65,9 +65,9 @@ Sender.send(message);
 Don't let irritate you because I used different namespaces when I did the tutorial. It's always a good practice when you want to set them back to the SomeCo originals.
 
 What is done here is rather simple. We create a JSON message depending on the state of the isActive Web Flag.
-And the we send it to ActiveMQ with the Sender class.
+And then we send it to ActiveMQ with the Sender class.
 
-## The ActiveMQ Sender
+### The ActiveMQ Sender
 On the top of the JAVA file I import the Sender class. So let's see what that is.
 
 
