@@ -9,9 +9,12 @@ Looking deeper in some oh-so-fantastic new technology often leaves you with only
 So I though documenting my experiences and achivements here could help others.
 
 ### Alfreso - Liferay integration based on Camel / Fuse
-Let's start with a little Tutorial that extends the [Alfresco Developer Series](https://ecmarchitect.com/alfresco-developer-series) from Jeff Potts which is an essential start if you try to dig into the Alfresco Customization / Developer world.
+Let's start with a little Tutorial that extends the [Alfresco Developer Series](https://ecmarchitect.com/alfresco-developer-series){:target="_blank" rel="noopener"} from Jeff Potts which is an essential start if you try to dig into the Alfresco Customization / Developer world.
 
 In that series Jeff builds a scenario where a company called SomCo publishes whitepapers, stored in Alfresco, to an external website. He explains and realizes all the necessary steps on the Alfresco site without actually transporting /managing documents to / in the external repository.
+
+Interested in realizing the missing Link? Read on here:
+[Extending the SomCo Example with a route to Liferay](/Alfreso_route_to_Liferay/index.md)
 
 
 
