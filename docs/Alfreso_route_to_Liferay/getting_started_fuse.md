@@ -51,7 +51,7 @@ Click on the remaining blue route on the canvas and edit it's properties underne
 
 ![Camel route properties](img/route_properties.png)
 
-Now change the id of the route to *_routeLiferay* and you're ready for the next chapter
+Change the id of the route to *_routeLiferay*, save the *jboss-context-xml*  and you're ready for the next chapter
 
 
 [Back to tutorial overwiew](index.md)<br> 
