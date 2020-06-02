@@ -38,6 +38,21 @@ The reason it takes so long is probably that numerous Maven artifacts must be do
 
 This is an inportant thing to realize. Every time you add a Camel Component to your project your projects *pom.xml* eventually gets updated by the Route Designer and the artifacts are downloaded during the next Maven compile phase.
 
+After your harddrive and your network connection survived the stresstest you,ll see this:
+
+![Camel example route](img/camel_example_route.png)
+
+because the project came with an example.
+
+The route definition lives in a file called *jboss-context-xml* underneath the *Camel-Contexts* Folder of the new Project.
+Simply hover over the two enlosed Camel components, and delete them mercilessly.
+
+Click on the remaining blue route on the canvas and edit it's properties underneath the designer.
+
+![Camel route properties](img/route_properties.png)route_properties.png
+
+Now change the id of the route to *_routeLiferay* and you're ready for the next chapter
+
 
 [Back to tutorial overwiew](index.md)<br> 
 [Back to the top](../index.md)
