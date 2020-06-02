@@ -23,7 +23,7 @@ Start your Eclipse IDE and create a new Fuse Integration Project in the workspac
 
 ![New Fuse Integration Project](img/new_fuse_integration_project.png)
 
-Click "Next", give the project a name of your choice and click "Next" again. Now this step is important.
+Click "Next", give the project a name of your choice and click "Next" again. Now this step is important:
 
 ![New Fuse Integration Project](img/new_fuse_integration_project2.png)
 
