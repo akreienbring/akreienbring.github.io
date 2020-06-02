@@ -159,7 +159,7 @@ Now ActiveMQ should present you the new Queue with one message in it. Inspect th
 
 ![ActiveMQ with liferay](img/activemq_with_liferay.png)
 
-[-> Chapter 3.: Getting started with Fuse](getting_started_fuse.md)
+[-> Chapter 3.: Getting started with Fuse](getting_started_fuse.md)<br> 
 [<- Back to tutorial overwiew](index.md)<br> 
 [<-- Back to the top](../index.md)
 
