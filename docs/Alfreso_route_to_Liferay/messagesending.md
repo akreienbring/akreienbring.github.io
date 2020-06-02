@@ -90,7 +90,7 @@ However, we will use a Queue for our purpose and have a look on the
 
 **Sender.java class**
 ```
-package com.binformed.platform.activemq;
+package platform.activemq;
 
 import javax.jms.Session;
 import javax.jms.TextMessage;
@@ -122,6 +122,33 @@ public class Sender {
     }
 }
 ```
+
+Because Alfresco uses ActiveMQ out-of-the-box you should not need to do any Spring XML fuddelings to be able to import the needed framework.
+
+Looks rather easy... but have a look at the *Broker* Class that does some important things for us.
+
+### The ActiveMQ Broker
+As ActiveMQ is a separate Server (that by default listens to incoming messages on the TCP port 61616) the Broker will set up a connection to it, create a Queue named *liferay* and, even more important, reuse things to save our ressources. 
+If you look into the code, you will see that Connection, Session and MessageProducer can be reused when sending messages.
+
+### Time for a fist Test
+At this point, after you did implement the code above, let's get a taste of the fruits we're raising.
+You know what you need to do:
+- Deploy the Alfresco Repository Module
+- Fire up your server(s) 
+and then point your Browser to your ActiveMQ Webinterface (In my case that is the default: http://localhost:8161/)
+
+Navigate to the Queues View. It will probably look like this:
+
+
+![ActiveMQ without liferay](img/activemq_without_liferay.png)
+
+Next click on the *Publish to Liferay* button that you see on the top of this screen.
+
+Now ActiveMQ should present you the new Queue with one message in it. Inspect the message. It should contain the *create* action and the *alfresoID*. When it all worked, then your are ready to consume this message from Camel in the next step.
+
+![ActiveMQ with liferay](img/activemq_with_liferay.png)
+
 
 [Back to tutorial overwiew](index.md)<br> 
 [Back to the top](../index.md)
