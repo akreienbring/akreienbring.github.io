@@ -28,7 +28,7 @@ Click *Next*, give the project a name of your choice and click *Next* again. Now
 ![New Fuse Integration Project](img/new_fuse_integration_project2.png)
 
 Note the selections I made:
-Red Had offers you to deploy the Projekt to their Kubernetes / Openshift platform. This is surely a cool thing, but let's run it *standalone*.
+Red Had offers you to deploy the project to their Kubernetes / Openshift platform. This is surely a cool thing, but let's run it *standalone*.
 
 For this tutorial, as described in the [Software Stack](softwarestack.md), I'll choose *Wildfly*
 
