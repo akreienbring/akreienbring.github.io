@@ -50,4 +50,16 @@ This all means that Alfresco has to be able to send such a message.
 Follow on with:<br>
 [Chapter 2.: Sending an ActiveMQ message from Alfresco](messagesending.md)
 
+### Part 3: Consuming ActiveMQ messages with Camel / Fuse
+*Even the nicest message fails if nobody wants to hear it.* (If this is a illegal quotation, let me know)
+
+Now on to Fuse! We will set up a *Fuse Integration Project* with Eclipse and start building our route. Our first task is to cope with messages of the form
+```
+{
+	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
+	"action":"create"
+}
+```
+which was created by Alfresco and send to ActiveMQ. The messages holds the Alfresco document ID (of type whitepaper) and the action that we finally want to perform in Liferay.
+
 [Back to the top](../index.md)
