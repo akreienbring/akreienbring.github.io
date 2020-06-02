@@ -59,7 +59,7 @@ The most basic thing to have for everything we do here.
 I worked with OpenJDK 1.8 and 11 and had no noteable problems.
 Alfresco 6.2 officially [requires JAVA 11](https://docs.alfresco.com/6.2/concepts/supported-platforms-ACS.html) and Liferay claims that [it can run on both platforms](https://help.liferay.com/hc/en-us/articles/360028982631-Liferay-DXP-7-3-Compatibility-Matrix).
 
-## Finally
+### Finally
 Now you should be ready to go. Despite of the Version Hell!
 
 [-> Chapter 2.: Sending an ActiveMQ message from Alfresco](messagesending.md)<br>
