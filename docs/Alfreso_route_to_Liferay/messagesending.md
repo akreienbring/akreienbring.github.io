@@ -89,7 +89,7 @@ When you send a message to an ActiveMQ Queue, then it is directed to a message c
 #### Topic
 When you send a message to an ActiveMQ Topic, then it may be consumed by all consumers that subcribed to the topic (publish-subscribe or one-to-many)
 
-I hope you allready now get an idea of the potential of this pattern over the one-to-one REST approach we discussed in the beginning.
+I hope you already now get an idea of the potential of this pattern over the one-to-one REST approach we discussed in the beginning.
 
 However, we will use a Queue for our purpose and have a look on the 
 
