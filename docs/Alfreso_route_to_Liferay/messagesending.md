@@ -50,8 +50,6 @@ if (activeFlag) {
 	// reset the properties
 	properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
 		BInformedModel.PROP_PUBLISHED), null);
-	properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
-		BInformedModel.PROP_EXTERNALID), 0);
 				
 	message = 
 		"{\r\n" + 
