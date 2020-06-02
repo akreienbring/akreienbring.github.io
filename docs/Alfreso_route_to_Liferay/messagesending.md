@@ -148,7 +148,7 @@ Navigate to the Queues View. It shows an Alfresco internal route and will probab
 
 ![ActiveMQ without liferay](img/activemq_without_liferay.png)
 
-Next click go to Alfresco Share and to the repo folder where you stored your whitepapers.
+Next go to Alfresco Share and to the repo folder where you stored your whitepapers.
 Recall from Jeffs tutorial that you may have to change the type of documents to *whitepaper* and add the *webable* aspect to the content. Now you should see the *Publish to Liferay* button.
 
 ![Publish to Liferay Action](img/publish_action.png)
