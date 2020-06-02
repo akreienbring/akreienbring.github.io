@@ -70,7 +70,7 @@ What is done here is rather simple. We create a JSON message depending on the st
 	"action":"create"
 }
 ```
-where *alfrescoID* is the unique ID of the whitepaper and the *action* is the action we want to perform in Liferay.
+where *alfrescoID* is the unique ID of the document node and the *action* is the action we want to perform in Liferay.
 And finally we send this JSON to ActiveMQ with the Sender class.
 
 ### The ActiveMQ Sender
