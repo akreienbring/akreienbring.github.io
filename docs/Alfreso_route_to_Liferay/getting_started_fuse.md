@@ -23,16 +23,20 @@ Start your Eclipse IDE and create a new Fuse Integration Project in the workspac
 
 ![New Fuse Integration Project](img/new_fuse_integration_project.png)
 
-Click "Next", give the project a name of your choice and click "Next" again. Now this step is important:
+Click *Next*, give the project a name of your choice and click *Next* again. Now this step is important:
 
 ![New Fuse Integration Project](img/new_fuse_integration_project2.png)
 
 Note the selections I made:
-Red Had offers you to deploy the Projekt to their Kubernetes / Openshift platform. This is surely a cool thing, but let's run it **standalone**.
+Red Had offers you to deploy the Projekt to their Kubernetes / Openshift platform. This is surely a cool thing, but let's run it *standalone*.
 
 For this tutorial, as described in the [Software Stack](softwarestack.md), I'll choose *Wildfly*
 
 Red Hat requires you to *verify* the settings. After that you can click on *finish*. Now sit back and wait or get yourself a drink of your choice. Creating the project takes quite a while.
+
+The reason it takes so long is probably that numerous Maven artifacts must be downloaded. Camel consists of so called *Enterprise Integration Points (EIP)* or *Components* and I guess a few of them are preloaded.
+
+This is an inportant thing to realize. Every time you add a Camel Component to your project your projects *pom.xml* eventually gets updated by the Route Designer and the artifacts are downloaded during the next Maven compile phase.
 
 
 [Back to tutorial overwiew](index.md)<br> 
