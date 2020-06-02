@@ -6,7 +6,7 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 [Back to the top](../index.md)<br>
 [Back to tutorial overwiew](index.md)
 
-## The Software Stack
+## Chapter 2.: The Software Stack
 
 ### Yes! Versions are crucial!
 Believe me, I suffered a lot when I was thinking *Hey, cool, a newer version is available. Let's use that one.* On the other hand: if you find out that things are still working or might even improve, be sure to let me know!
