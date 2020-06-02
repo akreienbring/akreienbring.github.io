@@ -1,4 +1,4 @@
-[Back to the overview](../index.md)
+[Back to the top](../index.md)
 
 ## Alfreso - Liferay integration based on Camel / Fuse
 Let's start with a Tutorial that extends the [Alfresco Developer Series](https://ecmarchitect.com/alfresco-developer-series) from Jeff Potts which is an essential start if you try to dig into the Alfresco Customization / Developer world.
