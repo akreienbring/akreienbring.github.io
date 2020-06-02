@@ -143,12 +143,17 @@ You know what you need to do:
 - Fire up your server(s) 
 and then point your Browser to your ActiveMQ Webinterface (In my case that is the default: `http://localhost:8161`)
 
-Navigate to the Queues View. It will probably look like this:
+Navigate to the Queues View. It shows an Alfresco internal route and will probably look like this:
 
 
 ![ActiveMQ without liferay](img/activemq_without_liferay.png)
 
-Next click on the *Publish to Liferay* button that you see on the top of this screen.
+Next click go to Alfresco Share and to the repo folder where you stored your whitepapers.
+Recall from Jeffs tutorial that you may have to change the type of documents to *whitepaper* and add the *webable* aspect to the content. Now you should see the *Publish to Liferay* button.
+
+![Publish to Liferay Action](img/publish_action.png)
+
+Take a deep breath and click on it.
 
 Now ActiveMQ should present you the new Queue with one message in it. Inspect the message. It should contain the *create* action and the *alfresoID*. When it all worked, then your are ready to consume this message from Camel in the next step.
 
