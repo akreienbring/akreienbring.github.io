@@ -17,7 +17,8 @@ Remember the [Developing custom Actions tutorial](https://ecmarchitect.com/alfre
 That gave us 3 new actions in Alfreso 
 1. *set-web-flag* 
 2. *enable-web-flag*
-3. *disable-web-flag*<br>
+3. *disable-web-flag*
+
 I just relabled them (like some other things too) to make clear what we are here for.
 
 What you see in the picture enables the web flag when you (could) click on it. The latter two actions extend the *set-web-flag* ActionExecuter. So let's put the central logic that handles messages there.
