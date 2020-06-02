@@ -62,5 +62,6 @@ Alfresco 6.2 officially [requires JAVA 11](https://docs.alfresco.com/6.2/concept
 ## Finally
 Now you should be ready to go. Despite of the Version Hell!
 
-[Back to tutorial overwiew](index.md)<br>
-[Back to the top](../index.md)
+[-> Chapter 2.: Sending an ActiveMQ message from Alfresco](messagesending.md)
+[<-Back to tutorial overwiew](index.md)<br>
+[<--Back to the top](../index.md)
