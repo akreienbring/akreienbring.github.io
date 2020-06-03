@@ -73,7 +73,7 @@ Click on the remaining blue route on the canvas and edit it's properties underne
 
 Change the id of the route to *_routeLiferay*, save the *jboss-context-xml*  and you're ready to go your own way.
 
-## Receive an ActiveMQ message with Fuse
+### Receive an ActiveMQ message with Fuse
 On the left of the Designer canvas you see the palette.
 
 ![The Fuse Palette](img/fuse_palette.png)
@@ -99,7 +99,7 @@ Drag & Drop the *Log* component from the palette directly onto the *ActiveMQ* co
 
 The output of the *Log* can later be found in the context that camel is running in. In our case thats the Wildfly Server log file. But before we can raise our glasses when we find the incoming message in the server log, we need to build the Fuse project and publish it to the Server.
 
-## Compiling, publishing and running the Fuse Project.
+### Compiling, publishing and running the Fuse Project.
 I hope you're familiar with Eclipse, Maven and Server Runtimes. Because I'll not go into the details in this tutorial. Under the hood there are a lot of things happening during the process, but the short story is:
 
 - Rightclick your Fuse project in the workspace
@@ -108,6 +108,8 @@ I hope you're familiar with Eclipse, Maven and Server Runtimes. Because I'll not
 - Switch to the Console view of Eclipse an watch your server starting and putting lots of stuff into the server log.
 
 If you still have a message in the ActiveMQ Queue that we generated in chapter 2, then it should be immediatly processed by the wildfly-camel subsystem and hence the JSON should be written into the servers log file. 
+
+
 
 
 [Back to the previous chapter](messagesending.md)<br> 
