@@ -40,7 +40,7 @@ And here's another task for you: Find the hidden folderId in the picture.
 
 Honestly: In a production environment there must be a better way, but hardcoding this for the tutorial is acceptable.
 
-### Getting the *document* JSON
+### Getting the document / file name
 Do you remember the CMIS download from the last chapter? (shortened)
 ```
 [{cmis:objectId=8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37;1.0, 
@@ -62,6 +62,28 @@ Did you notice the *CamelCMISContent=java.io.BufferedInputStream@53ad0d89* in th
 What we learn here is that the Camel exchange object can transport JAVA objects! That's amazing, if you think about it. POJOs (Plain old JAVA objects) in the exchange. WOW! We come back to this in a minute.
 
 Just put the *CamelCMISContent* into another property. Like above: Set the expression language to *simple*, the simple expression to *${body[0]["CamelCMISContent"]}* and the Property Name to *CamelCMISContent*
+
+### Getting the *document* JSON
+Up to this point we have two new properties on the exchange. The *FileName* and the *CamelCMISContent*. But the *FileName* needs to be posted to Liferay as a JSON structure like this:
+```json
+{
+	"title": "myWhitepaper.pdf"
+}
+```
+Thank Camel, there is the [Freemarker Component](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html/apache_camel_component_reference/freemarker-component).
+
+Freemarker is a powerfull template engine that will create the JSON for us.
+
+The Freemarker template needs to be on the classpath to be found by the component. So create a new file called *liferay_document.post.ftl* under ```[Your fuse integration project]/src/main/java```
+However, that is not really a good place for resource. So if you like you can also change the classpath settings for your project and create a location like ```[Your fuse integration project]/src/main/ressources```
+
+In that file put **2DO The property shoud be used here!**
+```json
+{
+	"title": "${body[0]["cmis:name"]}"
+}
+```
+
 
 ### Creating the multipart/form-data body and the header
 Yes, that sounds complicated...
