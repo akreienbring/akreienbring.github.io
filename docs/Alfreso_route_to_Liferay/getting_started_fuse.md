@@ -63,7 +63,7 @@ The route definition lives in a file called *jboss-context-xml* underneath the *
 </beans>
 ```
 
-Note that Fuse generated the XML that Camel can understand. Also JAVA beans can be parts of Camel routes. We will use this in our own route to Liferay later. Switch back to *Design*.
+Note that Fuse generated the XML that Camel can understand. Also JAVA beans can be parts of Camel routes. We will use this in our own route to Liferay later. Remove the bean with the id *helloBean* and switch back to *Design*.
 
 Simply hover over the two enlosed Camel components, and delete them mercilessly.
 
@@ -74,7 +74,19 @@ Click on the remaining blue route on the canvas and edit it's properties underne
 Change the id of the route to *_routeLiferay*, save the *jboss-context-xml*  and you're ready to go your own way.
 
 ## Receive an ActiveMQ message with Fuse
+On the left of the Designer canvas you see the palette.
 
+![The Fuse Palette](img/fuse_palette.png)
+
+From here you can Drag & Drop Camel Components to your route.
+Start by dragging the ActiveMQ Component and drop it onto the blue route component.
+In the properties of the ActiveMQ component set the *Uri* to *activemq:queue:liferay?jmsMessageType=Text* and the *Id* to *_fromAlfresco*
+
+![The first component](img/fuse_first_component.png)
+
+Fuse does a real good job here. In the background it manipulates your *pom.xml* if needed, it generates the source XML of the Camel Context and it sets parameters. You can see this, if you click on the tabs in the *Advanced* properties. The parameters of the *Uri* have been inserted in the appropriate fields.
+
+As a plus you can read the documentation of every component. 
 
 [Back to the previous chapter](messagesending.md)<br> 
 [Back to tutorial overview](index.md)<br> 
