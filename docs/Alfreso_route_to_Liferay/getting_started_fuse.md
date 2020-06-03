@@ -113,7 +113,7 @@ Also check the ActiveMQ *liferay* queue. After the message was consumed by Camel
 
 ![ActiveMQ empty Queue](img/activemq_empty_queue.png)
 
-
+[Chapter 4.: Using CMIS to download a document from Alfresco](using_cmis_download.md)<br>
 [Back to the previous chapter](messagesending.md)<br> 
 [Back to tutorial overview](index.md)<br> 
-[Back to the top](../index.md)
+[Leave the tutorial](../index.md)
