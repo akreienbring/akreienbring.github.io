@@ -12,6 +12,13 @@ One way to do this is the Camel-CMIS component that can be added to our route.
 But first we need to extract the information from the JSON message.
 
 ### From JSON text to exchange properties
+```json
+{
+	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
+	"action":"create"
+}
+```json
+
 JSON and XML are both very handy when one needs to extract information from the text. For XML there's XPATH and for JSON there's JSONPATH. What a luck that these languages are included in Fuse. Let's see how simple that is.
 
 Go back to the Design mode of your route and drop a *Set Property* component on the *Log* component. It is hidden in the Transformation section of the palette. Select *jsonpath* from the (first) Expression dropdown and make the settings like below.
