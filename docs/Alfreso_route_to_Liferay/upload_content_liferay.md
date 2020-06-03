@@ -20,7 +20,7 @@ Thanks to the fact that Alfresco and Liferay both follow this defacto standard, 
 However, we still need some coding to do before we can upload our document to Liferay.
 
 ### Prepare the upload
-Looking up the specification of the Liferay REST API that allows us to upload a document to Liferay you'll find this:
+Looking up the specification of the Liferay REST API, that allows us to upload a document to Liferay, you'll find this:
 
 ![Liferay OAS](img/liferay_oas.png)
 
