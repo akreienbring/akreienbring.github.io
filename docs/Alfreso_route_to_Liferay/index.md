@@ -8,7 +8,7 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 ## Alfreso - Liferay integration based on Camel / Fuse
 This is a Tutorial that extends the [Alfresco Developer Series](https://ecmarchitect.com/alfresco-developer-series) from Jeff Potts which is an essential start if you try to dig into the Alfresco Customization / Developer world.
 
-In that series Jeff builds a scenario where a company called SomeCo publishes whitepapers, stored in Alfresco, to an external website. He explains and realizes all the necessary steps on the Alfresco site without actually transporting /managing documents to / in the external repository.
+In that series Jeff builds a scenario where a company, called SomeeCo, publishes whitepapers, stored in Alfresco, to an external website. He explains and realizes all the necessary steps on the Alfresco site without actually transporting /managing documents to / in the external repository.
 
 ### The route to Liferay
 Thinking of [Alfresco](https://en.wikipedia.org/wiki/Alfresco_Software) as the leading Open Source ECM System and [Liferay](https://en.wikipedia.org/wiki/Liferay) as the leading Portal Server in the JAVA world, an integration of the two is worth thinking about. Actually it has been done many times. For example by using [CMIS](https://en.wikipedia.org/wiki/Content_Management_Interoperability_Services). But CMIS seems not to be a rising star anymore and Liferay dropped the CMIS store for a reason.
