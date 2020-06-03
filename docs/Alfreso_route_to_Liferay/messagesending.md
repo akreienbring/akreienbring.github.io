@@ -4,7 +4,8 @@ André Kreienbring, Cologne, June 2020
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit [http://creativecommons.org/licenses/by-sa/3.0/](http://creativecommons.org/licenses/by-sa/3.0/) or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
 [Back to the top](../index.md)<br>
-[Back to tutorial overview](index.md)
+[Back to tutorial overview](index.md)<br>
+[Back to the previous chapter](softwarestack.md)
 
 ## Chapter 2.: Sending a message from Alfreso to ActiveMQ
 Our route to Liferay starts when the Camel middleware receives a ActiveMQ message. More on the route later...
@@ -34,7 +35,7 @@ Remember that the Alfresco GUI is configured on the Share-Tier, whereas the impl
 As you can download the code from this repository, I will not post the whole code here. Just the main and important changes I made to the
 
 **SetWebFlag.java class**
-```Java			
+```java			
 import platform.activemq.Sender;
 
 ...
@@ -60,7 +61,7 @@ Sender.send(message);
 Don't let confuse you because I used different namespaces when I did the tutorial. It's surely a good practice when you want to set them back to the SomeCo originals. The same is true for the package names. 
 
 What's done here is rather simple. We create a JSON message depending on the state of the isActive Web Flag. For example:
-```
+```json
 {
 	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
 	"action":"create"
@@ -85,7 +86,7 @@ I hope you already now get an idea of the potential of this pattern over the one
 However, we will use a Queue for our purpose and have a look on the 
 
 **Sender.java class**
-```
+```java
 package platform.activemq;
 
 import javax.jms.Session;
@@ -150,7 +151,8 @@ Now ActiveMQ should present you the new Queue with one message in it. Inspect th
 
 ![ActiveMQ with liferay](img/activemq_with_liferay.png)
 
-[-> Chapter 3.: Getting started with Fuse](getting_started_fuse.md)<br> 
+[-> Chapter 3.: Getting started with Fuse](getting_started_fuse.md)<br>
+[<- Back to the previous chapter](softwarestack.md)
 [<- Back to tutorial overview](index.md)<br> 
 [<-- Back to the top](../index.md)
 
