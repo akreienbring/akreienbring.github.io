@@ -21,6 +21,11 @@ As the time of this writing I've installed [Liferay 7.3.2 GA3](https://sourcefor
 Liferay 7.3.2 is also compatible with Wildfly 16.0.0. Being bravehearded I installed it on [Wildfly 18.0.1](https://wildfly.org/downloads/) and luckily until now it did not complain.
 BTW: I'm running Liferay on MySQL 8.
 
+If you look at the [Liferay installation documentation for Wildfly](https://help.liferay.com/hc/en-us/articles/360018175031-Installing-Liferay-DXP-on-Wildfly) there are a view things to mention.
+
+- Don't remove the *org.jboss.as.weld* extension and subsystem. If you do, Wildfly 18.0.1 doen't start
+- Instead of configuring things in *standalone.xml* make the changes to the *standalone-camel.xml* that comes with the Wildfly-Camel Subsystem
+
 ### Wildfly-Camel Subsystem
 There are numerous ways to run Camel. Standalone, with Springboot... and with the [Wildfly-Camel Patch](https://github.com/wildfly-extras/wildfly-camel/releases). I decided for the latter because the Version 11.0.1 is suited for Wildfly 18.0.1. and comes with Camel 2.25.0
 
