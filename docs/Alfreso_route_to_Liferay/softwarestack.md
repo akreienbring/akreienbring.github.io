@@ -69,4 +69,4 @@ Now you should be ready to go. Despite of the Version Hell!
 
 [Chapter 2.: Sending an ActiveMQ message from Alfresco](messagesending.md)<br>
 [Back to tutorial overview](index.md)<br>
-[Back to the top](../index.md)
+[Leave the tutorial](../index.md)
