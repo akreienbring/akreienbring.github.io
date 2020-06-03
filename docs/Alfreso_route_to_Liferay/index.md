@@ -3,7 +3,7 @@ André Kreienbring, Cologne, June 2020
 ![License](img/cc-by-sa-88x31.png)<br>
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit [http://creativecommons.org/licenses/by-sa/3.0/](http://creativecommons.org/licenses/by-sa/3.0/) or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
-[Back to the top](../index.md)
+[Leave tutorial](../index.md)
 
 ## Alfreso - Liferay integration based on Camel / Fuse
 This is a Tutorial that extends the [Alfresco Developer Series](https://ecmarchitect.com/alfresco-developer-series) from Jeff Potts which is an essential start if you try to dig into the Alfresco Customization / Developer world.
@@ -64,5 +64,11 @@ which was created by Alfresco and send to ActiveMQ. The message holds the Alfres
 
 [Chapter 3.: Getting started with Fuse](getting_started_fuse.md)
 
+### Part 4: Retrieve a Document by using Camel-CMIS
+Until now we only have the ID of an Alfresco document. The next step is getting our hands on the document object itself. We will use the Camel-CMIS component to achieve this.
 
-[Back to the top](../index.md)
+Therefor we need to take care about Authentication.
+
+[Chapter 4.: Using CMIS to download a document from Alfresco](using_cmis_download.md)
+
+[Leave tutorial](../index.md)
