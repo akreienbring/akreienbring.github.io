@@ -95,7 +95,7 @@ cmis:name=[myWhiteper.pdf,
 CamelCMISContent=java.io.BufferedInputStream@53ad0d89
 ```
 
-[Chapter 5.: Upload content to Liferay](upload_content_liferay.md)
+[Chapter 5.: Upload content to Liferay](upload_content_liferay.md)<br>
 [Back to the previous chapter](getting_started_fuse.md)<br>
 [Back to tutorial overview](index.md)<br>
 [Leave the tutoral](../index.md)
