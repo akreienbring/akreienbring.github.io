@@ -67,7 +67,7 @@ which was created by Alfresco and send to ActiveMQ. The message holds the Alfres
 ### Part 4: Retrieve a Document by using Camel-CMIS
 Until now we only have the ID of an Alfresco document. The next step is getting our hands on the document object itself. We will use the Camel-CMIS component to achieve this.
 
-Therefor we need to take care about Authentication.
+During this, it will also be shown how to add Camel components to Fuse which are not in the Fuse palette.
 
 [Chapter 4.: Using CMIS to download a document from Alfresco](using_cmis_download.md)
 
