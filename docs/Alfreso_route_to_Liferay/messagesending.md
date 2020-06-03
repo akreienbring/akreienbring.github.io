@@ -154,5 +154,5 @@ Now ActiveMQ should present you the new Queue with one message in it. Inspect th
 [Chapter 3.: Getting started with Fuse](getting_started_fuse.md)<br>
 [Back to the previous chapter](softwarestack.md)<br>
 [Back to tutorial overview](index.md)<br> 
-[Back to the top](../index.md)
+[Leave the tutorial](../index.md)
 
