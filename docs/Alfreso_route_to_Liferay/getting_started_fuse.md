@@ -16,7 +16,7 @@ We will set up a Fuse Integration Project with Eclipse and start building our ro
 	"action":"create"
 }
 ```
-The messages holds the Alfresco document ID (of type whitepaper) and the action that we finally want to perform in Liferay.
+The message holds the Alfresco document ID (of type whitepaper) and the action that we finally want to perform in Liferay.
 
 ### A new Fuse Integration Project
 Start your Eclipse IDE and create a new Fuse Integration Project in the workspace.
@@ -44,14 +44,20 @@ After your harddrive and your network connection survived the stresstest you,ll 
 
 because the project came with an example.
 
-The route definition lives in a file called *jboss-context-xml* underneath the *Camel-Contexts* Folder of the new Project.
+The route definition lives in a file called *jboss-context-xml* underneath the *Camel-Contexts* Folder of the new Project. To view the XML of that file simply change the mode of the editor from *Design* to *Source*.
+
+Note that Fuse generated the XML that Camel can understand. Also JAVA beans can be parts of Camel routes. We will use this in our own route to Liferay later. Switch back to *Design*.
+
 Simply hover over the two enlosed Camel components, and delete them mercilessly.
 
 Click on the remaining blue route on the canvas and edit it's properties underneath the designer.
 
 ![Camel route properties](img/route_properties.png)
 
-Change the id of the route to *_routeLiferay*, save the *jboss-context-xml*  and you're ready for the next chapter
+Change the id of the route to *_routeLiferay*, save the *jboss-context-xml*  and you're ready to go your own way.
+
+## Receive an ActiveMQ message with Fuse
+
 
 
 [Back to tutorial overview](index.md)<br> 
