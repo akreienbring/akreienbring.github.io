@@ -90,7 +90,7 @@ The result of the CMIS query will go into the *body* of the exchange. So here's 
 Fire up your servers! Publish a whitepaper and the result in the log should look somehow like this (shortened):
 ```
 [{cmis:objectId=8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37;1.0, 
-cmis:contentStreamFileName=myWhiteper.pdf, 
+cmis:contentStreamFileName=myWhitepaper.pdf, 
 cmis:name=myWhitepaper.pdf, 
 CamelCMISContent=java.io.BufferedInputStream@53ad0d89
 ```
