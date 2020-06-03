@@ -29,7 +29,7 @@ I just relabled them (like some other things too) to make clear what we are here
 
 What you see in the picture enables the web flag when you (could) click on it. The latter two actions extend the *set-web-flag* ActionExecuter. So let's put the central logic that handles messages there.
 
-Remember that the Alfresco GUI is configured on the Share-Tier, whereas the implemantaion of the actions was done on the Repository-Tier. Clearly we need to change the code in the respective classes of the Repository-Tier.
+Remember that the Alfresco GUI is configured on the Share-Tier, whereas the implemantation of the actions was done on the Repository-Tier. Clearly we need to change the code in the respective classes of the Repository-Tier.
 
 As you can download the code from this repository, I will not post the whole code here. Just the main and important changes I made to the
 
@@ -57,9 +57,9 @@ if (activeFlag) {
 Sender.send(message);
 ```
 
-Don't let confuse you because I used different namespaces when I did the tutorial. It's always a good practice when you want to set them back to the SomeCo originals. The same is true for the package names. 
+Don't let confuse you because I used different namespaces when I did the tutorial. It's surely a good practice when you want to set them back to the SomeCo originals. The same is true for the package names. 
 
-What is done here is rather simple. We create a JSON message depending on the state of the isActive Web Flag. For example:
+What's done here is rather simple. We create a JSON message depending on the state of the isActive Web Flag. For example:
 ```
 {
 	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
