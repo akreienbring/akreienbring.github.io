@@ -8,6 +8,7 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 
 ## Chapter 2.: Sending a message from Alfreso to ActiveMQ
 Our route to Liferay starts when the Camel middleware receives a ActiveMQ message. More on the route later...
+
 ![The Start of the route](img/start_of_route.jpg)
 
 Therefor we need to do something within Alfreso.
@@ -50,16 +51,6 @@ if (activeFlag) {
 		"{\r\n" + 
 		"	\"alfrescoID\":\"" + actionedUponNodeRef.getId() + "\",\r\n" +
 		"	\"action\":\"create\"\r\n" +
-		"}";
-}else {
-	// reset the properties
-	properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
-		BInformedModel.PROP_PUBLISHED), null);
-				
-	message = 
-		"{\r\n" + 
-		"	\"alfrescoID\":\"" + actionedUponNodeRef.getId() + "\",\r\n" +
-		"	\"action\":\"delete\"\r\n" +
 		"}";
 }
 			
