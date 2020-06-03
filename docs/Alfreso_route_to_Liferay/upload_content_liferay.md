@@ -170,6 +170,20 @@ Did you notice the *exchange.getIn()* and *exchange.getOut()* statements? That i
 
 A word on the Authentication Header: The *Basic Authentication* is created by a Base64 encryption of your Liferay credentials in the form "username:password" (e.g. ```"test@liferay.com:test```"). I got mine using Postman to test the REST services of Liferay. You can also use JAVA to encrypt your credentials or use an online tool such as [https://www.base64encode.org/](https://www.base64encode.org/). (I haven't tried that one)
 
+### Post the request with Camel-HTTP4
+We're almost there! Use the *Generic* Component once more to drop a [HTTP4 Component](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html/apache_camel_component_reference/http4-component) onto the *Document Sender* bean.
+
+Set the *Uri* of that component to 
+```
+http4://{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}:{port}/documents?httpMethod=POST
+```
+and the *Id* to *_createLiferayDocument*
+
+The response of that request goes into the body of the exchange. Use a *Log* component to output it.
+
+
+
+
 [Back to the previous chapter](using_cmis_download.md)<br>
 [Back to tutorial overview](index.md)<br>
 [Leave the tutoral](../index.md)
