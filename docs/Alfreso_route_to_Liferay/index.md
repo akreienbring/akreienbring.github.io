@@ -29,7 +29,7 @@ Although the solution that will be build in this tutorial is finally working, it
 During this turorial you will 
 **2DO Brief description of all sections**
 
-### Part 1: Now let's start working steb by step
+### Part 1: Now let's start working step by step
 We will first check what we need for the tutorial to work out. As I said it absolutely depends on Jeffs [SomeCo tutorial](https://ecmarchitect.com/alfresco-developer-series). If you haven't done it, I recommend starting there and come back later. 
 At a minimum go, get and install the tutorial code from [his github repo](https://github.com/jpotts/alfresco-developer-series).
 
