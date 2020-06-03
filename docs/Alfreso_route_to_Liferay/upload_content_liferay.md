@@ -166,8 +166,9 @@ And all of a sudden our list now looks like this
 - to create an url like *{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}/documents* :x:
 - to do a POST request with all this information :x:
 
+Did you notice the *exchange.getIn()* and *exchange.getOut()* statements? That is the *consumer* and *producer* pattern we already spoke about. The bean (a processor) simply consumes the exchange, has access to properties, body, header etc. and produces a new exchange object with manipulated properties, body, header etc. that is passed on to the next component in the route.
 
-
+A word on the Authentication Header: The *Basic Authentication* is created by a Base64 encryption of your Liferay credentials in the form "username:password" (e.g. "test@liferay.com:test"). I got mine using Postman to test the REST services of Liferay. You can also use JAVA to encrypt your credentials or use an online tool such as [https://www.base64encode.org/](https://www.base64encode.org/). (I haven't tried that one)
 
 [Back to the previous chapter](using_cmis_download.md)<br>
 [Back to tutorial overview](index.md)<br>
