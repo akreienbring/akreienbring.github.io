@@ -50,11 +50,18 @@ CamelCMISContent=java.io.BufferedInputStream@53ad0d89
 ```
 If you look at this a little bit closer, it is a JAVA Array with only one entry. And this entry is a JAVA Map.
 
-Let's quickly put the *cmis:name* in a exchange property: Add a *Set Property* component to the route. Set the expression language to *simple*, the simple expression to *${body[0]["cmis:name"]}* and the Property Name to *FileName*
+As this is still available in the exchange body, let's quickly put the *cmis:name* in a exchange property: Add a *Set Property* component to the route. Set the expression language to *simple*, the simple expression to *${body[0]["cmis:name"]}* and the Property Name to *FileName*
 
 Was that to quick? You want a picture here? Come on! You've done that before! 
 
 What's noteworthy is the simple language that is used here. If you want to find out why this expression works, have a look at [the documentation of the simple language](https://camel.apache.org/components/latest/languages/simple-language.html)
+
+### Getting the file object
+Did you notice the *CamelCMISContent=java.io.BufferedInputStream@53ad0d89* in the CMIS response? That's our file. 
+
+What we learn here is that the Camel exchange object can transport JAVA objects! That's amazing, if you think about it. POJOs (Plain old JAVA objects) in the exchange. WOW! We come back to this in a minute.
+
+Just put the *CamelCMISContent* into another property. Like above: Set the expression language to *simple*, the simple expression to *${body[0]["CamelCMISContent"]}* and the Property Name to *CamelCMISContent*
 
 ### Creating the multipart/form-data body and the header
 Yes, that sounds complicated...
