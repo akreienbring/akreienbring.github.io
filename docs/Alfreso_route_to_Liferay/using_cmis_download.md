@@ -72,10 +72,30 @@ With this little preparation, we can...
 
 #### Challenge 3
 The CMIS component is not in the palette. 
-But there's a *Generic* component you can add to the route. In the dialog that pops up, uncheck the 
+But there's a *Generic* component you can add to the route. In the dialog that pops up, uncheck *show only palette components* 
 
 ![Generic component](img/fuse_generic_component.png)
 
+Have you seen the HUGE list of Camel components that are available by using the *Generic* component?. To be honest: I've no clue what they're all good for but surely one can do a lot of things with them.
+
+The *Uri* of the component is
+```
+cmis:http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom?readContent=true&readCount=1&queryMode=true
+```
+And under *Advanced* you need to insert your Alfresco credentials on the *Security* tab.
+
+### Time for another Log
+The result of the CMIS query will go into the *body* of the exchange. So here's a little task for you. Add a component that writes the body to the log file. 
+
+Fire up your servers! Publish a whitepaper and the result in the log should look somehow like this (shortened):
+```
+[{cmis:objectId=8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37;1.0, 
+cmis:contentStreamFileName=myWhiteper.pdf, 
+cmis:name=[myWhiteper.pdf, 
+CamelCMISContent=java.io.BufferedInputStream@53ad0d89
+```
+
+[Chapter 5.: Upload content to Liferay](upload_content_liferay.md)
 [Back to the previous chapter](getting_started_fuse.md)<br>
 [Back to tutorial overview](index.md)<br>
 [Leave the tutoral](../index.md)
