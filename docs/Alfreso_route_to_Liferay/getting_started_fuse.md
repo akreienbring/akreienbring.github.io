@@ -109,7 +109,9 @@ I hope you're familiar with Eclipse, Maven and Server Runtimes. Because I'll not
 
 If you still have a message in the ActiveMQ Queue that we generated in chapter 2, then it should be immediatly processed by the wildfly-camel subsystem and hence the JSON should be written into the servers log file. 
 
+Also check the ActiveMQ *liferay* queue. After the message was consumed by Camel, it is dequeued and not pending anymore.
 
+![ActiveMQ empty Queue](img/activemq_empty_queue.png)
 
 
 [Back to the previous chapter](messagesending.md)<br> 
