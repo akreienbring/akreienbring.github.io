@@ -99,7 +99,7 @@ Let's look what we got until here. Your route from Camel-CMIS to Freemarker look
 
 ![Freemarker](img/fuse_cmis_to_freemarker.png)
 
-Our List now looks like this
+Our list now looks like this
 - The ID of a folder where our document will finally land in Liferay :heavy_check_mark: (we know it from the Liferay url)
 - the document file :x: (we have only the input stream)
 - a JSON with the documents name :heavy_check_mark: (thanks to Freemarker it's in the exchange body)
@@ -114,8 +114,57 @@ Reading the [documentation of the Camel-HTTP4 component](https://access.redhat.c
 
 The best thing we can do here is some coding. We will create a custom bean and add it to the route. This is called a *processor*. It simply gives us the possibiliy to do several things in one component.
 
+Add a new file named *myDocumentSender.java* under ```[Your fuse integration project]/src/main/java/org/test```
 
+**myDocumentSender.java class**
+```java
+/* Gets the CMIS Content from the Inputstream and writes it to a local file.
+ * After that the multipart/form header is constructed and put in the exchange body.
+ * TODO: not hardcode the directory
+ */
+public class MyDocumentSender implements Processor {
 
+	public void process(Exchange exchange) {
+        Map<String, Object> properties = exchange.getProperties();
+        String json = exchange.getIn().getBody(String.class);
+	InputStream inputstream = (InputStream) properties.get("CamelCMISContent");
+	String pathToFile = "C:/OpenSource/tmp/" + properties.get("FileName");
+	Path path = Paths.get(pathToFile);
+	    
+	File file;
+	try {
+		Files.copy(inputstream, path, StandardCopyOption.REPLACE_EXISTING);
+		file = new File(pathToFile);
+		MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder.create();
+	        multipartEntityBuilder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+	        
+	        multipartEntityBuilder.addBinaryBody("file", file);
+	        multipartEntityBuilder.addTextBody("document", json);
+	        exchange.getOut().setHeader("Authorization","Basic YWtyZWllbmJyaW5nQGdtYWlsLmNvbTphcHBsZXBpZQ==");
+	        exchange.getOut().setBody(multipartEntityBuilder.build());
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+    }
+}
+```
+
+To make the bean available to camel just add it into the sourc of your *jboss-camel-context.xml*
+```
+    <bean class="org.test.MyDocumentSender" id="DocumentSender"/>
+    <camelContext id="spring-context" xmlns="http://camel.apache.org/schema/spring">
+```
+And add a *Bean* Component to your route. In the properties of that component set *Ref* to the id of the bean *DocumentSender*
+
+And all of a sudden our list now looks like this
+- The ID of a folder where our document will finally land in Liferay :heavy_check_mark: 
+- the document file :heavy_check_mark: 
+- a JSON with the documents name :heavy_check_mark: 
+- a multipart/form-data body with the *file* object and the *document* JSON :heavy_check_mark:
+- a header with the (basic) authentication :heavy_check_mark:
+- to create an url like *{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}/documents* :x:
+- to do a POST request with all this information :x:
 
 
 
