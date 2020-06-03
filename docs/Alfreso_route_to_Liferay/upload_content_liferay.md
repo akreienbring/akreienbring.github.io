@@ -14,13 +14,13 @@ But there's even more. The [Open API Specification (formerly Swagger Specificati
 
 Thanks to the fact that Alfresco and Liferay both follow this defacto standard, it is very easy to find out what we need to do next.
 
-[Alfresco API on Swagger Hub](https://app.swaggerhub.com/apis/CPage/alfresco-content_services_rest_api/1)
+[Alfresco API on Swagger Hub](https://app.swaggerhub.com/apis/CPage/alfresco-content_services_rest_api/1)<br>
 [Liferay API on Swagger Hub](https://app.swaggerhub.com/apis/liferayinc/headless-delivery/v1.0#/)
 
 However, we still need some coding to do before we can upload our document to Liferay.
 
 ### Prepare the upload
-Looking up the specification of the REST API that allows us to upload a document to Liferay you'll find this:
+Looking up the specification of the Liferay REST API that allows us to upload a document to Liferay you'll find this:
 
 ![Liferay OAS](img/liferay_oas.png)
 
@@ -30,7 +30,12 @@ Taking into account the necessary Authentication that means that we need
 - a header with the (basic) authentication
 - to create an url like *{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}/documents*
 
+### Getting the FolderId
+Let's make things short here. I did it like this. In Liferay I created a new folder called *whitepapers* in the *Document and Media Library* and navigated into this folder:
 
+![Liferay OAS](img/liferay_empty_folder.png)
+
+And here's another task for you: Find the hidden folderId in the picture.
 
 [Back to the previous chapter](using_cmis_download.md)<br>
 [Back to tutorial overview](index.md)<br>
