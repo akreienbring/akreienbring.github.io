@@ -22,7 +22,7 @@ As we need also the action from the message, drop another *Set Property* on the 
 
 The result here is, that we have set two properties on the *exchange* object that is passed through the whole route. The *body* of the exchange object holds the message that we got from ActiveMQ.
 
-Note: I recommend setting properties you'll need later as early as possible in the route. The reason is that some components manipulate / delete the *exchange body*. This is for example the case if the *body* holds data that was streamed from somewhere. Like the response of a REST request. Streamed content can only be accessed once.
+Note: I recommend setting properties' you'll need later' as early as possible in the route. The reason is that some components manipulate / delete the *exchange body*. This is for example the case if the *body* holds data that was streamed from somewhere. Like the response of a REST request. Streamed content can only be accessed once.
 
 Drop another *Log* component and set the message to:
 *Need to ${property.action} a document with id  ${property.alfrescoID}
