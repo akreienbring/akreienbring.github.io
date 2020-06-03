@@ -102,7 +102,7 @@ Let's look what we got until here. Your route from Camel-CMIS to Freemarker look
 Our List now looks like this
 - The ID of a folder where our document will finally land in Liferay :heavy_check_mark: (we know it from the Liferay url)
 - the document file :x: (we have only the input stream)
-- a JSON with the documents name :heavy_check_mark: (thanks to Freemarker)
+- a JSON with the documents name :heavy_check_mark: (thanks to Freemarker it's in the exchange body)
 - a multipart/form-data body with the *file* object and the *document* JSON :x:
 - a header with the (basic) authentication :x:
 - to create an url like *{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}/documents* :x:
