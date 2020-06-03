@@ -50,7 +50,7 @@ Nope!
 #### Challenge 1
 The first challenge, if you try to do it like this, is the fact that the *alfrescoID* gets **not** inserted in the query.
 
-Inststead we need to put the query into the body of the exchange. So get a *Set Body* Component and add it to the route. The query goes into the expression of the component.
+Instead we need to put the query into the body of the exchange. So get a *Set Body* Component and add it to the route. The query goes into the expression of the component.
 
 ```
 Select * from cmis:document WHERE cmis:objectId = '${property.alfrescoID}'
