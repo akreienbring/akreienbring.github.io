@@ -97,6 +97,10 @@ Drag & Drop the *Log* component from the palette directly onto the *ActiveMQ* co
 
 ![The Log component](img/fuse_log_component.png)
 
+The output of the *Log* can later be found in the context that camel is running in. In our case thats the Wildfly Server log file. But before we can raise out glasses when we find the incoming message in the server log, we need to build the Fuse project and publish it to the Server.
+
+## Compiling and publishing the Fuse Project.
+
 
 [Back to the previous chapter](messagesending.md)<br> 
 [Back to tutorial overview](index.md)<br> 
