@@ -97,9 +97,17 @@ Drag & Drop the *Log* component from the palette directly onto the *ActiveMQ* co
 
 ![The Log component](img/fuse_log_component.png)
 
-The output of the *Log* can later be found in the context that camel is running in. In our case thats the Wildfly Server log file. But before we can raise out glasses when we find the incoming message in the server log, we need to build the Fuse project and publish it to the Server.
+The output of the *Log* can later be found in the context that camel is running in. In our case thats the Wildfly Server log file. But before we can raise our glasses when we find the incoming message in the server log, we need to build the Fuse project and publish it to the Server.
 
-## Compiling and publishing the Fuse Project.
+## Compiling, publishing and running the Fuse Project.
+I hope you're familiar with Eclipse, Maven and Server Runtimes. Because I'll not go into the details in this tutorial. Under the hood there are a lot of things happening during the process, but the short story is:
+
+- Rightclick your Fuse project in the workspace
+- Click on *Run As* -> *Run on Server*
+- Select the Wildfly Server that we set up in the first chapter
+- Switch to the Console view of Eclipse an watch your server starting and putting lots of stuff into the server log.
+
+If you still have a message in the ActiveMQ Queue that we generated in chapter 2, then it should be immediatly processed by the wildfly-camel subsystem and hence the JSON should be written into the servers log file. 
 
 
 [Back to the previous chapter](messagesending.md)<br> 
