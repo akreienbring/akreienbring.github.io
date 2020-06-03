@@ -91,7 +91,7 @@ Fire up your servers! Publish a whitepaper and the result in the log should look
 ```
 [{cmis:objectId=8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37;1.0, 
 cmis:contentStreamFileName=myWhiteper.pdf, 
-cmis:name=[myWhiteper.pdf, 
+cmis:name=myWhiteper.pdf, 
 CamelCMISContent=java.io.BufferedInputStream@53ad0d89
 ```
 
