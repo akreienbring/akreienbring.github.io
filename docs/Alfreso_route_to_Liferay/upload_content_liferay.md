@@ -26,16 +26,26 @@ Looking up the specification of the Liferay REST API that allows us to upload a 
 
 Taking into account the necessary Authentication that means that we need
 - The ID of a folder where our document will finally land in Liferay
-- a body with a *file* object and a *document* JSON to set metadata (e.g. the documents name)
+- a multipart/form-data body with a *file* object and a *document* JSON to set metadata (e.g. the documents name) 
 - a header with the (basic) authentication
 - to create an url like *{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}/documents*
+- to do a POST request with all this information
 
 ### Getting the FolderId
-Let's make things short here. I did it like this. In Liferay I created a new folder called *whitepapers* in the *Document and Media Library* and navigated into this folder:
+Let's make things short here. I did it like this: In Liferay I created a new folder called *Whitepapers* in the *Document and Media Library* and navigated into this folder:
 
 ![Liferay OAS](img/liferay_empty_folder.png)
 
 And here's another task for you: Find the hidden folderId in the picture.
+
+Honestly: In a production environment there must be a better way, but hardcoding this for the tutorial is acceptable.
+
+### Creating the multipart/form-data body and the header
+Yes, that sounds complicated...
+
+Reading the [documentation of the Camel-HTTP4 component](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html/apache_camel_component_reference/http4-component), that we will use to POST the request, it's clear that the component is able to use the exchange body and header to create the request.
+
+
 
 [Back to the previous chapter](using_cmis_download.md)<br>
 [Back to tutorial overview](index.md)<br>
