@@ -37,7 +37,7 @@ Drop another *Log* component and set the message to:
 Here you see how the properties can be retrieved from the exchange object. What's not so obvious is that the so called *simple* language is used here. Camel supports a couple of languages and sometimes it's not so easy to decide which one to use and how to apply them exactly.
 
 ### Using the Camel-CMIS component
-I had a hard fight with this component. At first it looks harmless
+I had a hard fight with this component until it did what it was made for. At first it looks harmless:
 
 ![CMIS1](img/fuse_cmis1.png)
 
@@ -45,7 +45,28 @@ I had a hard fight with this component. At first it looks harmless
 
 Looks like setting the Alfresco CMIS url and the query with the extracted alfrescoID is all it needs to happily download things.
 
-Nope! 
+Nope!
+
+#### Challenge 1
+The first challenge, if you try to do it like this, is the fact that the *alfrescoID* gets **not** inserted in the query.
+
+Inststead we need to put the query into the body of the exchange. So get a *Set Body* Component and add it to the route. The query goes into the expression of the component.
+
+```
+Select * from cmis:document WHERE cmis:objectId = '${property.alfrescoID}'
+```
+It looks like this:
+
+![Generic component](img/fuse_setBody_cmis_query.png)
+
+#### Challenge 2
+Do you see the *readContent* parameter in the CMIS url? The second challenge is, that the content is **not** downloaded, only the metadata of the node.
+
+Instead we need to put a special header into the exchange:
+
+![CMIS Header](img/fuse_cmis_header.png)
+
+## Adding the CMIS Component
 
 ![Generic component](img/fuse_generic_component.png)
 
