@@ -37,6 +37,15 @@ Drop another *Log* component and set the message to:
 Here you see how the properties can be retrieved from the exchange object. What's not so obvious is that the so called *simple* language is used here. Camel supports a couple of languages and sometimes it's not so easy to decide which one to use and how to apply them exactly.
 
 ### Using the Camel-CMIS component
+I had a hard fight with this component. At first it looks harmless
+
+![CMIS1](img/fuse_cmis1.png)
+
+![CMIS2](img/fuse_cmis2.png)
+
+Looks like setting the Alfresco CMIS url and the query with the extracted alfrescoID is all it needs to happily download things.
+
+Nope! 
 
 [Back to the previous chapter](getting_started_fuse.md)<br>
 [Back to tutorial overview](index.md)<br>
