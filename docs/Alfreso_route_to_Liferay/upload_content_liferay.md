@@ -150,7 +150,7 @@ public class MyDocumentSender implements Processor {
 }
 ```
 
-To make the bean available to camel just add it into the source of your *jboss-camel-context.xml*
+To make the bean available to Camel just add it into the source of your *jboss-camel-context.xml*
 ```
     <bean class="org.test.MyDocumentSender" id="DocumentSender"/>
     <camelContext id="spring-context" xmlns="http://camel.apache.org/schema/spring">
