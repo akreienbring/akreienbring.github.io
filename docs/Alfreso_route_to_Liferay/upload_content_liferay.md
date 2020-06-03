@@ -108,9 +108,13 @@ Our List now looks like this
 - to create an url like *{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}/documents* :x:
 - to do a POST request with all this information :x:
 
-The *FileName* and the *CamelCMISContent* are stored in exchange properties and the JSON we need is in the exchange body.
+The *CamelCMISContent* input stream is stored in an exchange property and the JSON is in the exchange body.
 
 Reading the [documentation of the Camel-HTTP4 component](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html/apache_camel_component_reference/http4-component), that we will use to POST the request, it's clear that the component is able to use the exchange *body* and *header* to create the request.
+
+The best thing we can do here is some coding. We will create a custom bean and add it to the route. This is called a *processor*. It simply gives us the possibiliy to do several things in one component.
+
+
 
 
 
