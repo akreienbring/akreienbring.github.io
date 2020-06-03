@@ -26,7 +26,9 @@ Looking up the specification of the Liferay REST API that allows us to upload a 
 
 Taking into account the necessary Authentication that means that we need
 - The ID of a folder where our document will finally land in Liferay
-- a multipart/form-data body with a *file* object and a *document* JSON to set metadata (e.g. the documents name) 
+- the document file
+- a JSON with the documents name
+- a multipart/form-data body with the *file* object and the *document* JSON 
 - a header with the (basic) authentication
 - to create an url like *{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}/documents*
 - to do a POST request with all this information
@@ -96,6 +98,15 @@ Yes, that sounds complicated...
 Let's look what we got until here. Your route from Camel-CMIS to Freemarker looks like this:
 
 ![Freemarker](img/fuse_cmis_to_freemarker.png)
+
+Our List now looks like this
+- The ID of a folder where our document will finally land in Liferay :heavy_check_mark:
+- the document file :x:
+- a JSON with the documents name :heavy_check_mark:
+- a multipart/form-data body with the *file* object and the *document* JSON :x:
+- a header with the (basic) authentication :x:
+- to create an url like *{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}/documents* :x:
+- to do a POST request with all this information :x:
 
 The *FileName* and the *CamelCMISContent* are stored in exchange properties and the JSON we need is in the exchange body.
 
