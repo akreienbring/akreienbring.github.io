@@ -48,9 +48,9 @@ cmis:contentStreamFileName=myWhitepaper.pdf,
 cmis:name=myWhitepaper.pdf, 
 CamelCMISContent=java.io.BufferedInputStream@53ad0d89
 ```
-If you look at this a litte bit closer, it is a JAVA Array with only one entry. And this entry is a JAVA Map.
+If you look at this a little bit closer, it is a JAVA Array with only one entry. And this entry is a JAVA Map.
 
-Let's qickly put the *cmis:name* in a exchange property: Add a *Set Property* component to the route. Set the expression language to *simple*, the simple expression to *${body[0]["cmis:name"]}* and the Property Name to *FileName*
+Let's quickly put the *cmis:name* in a exchange property: Add a *Set Property* component to the route. Set the expression language to *simple*, the simple expression to *${body[0]["cmis:name"]}* and the Property Name to *FileName*
 
 Was that to quick? You want a picture here? Come on! You've done that before! 
 
