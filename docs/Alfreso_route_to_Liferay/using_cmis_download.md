@@ -17,7 +17,7 @@ But first we need to extract the information from the JSON message.
 	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
 	"action":"create"
 }
-```json
+```
 
 JSON and XML are both very handy when one needs to extract information from the text. For XML there's XPATH and for JSON there's JSONPATH. What a luck that these languages are included in Fuse. Let's see how simple that is.
 
