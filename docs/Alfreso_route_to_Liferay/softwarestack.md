@@ -23,7 +23,7 @@ BTW: I'm running Liferay on MySQL 8.
 
 If you look at the [Liferay installation documentation for Wildfly](https://help.liferay.com/hc/en-us/articles/360018175031-Installing-Liferay-DXP-on-Wildfly) there are a view things to mention.
 
-- Don't remove the *org.jboss.as.weld* extension and subsystem. If you do, Wildfly 18.0.1 doen't start
+- Don't remove the *org.jboss.as.weld* extension and subsystem. If you do, Wildfly 18.0.1 doesn't start
 - Instead of configuring things in *standalone.xml* make the changes to the *standalone-camel.xml* that comes with the Wildfly-Camel Subsystem
 
 ### Wildfly-Camel Subsystem
