@@ -60,13 +60,19 @@ It looks like this:
 ![Generic component](img/fuse_setBody_cmis_query.png)
 
 #### Challenge 2
-Do you see the *readContent* parameter in the CMIS url? The second challenge is, that the content is **not** downloaded, only the metadata of the node.
+Do you see the *readContent=true* parameter in the CMIS url? The second challenge is, that, despite of this parameter, the content is **not** downloaded, only the metadata of the node.
 
 Instead we need to put a special header into the exchange:
 
 ![CMIS Header](img/fuse_cmis_header.png)
 
-## Adding the CMIS Component
+With this little preparation, we can...
+
+### ...Finally add the CMIS component
+
+#### Challenge 3
+The CMIS component is not in the palette. 
+But there's a *Generic* component you can add to the route. In the dialog that pops up, uncheck the 
 
 ![Generic component](img/fuse_generic_component.png)
 
