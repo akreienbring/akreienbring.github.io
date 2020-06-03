@@ -75,7 +75,7 @@ Thank Camel, there is the [Freemarker Component](https://access.redhat.com/docum
 Freemarker is a powerfull template engine that will create the JSON for us.
 
 The Freemarker template needs to be on the classpath to be found by the component. So create a new file called *liferay_document.post.ftl* under ```[Your fuse integration project]/src/main/java```
-However, that is not really a good place for resource. So if you like you can also change the classpath settings for your project and create a location like ```[Your fuse integration project]/src/main/ressources```
+However, that is not really a good place for a resource. So if you like you can also change the classpath settings for your project and create a location like ```[Your fuse integration project]/src/main/resources```
 
 In that file put **2DO The property shoud be used here!**
 ```json
@@ -84,9 +84,20 @@ In that file put **2DO The property shoud be used here!**
 }
 ```
 
+Now place a *Generic* component onto the route, like you did with *Camel-CMIS*. But this time select the *Freemarker* component.
+
+The *Uri* setting goes to *freemarker:liferay_document.post.ftl* and the id to *_freemarker_liferay*
+
+The resulting JSON will be in the exchange body afterwards.
 
 ### Creating the multipart/form-data body and the header
 Yes, that sounds complicated...
+
+Let's look what we got until here. Your route from Camel-CMIS to Freemarker looks like this:
+
+![Freemarker](img/fuse_cmis_to_freemarker.png)
+
+The *FileName* and the *CamelCMISContent* are stored in exchange properties and the JSON we need is in the exchange body.
 
 Reading the [documentation of the Camel-HTTP4 component](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html/apache_camel_component_reference/http4-component), that we will use to POST the request, it's clear that the component is able to use the exchange *body* and *header* to create the request.
 
