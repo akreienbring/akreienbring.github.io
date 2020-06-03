@@ -71,4 +71,11 @@ During this, it will also be shown how to add Camel components to Fuse which are
 
 [Chapter 4.: Using CMIS to download a document from Alfresco](using_cmis_download.md)
 
+### Part 5: Upload content to Liferay
+Using the so called *headless delivery* REST API of Liferay, we are going to upload what we download via CMIS from Alfresco in this chapter.
+
+Using Camel this is one of the rare spots where a small JAVA bean must be written to achieve what we want.
+
+[Chapter 5.: Upload content to Liferay](upload_content_liferay.md)
+
 [Leave tutorial](../index.md)
