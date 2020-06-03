@@ -88,6 +88,16 @@ Fuse does a real good job here. In the background it manipulates your *pom.xml* 
 
 As a plus you can read the documentation of every component. 
 
+### The Log Component
+You'll find out that logging is very helpfull. Camel works like this (in short):<br>
+The object that goes through the route is called *exchange*. This object has a *body*, a *header* and it has *properties*.
+Every component you have in the route gets (consumes) the *exchange*, does something to / with it and forwards (produces) it to the next component.
+
+Drag & Drop the *Log* component from the palette directly onto the *ActiveMQ* component in your route. This connects them immediatly. In the properties of the *log* set *Message* to *Received ${body}*
+
+![The Log component](img/fuse_log_component.png)
+
+
 [Back to the previous chapter](messagesending.md)<br> 
 [Back to tutorial overview](index.md)<br> 
 [Back to the top](../index.md)
