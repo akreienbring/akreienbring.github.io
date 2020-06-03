@@ -47,6 +47,8 @@ Looks like setting the Alfresco CMIS url and the query with the extracted alfres
 
 Nope! 
 
+![Generic component](img/fuse_generic_component.png)
+
 [Back to the previous chapter](getting_started_fuse.md)<br>
 [Back to tutorial overview](index.md)<br>
 [Leave the tutoral](../index.md)
