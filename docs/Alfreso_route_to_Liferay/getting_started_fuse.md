@@ -46,6 +46,22 @@ because the project came with an example.
 
 The route definition lives in a file called *jboss-context-xml* underneath the *Camel-Contexts* Folder of the new Project. To view the XML of that file simply change the mode of the editor from *Design* to *Source*.
 
+```xml
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    https://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://camel.apache.org/schema/spring https://camel.apache.org/schema/spring/camel-spring.xsd">
+    <bean class="org.test.MyBean" id="helloBean"/>
+    <camelContext id="spring-context" xmlns="http://camel.apache.org/schema/spring">
+        <route id="_route1">
+            <from id="_from1" uri="direct:start"/>
+            <bean id="_bean1" ref="helloBean"/>
+        </route>
+    </camelContext>
+</beans>
+```
+
 Note that Fuse generated the XML that Camel can understand. Also JAVA beans can be parts of Camel routes. We will use this in our own route to Liferay later. Switch back to *Design*.
 
 Simply hover over the two enlosed Camel components, and delete them mercilessly.
