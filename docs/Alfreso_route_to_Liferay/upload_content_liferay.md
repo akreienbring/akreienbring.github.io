@@ -40,10 +40,28 @@ And here's another task for you: Find the hidden folderId in the picture.
 
 Honestly: In a production environment there must be a better way, but hardcoding this for the tutorial is acceptable.
 
+### Getting the *document* JSON
+Do you remember the CMIS download from the last chapter? (shortened)
+```
+[{cmis:objectId=8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37;1.0, 
+cmis:contentStreamFileName=myWhitepaper.pdf, 
+cmis:name=myWhitepaper.pdf, 
+CamelCMISContent=java.io.BufferedInputStream@53ad0d89
+```
+If you look at this a litte bit closer, it is a JAVA Array with only one entry. And this entry is a JAVA Map.
+
+Let's qickly put the *cmis:name* in a exchange property: Add a *Set Property* component to the route. Set the expression language to *simple*, the simple expression to *${body[0]["cmis:name"]}* and the Property Name to *FileName*
+
+Was that to quick? You want a picture here? Come on! You've done that before! 
+
+What's noteworthy is the simple language that is used here. If you want to find out why this expression works, have a look at [the documentation of the simple language](https://camel.apache.org/components/latest/languages/simple-language.html)
+
 ### Creating the multipart/form-data body and the header
 Yes, that sounds complicated...
 
-Reading the [documentation of the Camel-HTTP4 component](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html/apache_camel_component_reference/http4-component), that we will use to POST the request, it's clear that the component is able to use the exchange body and header to create the request.
+Reading the [documentation of the Camel-HTTP4 component](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html/apache_camel_component_reference/http4-component), that we will use to POST the request, it's clear that the component is able to use the exchange *body* and *header* to create the request.
+
+
 
 
 
