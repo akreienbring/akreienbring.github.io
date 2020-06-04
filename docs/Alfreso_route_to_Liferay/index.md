@@ -82,7 +82,14 @@ Using Camel this is one of the rare spots where a small JAVA bean must be writte
 The document was successfully created in Liferay. That was the "C" of C(R)UD.
 That stands for Create-Read-Update-Delete. We don't need to read the document from Liferay in this scenario, but we need to update or delete the created Liferay document when it get's updated or deleted in Alfresco. 
 
-[Chapter 6.: Preparations for CRUD](prepare_crud.md)
+[Chapter 6.: Preparations for C(R)UD](prepare_crud.md)
+
+### Part 7: Implementing ActiveMQ Update / Delete messages in Alfresco 
+It's time to tweak Alfresco to be able to send update and delete messages besides the create message we worked with until this point of the tutorial
+
+This will be done by teaching the platform a new behavior when the corresponding events occur.
+
+[Chapter 7.: Implementing the C(R)UD behaviour](implement_crud.md)
 
 
 [Leave tutorial](../index.md)
