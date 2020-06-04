@@ -116,6 +116,29 @@ If you look closely to the JSON response in your server log then you'll notice (
 
 Thats the ID that Liferay assigned to the document when it was created. (Of course your value is different...)
 
+But before we can extract the value into a exchange property we are facing a challenge here. The *Log* component after the *HTTP4* component consumed the response from the POST request. Because that response was a stream it is not in the exchange body anymore. 
+
+One way to prevent that would be to [enable stream chaching](https://camel.apache.org/manual/latest/stream-caching.html) for the route, but let me show you another way. 
+
+Get a *convert Body to* component from the *Transformation* section of the palette and drop it on the little arrow between the *HTTP4* and the *Log* component. Then set the *Type* property of this component to *java.lang.String*.
+
+![Convert Body](img/fuse_convert_body.png)
+
+This little trick solves the mystery of the lost body!
+
+Now you're able to get the ID with a *Set Property* component by using jsonpath *$.id*. Name this propertie *liferayID*
+
+Why not drop another *Log* in the route that prints us *Need to add liferayID (${property.liferayID}) to Alfresco document with id  ${property.alfrescoID}* in the server log? It's allways helpfull to see if everything we need is in place.
+
+In my case the output was:<br>
+*Need to add liferayID (36207) to Alfresco document with id  67e6252d-7b89-4bdc-ab19-82ac75b0dbf4*
+
+OK, but how do we do that? Of course with another REST call. This time to Alfresco!
+
+Again we trust Swagger Hub and find:
+
+![Alfresco put node](img/alfresco_put_node.png)
+
 
 
 
