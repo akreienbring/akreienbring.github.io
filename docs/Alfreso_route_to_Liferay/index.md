@@ -15,7 +15,7 @@ Thinking of [Alfresco](https://en.wikipedia.org/wiki/Alfresco_Software) as the l
 
 Both systems follow the "Headless" approach. That means that the GUI and the server logic are getting decoupled and the core functionality is offered by REST services.
 
-Having said that you might think: *OK, let's use these services and connect Alfresco with Liferay. That's no rocket sience!*
+Having said that you might think: *OK, let's use these services and connect Alfresco with Liferay. That's no rocket science!*
 
 You surely could. But thinking a little bit further you might want to reuse your connection components. You might want to have some system-independent businesslogic or workflow tooling to make everything part of a business process. Or you may have the need to connect more than two systems to build the solution.
 
@@ -24,23 +24,23 @@ That's where [Apache Camel](https://en.wikipedia.org/wiki/Apache_Camel) and [Red
 So I decided to have a closer look...
 
 ### About this work
-Although the solution that will be build in this tutorial is finally working, it is far from being production ready and might not even be always done in the perfect way. So, if you find anything that can be done better for any reason, don't hesitate to let me know. For example you could raise an [issue](https://github.com/akreienbring/akreienbring.github.io/issues) to start a discussion.
+Although the solution that will be build in this tutorial is finally working, it is far from being production ready and might not even always be done in the perfect way. So, if you find anything that can be done better for any reason, don't hesitate to let me know. For example you could raise an [issue](https://github.com/akreienbring/akreienbring.github.io/issues) to start a discussion.
 
-During this turorial you will 
+During this turorial you will<br> 
 **2DO Brief description of all sections**
 
 ### Part 1: Now let's start working step by step
-We will first check what we need for the tutorial to work out. As I said it absolutely depends on Jeffs [SomeCo tutorial](https://ecmarchitect.com/alfresco-developer-series). If you haven't done it, I recommend starting there and come back later. 
+We will first check what we need for the tutorial to work out. As I said, it absolutely depends on Jeffs [SomeCo tutorial](https://ecmarchitect.com/alfresco-developer-series). If you haven't done it, I recommend starting there and come back later. 
 At a minimum go, get and install the tutorial code from [his github repo](https://github.com/jpotts/alfresco-developer-series).
 
 ... Welcome back! 
 
-At the very first I will give you an overview over all the main software I used in the process. Needless to say that I guarantee nothing. Nor do I support the things we will create here. It is allways a good idea to check out the respective Community Forum if you get stuck.
+At the very first, I will give you an overview over the main software I used in the process. Needless to say that I guarantee nothing. Nor do I support the things we will create here. It is allways a good idea to check out the respective community Forum if you get stuck.
 
 [Chapter 1.: A bunch of tools we need to get up and running](softwarestack.md)
 
 ### Part 2: Extending the Alfreso SomeCo Module with an ActiveMQ message sender
-Now you mastered the *Open Source Version Hell* you've earned a first preview to the route to Liferay.
+Now you survived the *Open Source Version Hell* you've earned a first preview to the route to Liferay.
 
 ![The Start of the route](img/start_of_route.jpg)
 
@@ -72,9 +72,9 @@ During this, it will also be shown how to add Camel components to Fuse which are
 [Chapter 4.: Using CMIS to download a document from Alfresco](using_cmis_download.md)
 
 ### Part 5: Upload content to Liferay
-Using the so called *headless delivery* REST API of Liferay, we are going to upload what we download via CMIS from Alfresco in this chapter.
+Using the so called *headless delivery* REST API of Liferay, we are going to upload what we downloaded via CMIS from Alfresco in this chapter.
 
-Using Camel this is one of the rare spots where a small JAVA bean must be written to achieve what we want.
+Using Camel, this is one of the rare spots where a small JAVA bean must be written to achieve what we want.
 
 [Chapter 5.: Upload content to Liferay](upload_content_liferay.md)
 
@@ -87,7 +87,7 @@ That stands for Create-Read-Update-Delete. We don't need to read the document fr
 ### Part 7: Implementing ActiveMQ Update / Delete messages in Alfresco 
 It's time to tweak Alfresco to be able to send update and delete messages besides the create message we worked with until this point of the tutorial
 
-This will be done by teaching the platform a new behavior when the corresponding events occur.
+This will be done by teaching the platform a new behavior, when the corresponding events occur.
 
 [Chapter 7.: Implementing the C(R)UD behaviour](implement_crud.md)
 
