@@ -157,7 +157,7 @@ If you want to know more about it, feel free to study the [Freemarker Template L
 
 Drop in another *Log* component that outputs the exchange body. Just to see if Freemarker has done what it was told to do.
 
-The PUT request is a lot easier to generate then the previous POST to Liferay because it doesn't need a *multipart / form* element in the body. And remember that the Freemarker component already generated the requiered JSON in the exchange body for us.
+The PUT request is a lot easier to generate then the previous POST to Liferay, because it doesn't need a *multipart / form* element in the body. And remember that the Freemarker component already generated the requiered JSON in the exchange body for us.
 
 But, again, an Authorization Header must be set. Drop a *Set Header* component on the Freemarker component.
 
@@ -165,7 +165,7 @@ But, again, an Authorization Header must be set. Drop a *Set Header* component o
 
 This time you need to Base64 encode your Alfresco credentials in the form ```"username:password``` to get this working.
  
-The last step is to fire the request with the *HTTP4* component. Get one by using the *Generic* one again and set the *Uri* to 
+The last step is to fire the request with the *HTTP4* component. Get one by using the *Generic* compontent once again and set the *Uri* to 
 *http4://[myHost]:[myPort]/alfresco/api/-default-/public/alfresco/versions/1/nodes/${property.alfrescoID}?httpMethod=PUT*
 
 The *Id* goes to *_alfresco_Put_LiferayID*
