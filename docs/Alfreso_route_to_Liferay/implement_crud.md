@@ -30,7 +30,7 @@ Looking through the [list of available events](https://docs.alfresco.com/6.2/ref
 - *NodeServicePolicies / beforeDeleteNode*
 
 For this tutorial I prefer *afterCreateVersion* over *onUpdateNode* because the latter gets also fired when a property of the node / document is updated.
-In a usecase where we transfer content to Liferay with more medadata then simply the documents name, then the decision could be different.
+In a usecase where we transfer content to Liferay with more medadata then simply the documents name, the decision could be different.
 
 *afterCreateVersion* is triggered when a new version of a document is uploaded to the repository. So let's go for it with JAVA. I prefer JAVA instead of (the also possible) Javascript. But thats just my opinion.
 
@@ -139,7 +139,7 @@ The bean definition of the new behaviour goes to the *service-context.xml* in th
 	</bean>
 ```
 
-Note that the bean references the *NodeService* and the *ActionService*. Spring will inject them for us in the JAVA class we will generate. Thats handy. These services will let us access Alfresco Core elements.
+Note that the bean references the *NodeService* and the *ActionService*. Spring will inject them for us in the JAVA class we will generate. That's handy. These services will let us access Alfresco Core elements.
 The same is true for the *policyComponent* which we need to bind to the mentioned events.
 
 ### Writing the "behavior" code
