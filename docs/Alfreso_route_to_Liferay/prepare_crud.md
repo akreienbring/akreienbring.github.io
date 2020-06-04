@@ -70,7 +70,7 @@ Edit your *share-config-custom.xml*
 		<field id="sc:published" label-id="prop.sc_published">
 			<control template="/org/alfresco/components/form/controls/daterange.ftl" />
 		</field>
-		<field id="sc:externalID" label-id="prop.sc_externalID">
+		<field id="sc:externalID" label-id="prop.sc_externalID" read-only="true">
 			<control template="/org/alfresco/components/form/controls/textfield.ftl" />
 		</field>
    </appearance>
