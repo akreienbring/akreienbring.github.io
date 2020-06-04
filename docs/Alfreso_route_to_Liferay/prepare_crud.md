@@ -178,14 +178,25 @@ Now replace the harmless looking *to* at the beginning with *toD*
 
 The [Camel documentation of *toD*](https://camel.apache.org/components/latest/eips/toD-eip.html) sais:
 
-*There is a new .toD / <toD> that allows to send a message to a dynamic computed Endpoint using one or more Expression that are concat together. By default the Simple language is used to compute the endpoint.*
+*There is a new ```.toD / <toD>``` that allows to send a message to a dynamic computed Endpoint using one or more Expression that are concat together. By default the Simple language is used to compute the endpoint.*
 	
 which is what we need here.
 
 One last *Log* component that logs the exchange body (The response to the PUT request) to the server log and you're ready to start your engines again.
 
 ### The result of our Work in this chapter
-
+In the server log you see the JSON response (shortened)
+```json
+{"entry":
+	-- bla bla
+	-- bla bla
+	"properties":{
+		"sc:isActive":true,
+		"sc:published":"2020-06-04T11:26:30.913+0000",
+		"sc:externalID":36207
+	}
+}
+```
 
 
 
