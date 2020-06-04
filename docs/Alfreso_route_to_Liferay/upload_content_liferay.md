@@ -112,7 +112,7 @@ The *CamelCMISContent* input stream is stored in an exchange property and the JS
 
 Reading the [documentation of the Camel-HTTP4 component](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html/apache_camel_component_reference/http4-component), that we will use to POST the request, it's clear that the component is able to use the exchange *body* and *header* to create the request.
 
-The best thing we can do here is some coding. We will create a custom bean and add it to the route. This is called a *processor*. It simply gives us the possibiliy to do several things in one component.
+The best thing we can do here is some coding. We will create a custom bean and add it to the route. This is called a *Processor*. It simply gives us the possibiliy to do several things in one component.
 
 Add a new file named *myDocumentSender.java* under ```[Your fuse integration project]/src/main/java/org/test```
 
@@ -124,14 +124,14 @@ Add a new file named *myDocumentSender.java* under ```[Your fuse integration pro
  */
 public class MyDocumentSender implements Processor {
 
-	public void process(Exchange exchange) {
+    public void process(Exchange exchange) {
         Map<String, Object> properties = exchange.getProperties();
         String json = exchange.getIn().getBody(String.class);
 	InputStream inputstream = (InputStream) properties.get("CamelCMISContent");
 	String pathToFile = "C:/OpenSource/tmp/" + properties.get("FileName");
 	Path path = Paths.get(pathToFile);
-	    
 	File file;
+	
 	try {
 		Files.copy(inputstream, path, StandardCopyOption.REPLACE_EXISTING);
 		file = new File(pathToFile);
@@ -150,7 +150,7 @@ public class MyDocumentSender implements Processor {
 }
 ```
 
-To make the bean available to Camel just add it into the source of your *jboss-camel-context.xml*
+To make the bean available to Camel just add it to the source of your *jboss-camel-context.xml*
 ```
     <bean class="org.test.MyDocumentSender" id="DocumentSender"/>
     <camelContext id="spring-context" xmlns="http://camel.apache.org/schema/spring">
