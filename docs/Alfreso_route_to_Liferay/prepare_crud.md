@@ -212,4 +212,4 @@ The LiferayID gets now stored on the document properties.
 [Chapter 7.: Implementing the C(R)UD behaviour](implement_crud.md)<br>
 [Back to the previous chapter](upload_content_liferay.md)<br>
 [Back to tutorial overview](index.md)<br>
-[Leave the tutoral](../index.md)
+[Leave the tutorial](../index.md)
