@@ -197,8 +197,61 @@ and the *Id* to *_createLiferayDocument*
 
 The response of that request goes into the body of the exchange. Use a *Log* component to output it.
 
+### Status Quo after this chapter
+Starting from the CMIS download you did in the previous chapter your route looks like this:
 
+![From CMIS to HTTP4](img/fuse_cmis_to_http4.png)fuse_cmis_to_http4.png
 
+Your document was uploaded to Liferays *Document and Media Library* in the folder you created for Whitpapers.
+
+And in the server log you have the JSON response of the POST request (shortened):
+```json
+{
+  "actions" : {
+    "get" : {
+      "method" : "GET",
+      "href" : "http://localhost:8081/o/headless-delivery/v1.0/documents/{documentId}"
+    },
+    "replace" : {
+      "method" : "PUT",
+      "href" : "http://localhost:8081/o/headless-delivery/v1.0/documents/{documentId}"
+    },
+    "update" : {
+      "method" : "PATCH",
+      "href" : "http://localhost:8081/o/headless-delivery/v1.0/documents/{documentId}"
+    },
+    "delete" : {
+      "method" : "DELETE",
+      "href" : "http://localhost:8081/o/headless-delivery/v1.0/documents/{documentId}"
+    }
+  },
+  "adaptedImages" : [ ],
+  "contentUrl" : "/documents/20123/35711/myWhitepaper.pdf/99e82be2-6d5c-9bee-c41c-e4149c5f79b1?version=1.0&t=1591257053325",
+  "creator" : {
+    "additionalName" : "",
+    "contentType" : "UserAccount",
+    "familyName" : "What",
+    "givenName" : "Ever",
+    "id" : 35501,
+    "name" : "What Ever",
+    "profileURL" : "/web/whatever"
+  },
+  "customFields" : [ ],
+  "dateCreated" : "2020-06-04T07:50:52Z",
+  "dateModified" : "2020-06-04T07:50:53Z",
+  "description" : "",
+  "documentFolderId" : 35711,
+  "encodingFormat" : "application/pdf",
+  "fileExtension" : "pdf",
+  "id" : 36101,
+  "keywords" : [ ],
+  "numberOfComments" : 0,
+  "relatedContents" : [ ],
+  "sizeInBytes" : 43837,
+  "taxonomyCategoryBriefs" : [ ],
+  "title" : "Preisliste.pdf"
+}
+```
 
 [Back to the previous chapter](using_cmis_download.md)<br>
 [Back to tutorial overview](index.md)<br>
