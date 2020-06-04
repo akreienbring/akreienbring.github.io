@@ -51,15 +51,18 @@ Don't blame me for using my own package names and namespaces different from the 
 			Map<QName, Serializable> properties = nodeService.getProperties(actionedUponNodeRef);
       
 			// set the bi:isActive property to the value of the parameter
-			properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
-        BInformedModel.PROP_IS_ACTIVE),activeFlag);
+			properties.put(QName.createQName(
+				BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
+        			BInformedModel.PROP_IS_ACTIVE),activeFlag);
 			
 			//If properties exist: get them else set them to null
-			Serializable lastPublishedProperty = properties.get(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
-        BInformedModel.PROP_PUBLISHED));
+			Serializable lastPublishedProperty = properties.get(QName.createQName(
+				BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
+        			BInformedModel.PROP_PUBLISHED));
       
-			Serializable liferayIDProperty = properties.get(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
-        BInformedModel.PROP_EXTERNALID));
+			Serializable liferayIDProperty = properties.get(QName.createQName(
+				BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
+       				BInformedModel.PROP_EXTERNALID));
       
 			Date lastPublished = (lastPublishedProperty != null) ? (Date) lastPublishedProperty : null;
 			int liferayID = (liferayIDProperty != null) ? (Integer) liferayIDProperty : 0;
@@ -70,8 +73,9 @@ Don't blame me for using my own package names and namespaces different from the 
 			String message = "";
 			if (activeFlag) {
 				// set the bi:published property to now
-				properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
-          BInformedModel.PROP_PUBLISHED), justNow);
+				properties.put(QName.createQName(
+					BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
+          				BInformedModel.PROP_PUBLISHED), justNow);
 				
 				if(lastPublished == null && liferayID == 0) {
 					crud = "create";
@@ -88,10 +92,13 @@ Don't blame me for using my own package names and namespaces different from the 
 						"}";
 			}else {
 				// reset the properties
-				properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
-          BInformedModel.PROP_PUBLISHED), null);
-				properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
-          BInformedModel.PROP_EXTERNALID), 0);
+				properties.put(QName.createQName(
+					BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
+          				BInformedModel.PROP_PUBLISHED), null);
+					
+				properties.put(QName.createQName(
+					BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
+         				BInformedModel.PROP_EXTERNALID), 0);
 				
 				message = 
 						"{\r\n" + 
