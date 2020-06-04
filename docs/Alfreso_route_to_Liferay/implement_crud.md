@@ -24,13 +24,119 @@ Looking through the [list of available events](https://docs.alfresco.com/6.2/ref
 For this tutorial I prefer *afterCreateVersion* over *onUpdateNode* because the latter gets also fired when a property of the node / document is updated.
 In a usecase where we transfer content to Liferay with more medadata then simply the documents name, then the decision could be different.
 
-*afterCreateVersion* is triggered when a new version of a document is uploaded to the repository. So let's go for it.
+*afterCreateVersion* is triggered when a new version of a document is uploaded to the repository. So let's go for it with JAVA. I prefer JAVA instead of (the also possible) Javascript. But thats just my opinion.
 
-One more Thought before we start coding: I first just wanted to use a simple rule that triggers the already existing
-```enable-web-flag```
+One more thought before we start coding: I first just wanted to use a simple rule that triggers the already existing
+```enable-web-flag``` <br>
 ```disable-web-flag```
 actions. But the rule configuration in Alfresco does not provide a possibility to react on the upload of a new version out of the box.
 
+The central point where all the magic o message sending happens is the ```set-web-flag``` action. So let's revisit the code.
+
+### Making SetWebFlag smart
+Don't blame me for using my own package names and namespaces different from the original SomeCo tutorial. That should be easy to fix for you, if you follow on. BTW: This is a good practice of the things you learned.
+
+**SetWebFlag.java**
+```java
+  @Override
+	protected void executeImpl(Action action, NodeRef actionedUponNodeRef) {
+			
+		try {
+			if (logger.isDebugEnabled()) logger.debug("Inside SetWebFlag executeImpl");
+			
+			Boolean activeFlag = (Boolean)action.getParameterValue(PARAM_ACTIVE);
+
+			if (activeFlag == null) activeFlag = true;
+			
+			Map<QName, Serializable> properties = nodeService.getProperties(actionedUponNodeRef);
+      
+			// set the bi:isActive property to the value of the parameter
+			properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
+        BInformedModel.PROP_IS_ACTIVE),activeFlag);
+			
+			//If properties exist: get them else set them to null
+			Serializable lastPublishedProperty = properties.get(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
+        BInformedModel.PROP_PUBLISHED));
+      
+			Serializable liferayIDProperty = properties.get(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
+        BInformedModel.PROP_EXTERNALID));
+      
+			Date lastPublished = (lastPublishedProperty != null) ? (Date) lastPublishedProperty : null;
+			int liferayID = (liferayIDProperty != null) ? (Integer) liferayIDProperty : 0;
+			
+			String crud = "";
+			Date justNow = new Date();
+					
+			String message = "";
+			if (activeFlag) {
+				// set the bi:published property to now
+				properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
+          BInformedModel.PROP_PUBLISHED), justNow);
+				
+				if(lastPublished == null && liferayID == 0) {
+					crud = "create";
+				}else {
+					crud = "update";
+				}
+				
+				//Crate a activemq message
+				message = 
+						"{\r\n" + 
+						"	\"alfrescoID\":\"" + actionedUponNodeRef.getId() + "\",\r\n" +
+						"	\"liferayID\":"+ liferayID + ",\r\n" +
+						"	\"action\":\""+ crud + "\"\r\n" +
+						"}";
+			}else {
+				// reset the properties
+				properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
+          BInformedModel.PROP_PUBLISHED), null);
+				properties.put(QName.createQName(BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
+          BInformedModel.PROP_EXTERNALID), 0);
+				
+				message = 
+						"{\r\n" + 
+						"	\"alfrescoID\":\"" + actionedUponNodeRef.getId() + "\",\r\n" +
+						"	\"liferayID\":\""+ liferayID + "\",\r\n" +
+						"	\"action\":\"delete\"\r\n" +
+						"}";
+			}
+			
+			Sender.send(message);
+```
+
+As always this is only the main excerpt of the code.
+
+What has changed is that we send ActiveMQ messages with the action set to "delete" or "update" depending on the *isActive* flag and the *published* properties. Clearly if the document has a publish date, the it needs to be updated. If it has not, it needs to be created.
+
+And that the *liferayID* is now included in the message.
+
+### Creating the "behavior" bean
+The bean definition of the new behaviour goes to the *service-context.xml* in the Repository tier of our Alfresco module.
+```xml
+	<!--
+	 Whitpaper external action for updating or deleting documents on the external platform if active.
+	-->
+	<bean id="externalAction"
+		class="[myPackage].behavior.ExternalAction" init-method="init">
+		<property name="nodeService">
+			<ref bean="NodeService" />
+		</property>
+		<property name="actionService">
+			<ref bean="ActionService" />
+		</property>
+		<property name="policyComponent">
+			<ref bean="policyComponent" />
+		</property>
+	</bean>
+```
+
+Note that the bean references the *NodeService* and the *ActionService*. Spring will inject them for us in the JAVA class we will generate. Thats handy. These services will let us access Alfresco Core elements.
+The same is true for the *policyComponent* which we need to bind to the mentioned events.
+
+### Writing the "behavior" code
+Create the JAVA file where the behaviour will be defined. Look at the main parts of the code here:
+
+**ExternalAction.java**
 
 
 [Back to the previous chapter](prepare_crud.md)<br>
