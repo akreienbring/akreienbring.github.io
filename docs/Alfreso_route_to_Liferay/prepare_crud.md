@@ -133,6 +133,8 @@ Why not drop another *Log* in the route that prints us *Need to add liferayID ($
 In my case the output was:<br>
 *Need to add liferayID (36207) to Alfresco document with id  67e6252d-7b89-4bdc-ab19-82ac75b0dbf4*
 
+### Update the Alfresco document with the Liferay ID
+
 OK, but how do we do that? Of course with another REST call. This time to Alfresco!
 
 Again we trust Swagger Hub and find:
