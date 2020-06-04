@@ -10,7 +10,7 @@ In the previous chapter we downloaded content from Alfresco by using the Camel-C
 
 As I said earlier: Both, Alfresco and Liferay are following the *headless approach*. Offering an extensive REST API that makes the development of custom clients possible.
 
-But there's even more. The [Open API Specification (formerly Swagger Specification)](https://swagger.io/docs/specification/about/) (OAS3) not only has standards for describing a REST API, but also there are a lot of tools available that can generate code from API specifications (Contract First) or vice versa API specifations from code (Code First).
+But there's even more. The [Open API Specification (formerly Swagger Specification)](https://swagger.io/docs/specification/about/) (OAS3) not only has standards for describing a REST API, but also there are a lot of tools available that can generate code from API specifications (Contract First) or vice versa API specifications from code (Code First).
 
 Thanks to the fact that Alfresco and Liferay both follow this defacto standard, it is very easy to find out what we need to do next.
 
