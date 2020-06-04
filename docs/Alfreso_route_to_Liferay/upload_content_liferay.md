@@ -99,7 +99,7 @@ Let's look what we got until here. Your route from Camel-CMIS to Freemarker look
 
 ![Freemarker](img/fuse_cmis_to_freemarker.png)
 
-Our list now looks like this
+Our 2Do list now looks like this
 - The ID of a folder where our document will finally land in Liferay :heavy_check_mark: (we know it from the Liferay url)
 - the document file :x: (we have only the input stream)
 - a JSON with the documents name :heavy_check_mark: (thanks to Freemarker it's in the exchange body)
@@ -157,7 +157,7 @@ To make the bean available to Camel just add it to the source of your *jboss-cam
 ```
 And add a *Bean* Component to your route. In the properties of that component set *Ref* to the id of the bean *DocumentSender*
 
-And all of a sudden our list now looks like this
+And all of a sudden our 2Do list now looks like this
 - The ID of a folder where our document will finally land in Liferay :heavy_check_mark: 
 - the document file :heavy_check_mark: 
 - a JSON with the documents name :heavy_check_mark: 
@@ -175,7 +175,7 @@ We're almost there! Use the *Generic* Component once more to drop a [HTTP4 Compo
 
 Set the *Uri* of that component to 
 ```
-http4://{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}:{port}/documents?httpMethod=POST
+http4://{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}/documents?httpMethod=POST
 ```
 and the *Id* to *_createLiferayDocument*
 
