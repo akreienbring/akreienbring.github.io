@@ -64,7 +64,7 @@ which was created by Alfresco and send to ActiveMQ. The message holds the Alfres
 
 [Chapter 3.: Getting started with Fuse](getting_started_fuse.md)
 
-### Part 4: Retrieve a Document by using Camel-CMIS
+### Part 4: Retrieve a document by using Camel-CMIS
 Until now we only have the ID of an Alfresco document. The next step is getting our hands on the document object itself. We will use the Camel-CMIS component to achieve this.
 
 During this, it will also be shown how to add Camel components to Fuse which are not in the Fuse palette.
