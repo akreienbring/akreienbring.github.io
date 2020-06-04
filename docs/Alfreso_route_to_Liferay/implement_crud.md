@@ -228,7 +228,7 @@ In case of the *beforeDeleteNode* event there is some extra work to do. This eve
 
 If all tests are passed then the *actionService* is used to execute the *enable-web-flag* or *disable-web-flag* actions that you already know. These, in turn, execute the *set-web-flag* action with the *active* parameter set to *true* or *false*.
 
-This way the logic, that we implemented in *SetWebFlag.java* will send the JSON message with the *"action": "update"* or *"action":"delete"* content.
+This way the logic, that we implemented in *SetWebFlag.java* will send the JSON message with the *"action": "update"* or *"action":"delete"* content to ActiveMQ.
 
 
 [Back to the previous chapter](prepare_crud.md)<br>
