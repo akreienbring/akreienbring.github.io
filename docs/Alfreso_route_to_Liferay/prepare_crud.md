@@ -178,7 +178,7 @@ Switch your Fuse Designer to Source mode and locate the following XML:
 
 Now replace the harmless looking *to* at the beginning with *toD*
 
-The [Camel documentation of *toD*](https://camel.apache.org/components/latest/eips/toD-eip.html) sais:
+The [Camel documentation of *toD*](https://camel.apache.org/components/latest/eips/toD-eip.html) says:
 
 *There is a new ```.toD / <toD>``` that allows to send a message to a dynamic computed Endpoint using one or more Expression that are concat together. By default the Simple language is used to compute the endpoint.*
 	
