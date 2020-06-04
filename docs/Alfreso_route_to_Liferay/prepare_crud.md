@@ -186,9 +186,9 @@ The [Camel documentation of *toD*](https://camel.apache.org/components/latest/ei
 	
 which is what we need here.
 
-One last *Log* component that logs the exchange body (The response to the PUT request) to the server log and you're ready to start your engines again.
+One last *Log* component that logs the exchange body (The response of the PUT request) to the server log and you're ready to start your engines again.
 
-### The result of our Work in this chapter
+### The result of our work in this chapter
 In the server log you see the JSON response (shortened):
 ```
 {"entry":
