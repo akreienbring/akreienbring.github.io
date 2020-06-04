@@ -205,7 +205,7 @@ Your route (from the Liferay POST to the Alfresco PUT request):
 But the most important result can be seen in Alfresco, when you click on the whitepaper you just published.<br>
 The LiferayID gets now stored on the document properties.
 
-![Alfresco Doc properties(img/alfresco_doc_properties.png)
+![Alfresco Doc properties](img/alfresco_doc_properties.png)
 
 
 [Back to the previous chapter](upload_content_liferay.md)<br>
