@@ -38,8 +38,6 @@ Don't blame me for using my own package names and namespaces different from the 
 
 **SetWebFlag.java**
 ```java
-if (logger.isDebugEnabled()) logger.debug("Inside SetWebFlag executeImpl");
-			
 Boolean activeFlag = (Boolean)action.getParameterValue(PARAM_ACTIVE);
 
 if (activeFlag == null) activeFlag = true;
