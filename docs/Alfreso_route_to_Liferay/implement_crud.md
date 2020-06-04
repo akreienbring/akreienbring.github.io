@@ -193,10 +193,8 @@ public void beforeDeleteNode(NodeRef nodeRef) {
 		//checked out / in
 			
 		if (logger.isDebugEnabled()) logger.debug("A webable and active Node was deleted. Calling disable-web-flag");
-			Action action = actionService.createAction("disable-web-flag");
-			actionService.executeAction(action, nodeRef);
-			
-		};
+		Action action = actionService.createAction("disable-web-flag");
+		actionService.executeAction(action, nodeRef);
 	}
 }
 
