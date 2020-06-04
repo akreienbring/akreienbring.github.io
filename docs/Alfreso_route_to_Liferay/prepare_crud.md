@@ -153,6 +153,43 @@ The content is like so
 What did I say about many different languages when using Camel? Here's another example. This is the Freemarker template specific language to access the exchange properties. And without the *?string.computer* our number *36207* would have been converted to *3.6207*.
 If you want to know more about it, feel free to study the [Freemarker Template Language Reference](https://freemarker.apache.org/docs/ref_builtins_number.html)
 
+The PUT request is a lot easier to generate then the previous POST to Liferay because it doesn't need a *multipart / form* element in the body. And remember that the Freemarker component already generated the requiered JSON in the exchange body for us.
+
+But, again, an Authorization Header must be set. Drop a *Set Header* component on the Freemarker component.
+
+![Fuse set header](img/fuse_set_header.png)
+
+This time you need to Base64 encode your Alfresco credentials in the form ```"username:password``` to get this working.
+ 
+The last step is to fire the request with the *HTTP4* component. Get one by using the *Generic* one again and set the *Uri* to 
+*http4://[myHost]:[myPort]/alfresco/api/-default-/public/alfresco/versions/1/nodes/${property.alfrescoID}?httpMethod=PUT*
+
+The *Id* goes to *_alfresco_Put_LiferayID*
+
+STOP! Not so quick! We need another little not-so-obvious trick here.
+The *HTTP4* does **not** replace the property out of the box.
+
+Switch your Fuse Designer to Source mode and locate the following XML:
+```xml
+<to id="_alfresco_Put_LiferayID" uri="http4://[myHost]:[myPort]/alfresco/api/-default-/public/alfresco/versions/1/nodes/${property.alfrescoID}?httpMethod=PUT"/>
+```
+
+Now replace the harmless looking *to* at the beginning with *toD*
+
+The [Camel documentation of *toD*](https://camel.apache.org/components/latest/eips/toD-eip.html) sais:
+
+*There is a new .toD / <toD> that allows to send a message to a dynamic computed Endpoint using one or more Expression that are concat together. By default the Simple language is used to compute the endpoint.*
+	
+which is what we need here.
+
+One last *Log* component that logs the exchange body (The response to the PUT request) to the server log and you're ready to start your engines again.
+
+### The result of our Work in this chapter
+
+
+
+
+
 [Back to the previous chapter](upload_content_liferay.md)<br>
 [Back to tutorial overview](index.md)<br>
 [Leave the tutoral](../index.md)
