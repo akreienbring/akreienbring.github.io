@@ -205,19 +205,22 @@ public void beforeDeleteNode(NodeRef nodeRef) {
 */
 private boolean isExternalActionRequired(NodeRef nodeRef) {
 	boolean hasWebableAspect = nodeService.hasAspect(
-		nodeRef, 	
-		QName.createQName(
-			BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
-			BInformedModel.ASPECT_BI_WEBABLE)
+			nodeRef, 	
+			QName.createQName(
+				BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
+				BInformedModel.ASPECT_BI_WEBABLE)
+			)
 		);
 		
 	if (hasWebableAspect) {
 		boolean isActive = (Boolean) nodeService.getProperty(
-			nodeRef, 
-			QName.createQName(
-				BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
-				BInformedModel.PROP_IS_ACTIVE)
+				nodeRef, 
+				QName.createQName(
+					BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
+					BInformedModel.PROP_IS_ACTIVE)
+				)
 			);
+			
 		return isActive ? true: false;
 	}else {
 		return false;
