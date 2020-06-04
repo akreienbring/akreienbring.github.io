@@ -153,6 +153,8 @@ The content is like so
 What did I say about many different languages when using Camel? Here's another example. This is the Freemarker template specific language to access the exchange properties. And without the *?string.computer* our number *36207* would have been converted to *3.6207*.
 If you want to know more about it, feel free to study the [Freemarker Template Language Reference](https://freemarker.apache.org/docs/ref_builtins_number.html)
 
+Drop in another *Log* component that outputs the exchange body. Just to see if Freemarker has done what it was told to do.
+
 The PUT request is a lot easier to generate then the previous POST to Liferay because it doesn't need a *multipart / form* element in the body. And remember that the Freemarker component already generated the requiered JSON in the exchange body for us.
 
 But, again, an Authorization Header must be set. Drop a *Set Header* component on the Freemarker component.
