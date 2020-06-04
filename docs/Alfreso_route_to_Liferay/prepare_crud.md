@@ -104,6 +104,17 @@ prop.sc_published=Published
 prop.sc_isActive=Active?
 prop.sc_externalID=Liferay ID
 ```
+Now we are ready to store the Liferay ID in the Alfresco content mode as soon as we uploaded it.
+
+### Get the Lifray ID from the POST response
+If you look closely to the JSON response in your server log then you'll notice (shortened)
+```json
+{
+  "id" : 36101
+}
+```
+
+Thats the ID that Liferay assigned to the document when it was created.
 
 
 
