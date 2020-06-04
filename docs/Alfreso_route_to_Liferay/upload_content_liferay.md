@@ -41,7 +41,7 @@ Looking up the OAS3 specification of the Liferay REST API, that allows us to upl
 ![Liferay OAS](img/liferay_oas.png)
 
 Taking into account the necessary authentication that means that we need
-- The ID of a folder where our document will finally land in Liferay
+- the ID of a folder where our document will finally land in Liferay
 - the document file
 - a JSON with the documents name
 - a multipart/form-data body with the *file* object and the *document* JSON 
@@ -116,7 +116,7 @@ Let's look what we got until here. Your route from Camel-CMIS to Freemarker look
 ![Freemarker](img/fuse_cmis_to_freemarker.png)
 
 Our 2Do list now looks like this
-- The ID of a folder where our document will finally land in Liferay :heavy_check_mark: (we know it from the Liferay url)
+- the ID of a folder where our document will finally land in Liferay :heavy_check_mark: (we know it from the Liferay url)
 - the document file :x: (we have only the input stream)
 - a JSON with the documents name :heavy_check_mark: (thanks to Freemarker it's in the exchange body)
 - a multipart/form-data body with the *file* object and the *document* JSON :x:
@@ -174,7 +174,7 @@ To make the bean available to Camel just add it to the source of your *jboss-cam
 And add a *Bean* component to your route. In the properties of that component set *Ref* to the id of the bean *DocumentSender*
 
 And all of a sudden our 2Do list now looks like this
-- The ID of a folder where our document will finally land in Liferay :heavy_check_mark: 
+- the ID of a folder where our document will finally land in Liferay :heavy_check_mark: 
 - the document file :heavy_check_mark: 
 - a JSON with the documents name :heavy_check_mark: 
 - a multipart/form-data body with the *file* object and the *document* JSON :heavy_check_mark:
