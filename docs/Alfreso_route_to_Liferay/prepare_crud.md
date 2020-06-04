@@ -78,22 +78,31 @@ Edit your *share-config-custom.xml*
    ---
 </config> 
 
-<config evaluator="aspect" condition="bi:webable">
+<config evaluator="aspect" condition="sc:webable">
 	<forms>
 		<form>
 			<field-visibility>
-				<show id="bi:published" />
-				<show id="bi:isActive" />
-				<show id="bi:externalID" />
+				<show id="sc:published" />
+				<show id="sc:isActive" />
+				<show id="sc:externalID" />
 			</field-visibility>
 			<appearance>
-			   <field id="bi:published" label-id="prop.bi_published" />
-			   <field id="bi:isActive" label-id="prop.bi_isActive" />
-			   <field id="bi:externalID" label-id="prop.bi_externalID" />
+			   <field id="sc:published" label-id="prop.sc_published" />
+			   <field id="sc:isActive" label-id="prop.sc_isActive" />
+			   <field id="sc:externalID" label-id="prop.sc_externalID" />
 			</appearance>
 		</form>
 	</forms>
 </config>
+```
+
+Finally add the missing label to the corresponding *scModel.properties*
+```
+#sc:webable
+aspect.sc_webable=SomeCo Webable
+prop.sc_published=Published
+prop.sc_isActive=Active?
+prop.sc_externalID=Liferay ID
 ```
 
 
