@@ -238,7 +238,7 @@ If all tests are passed then the *actionService* is used to execute the *enable-
 
 This way the logic, that we implemented in *SetWebFlag.java* will send the JSON message with the *"action": "update"* or *"action":"delete"* content to ActiveMQ.
 
-## The C(R)UD messesages Alfresco sends
+## The C(R)UD messages Alfresco sends
 ... can look like this now:
 ```
 {
