@@ -139,9 +139,19 @@ Again we trust Swagger Hub and find:
 
 ![Alfresco put node](img/alfresco_put_node.png)
 
+The second example is what we want. To create the body of the PUT request, we quickly use the Freemarker component again. 
+Create ```[Your fuse integration project]/src/main/java/alfresco_document.put.ftl```
 
-
-
+The content is like so
+```json
+{
+	"properties":{
+		"bi:externalID":${exchange.properties.liferayID?string.computer}
+	}
+}
+```
+What did I say about many different languages when using Camel? Here's another example. This is the Freemarker template specific language to access the exchange properties. And without the *?string.computer* our number *36207* would have been converted to *3.6207*.
+If you want to know more about it, feel free to study the [Freemarker Template Language Reference](https://freemarker.apache.org/docs/ref_builtins_number.html)
 
 [Back to the previous chapter](upload_content_liferay.md)<br>
 [Back to tutorial overview](index.md)<br>
