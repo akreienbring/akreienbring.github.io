@@ -35,7 +35,7 @@ At a minimum go, get and install the tutorial code from [his github repo](https:
 
 ... Welcome back! 
 
-At the very first I will give you an overview over all the main software I used in the process. Needless to say that I guarantee nothing. Nor do I support the things we will create here. It is allways a good idea to checkout the respective Community Forum if you get stuck.
+At the very first I will give you an overview over all the main software I used in the process. Needless to say that I guarantee nothing. Nor do I support the things we will create here. It is allways a good idea to check out the respective Community Forum if you get stuck.
 
 [Chapter 1.: A bunch of tools we need to get up and running](softwarestack.md)
 
@@ -77,5 +77,12 @@ Using the so called *headless delivery* REST API of Liferay, we are going to upl
 Using Camel this is one of the rare spots where a small JAVA bean must be written to achieve what we want.
 
 [Chapter 5.: Upload content to Liferay](upload_content_liferay.md)
+
+### Part 6: Prepare yourself for C(R)UD
+The document was successfully created in Liferay. That was the "C" of C(R)UD.
+That stands for Create-Read-Update-Delete. We don't need to read the document from Liferay in this scenario, but we need to update or delete the created Liferay document when it get's updated or deleted in Alfresco. 
+
+[Chapter 6.: Preparations for CRUD](prepare_crud.md)
+
 
 [Leave tutorial](../index.md)
