@@ -136,7 +136,7 @@ Add a new file named *myDocumentSender.java* under ```[Your fuse integration pro
 ```java
 /* Gets the CMIS Content from the Inputstream and writes it to a local file.
  * After that the multipart/form header is constructed and put in the exchange body.
- * TODO: not hardcode the directory
+ * TODO: not hardcode the directory ;-)
  */
 public class MyDocumentSender implements Processor {
 
@@ -171,7 +171,7 @@ To make the bean available to Camel just add it to the source of your *jboss-cam
     <bean class="org.test.MyDocumentSender" id="DocumentSender"/>
     <camelContext id="spring-context" xmlns="http://camel.apache.org/schema/spring">
 ```
-And add a *Bean* Component to your route. In the properties of that component set *Ref* to the id of the bean *DocumentSender*
+And add a *Bean* component to your route. In the properties of that component set *Ref* to the id of the bean *DocumentSender*
 
 And all of a sudden our 2Do list now looks like this
 - The ID of a folder where our document will finally land in Liferay :heavy_check_mark: 
