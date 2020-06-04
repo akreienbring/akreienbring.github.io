@@ -198,9 +198,9 @@ and the *Id* to *_createLiferayDocument*
 The response of that request goes into the body of the exchange. Use a *Log* component to output it.
 
 ### Status Quo after this chapter
-Starting from the CMIS download you did in the previous chapter your route looks like this:
+Starting from the CMIS download, you did in the previous chapter, your route looks like this:
 
-![From CMIS to HTTP4](img/fuse_cmis_to_http4.png)fuse_cmis_to_http4.png
+![From CMIS to HTTP4](img/fuse_cmis_to_http4.png)
 
 Your document was uploaded to Liferays *Document and Media Library* in the folder you created for Whitpapers.
 
