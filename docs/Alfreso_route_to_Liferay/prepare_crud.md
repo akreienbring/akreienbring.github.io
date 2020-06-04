@@ -114,7 +114,9 @@ If you look closely to the JSON response in your server log then you'll notice (
 }
 ```
 
-Thats the ID that Liferay assigned to the document when it was created.
+Thats the ID that Liferay assigned to the document when it was created. (Of course your value is different...)
+
+
 
 
 
