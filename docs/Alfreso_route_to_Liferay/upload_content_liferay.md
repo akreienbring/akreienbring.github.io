@@ -255,4 +255,4 @@ And in the server log you have the JSON response of the POST request:
 [Chapter 6.: Preparations for C(R)UD](prepare_crud.md)<br>
 [Back to the previous chapter](using_cmis_download.md)<br>
 [Back to tutorial overview](index.md)<br>
-[Leave the tutoral](../index.md)
+[Leave the tutorial](../index.md)
