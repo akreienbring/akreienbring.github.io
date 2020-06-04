@@ -42,6 +42,62 @@ public static final String PROP_IS_ACTIVE = "isActive";
 public static final String PROP_EXTERNALID = "externalID";
 ```
 
+That's it for the Repository tier.
+
+Adding the new Property on the Share tier (GUI) is not necessary but helpful during the development process.
+
+Edit your *share-config-custom.xml* 
+
+```xml
+<config evaluator="model-type" condition="sc:whitepaper">
+   ---
+   ---
+   <field-visibility>
+      ---
+      ---
+	   <!-- sc:webable -->
+	   <show id="sc:isActive" />
+      <show id="sc:published" />
+	   <show id="sc:externalID" />
+   </field-visibility>
+   <appearance>
+      ---
+      ---
+		<!-- sc:webable -->
+		<field id="bi:isActive" label-id="prop.sc_isActive">
+			<control template="/org/alfresco/components/form/controls/checkbox.ftl" />
+		</field>
+		<field id="sc:published" label-id="prop.sc_published">
+			<control template="/org/alfresco/components/form/controls/daterange.ftl" />
+		</field>
+		<field id="sc:externalID" label-id="prop.sc_externalID">
+			<control template="/org/alfresco/components/form/controls/textfield.ftl" />
+		</field>
+   </appearance>
+   ---
+   ---
+</config> 
+
+<config evaluator="aspect" condition="bi:webable">
+	<forms>
+		<form>
+			<field-visibility>
+				<show id="bi:published" />
+				<show id="bi:isActive" />
+				<show id="bi:externalID" />
+			</field-visibility>
+			<appearance>
+			   <field id="bi:published" label-id="prop.bi_published" />
+			   <field id="bi:isActive" label-id="prop.bi_isActive" />
+			   <field id="bi:externalID" label-id="prop.bi_externalID" />
+			</appearance>
+		</form>
+	</forms>
+</config>
+```
+
+
+
 [Back to the previous chapter](upload_content_liferay.md)<br>
 [Back to tutorial overview](index.md)<br>
 [Leave the tutoral](../index.md)
