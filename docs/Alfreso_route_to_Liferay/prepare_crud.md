@@ -185,8 +185,8 @@ which is what we need here.
 One last *Log* component that logs the exchange body (The response to the PUT request) to the server log and you're ready to start your engines again.
 
 ### The result of our Work in this chapter
-In the server log you see the JSON response (shortened)
-```json
+In the server log you see the JSON response (shortened):
+```
 {"entry":
 	-- bla bla
 	-- bla bla
@@ -198,7 +198,14 @@ In the server log you see the JSON response (shortened)
 }
 ```
 
+Your route (from the Liferay POST to the Alfresco PUT request):
 
+![Fuse from Post to Put](img/fuse_from_POST_to_PUT.png)
+
+But the most important result can be seen in Alfresco, when you click on the whitepaper you just published.<br>
+The LiferayID gets now stored on the document properties.
+
+![Alfresco Doc properties(img/alfresco_doc_properties.png)
 
 
 [Back to the previous chapter](upload_content_liferay.md)<br>
