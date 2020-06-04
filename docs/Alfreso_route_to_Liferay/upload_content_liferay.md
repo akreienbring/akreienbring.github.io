@@ -204,7 +204,7 @@ Starting from the CMIS download you did in the previous chapter your route looks
 
 Your document was uploaded to Liferays *Document and Media Library* in the folder you created for Whitpapers.
 
-And in the server log you have the JSON response of the POST request (shortened):
+And in the server log you have the JSON response of the POST request:
 ```json
 {
   "actions" : {
@@ -249,7 +249,7 @@ And in the server log you have the JSON response of the POST request (shortened)
   "relatedContents" : [ ],
   "sizeInBytes" : 43837,
   "taxonomyCategoryBriefs" : [ ],
-  "title" : "Preisliste.pdf"
+  "title" : "myWhitepaper.pdf"
 }
 ```
 
