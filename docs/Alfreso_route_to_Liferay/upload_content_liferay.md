@@ -252,7 +252,7 @@ And in the server log you have the JSON response of the POST request:
   "title" : "myWhitepaper.pdf"
 }
 ```
-
+[Chapter 6.: Preparations for CRUD](prepare_crud.md)<br>
 [Back to the previous chapter](using_cmis_download.md)<br>
 [Back to tutorial overview](index.md)<br>
 [Leave the tutoral](../index.md)
