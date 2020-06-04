@@ -38,77 +38,77 @@ Don't blame me for using my own package names and namespaces different from the 
 
 **SetWebFlag.java**
 ```java
-  @Override
-	protected void executeImpl(Action action, NodeRef actionedUponNodeRef) {
+@Override
+protected void executeImpl(Action action, NodeRef actionedUponNodeRef) {
 			
-		try {
-			if (logger.isDebugEnabled()) logger.debug("Inside SetWebFlag executeImpl");
+	try {
+		if (logger.isDebugEnabled()) logger.debug("Inside SetWebFlag executeImpl");
 			
-			Boolean activeFlag = (Boolean)action.getParameterValue(PARAM_ACTIVE);
+		Boolean activeFlag = (Boolean)action.getParameterValue(PARAM_ACTIVE);
 
-			if (activeFlag == null) activeFlag = true;
+		if (activeFlag == null) activeFlag = true;
 			
-			Map<QName, Serializable> properties = nodeService.getProperties(actionedUponNodeRef);
+		Map<QName, Serializable> properties = nodeService.getProperties(actionedUponNodeRef);
       
-			// set the bi:isActive property to the value of the parameter
+		// set the bi:isActive property to the value of the parameter
+		properties.put(QName.createQName(
+			BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
+        		BInformedModel.PROP_IS_ACTIVE),activeFlag);
+			
+		//If properties exist: get them else set them to null
+		Serializable lastPublishedProperty = properties.get(QName.createQName(
+			BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
+        		BInformedModel.PROP_PUBLISHED));
+      
+		Serializable liferayIDProperty = properties.get(QName.createQName(
+			BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
+       			BInformedModel.PROP_EXTERNALID));
+      
+		Date lastPublished = (lastPublishedProperty != null) ? (Date) lastPublishedProperty : null;
+		int liferayID = (liferayIDProperty != null) ? (Integer) liferayIDProperty : 0;
+			
+		String crud = "";
+		Date justNow = new Date();
+					
+		String message = "";
+		if (activeFlag) {
+			// set the bi:published property to now
 			properties.put(QName.createQName(
-				BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
-        			BInformedModel.PROP_IS_ACTIVE),activeFlag);
-			
-			//If properties exist: get them else set them to null
-			Serializable lastPublishedProperty = properties.get(QName.createQName(
-				BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
-        			BInformedModel.PROP_PUBLISHED));
-      
-			Serializable liferayIDProperty = properties.get(QName.createQName(
-				BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL,
-       				BInformedModel.PROP_EXTERNALID));
-      
-			Date lastPublished = (lastPublishedProperty != null) ? (Date) lastPublishedProperty : null;
-			int liferayID = (liferayIDProperty != null) ? (Integer) liferayIDProperty : 0;
-			
-			String crud = "";
-			Date justNow = new Date();
-					
-			String message = "";
-			if (activeFlag) {
-				// set the bi:published property to now
-				properties.put(QName.createQName(
-					BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
-          				BInformedModel.PROP_PUBLISHED), justNow);
+				BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
+          			BInformedModel.PROP_PUBLISHED), justNow);
 				
-				if(lastPublished == null && liferayID == 0) {
-					crud = "create";
-				}else {
-					crud = "update";
-				}
-				
-				//Crate a activemq message
-				message = 
-						"{\r\n" + 
-						"	\"alfrescoID\":\"" + actionedUponNodeRef.getId() + "\",\r\n" +
-						"	\"liferayID\":"+ liferayID + ",\r\n" +
-						"	\"action\":\""+ crud + "\"\r\n" +
-						"}";
+			if(lastPublished == null && liferayID == 0) {
+				crud = "create";
 			}else {
-				// reset the properties
-				properties.put(QName.createQName(
-					BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
-          				BInformedModel.PROP_PUBLISHED), null);
-					
-				properties.put(QName.createQName(
-					BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
-         				BInformedModel.PROP_EXTERNALID), 0);
-				
-				message = 
-						"{\r\n" + 
-						"	\"alfrescoID\":\"" + actionedUponNodeRef.getId() + "\",\r\n" +
-						"	\"liferayID\":\""+ liferayID + "\",\r\n" +
-						"	\"action\":\"delete\"\r\n" +
-						"}";
+				crud = "update";
 			}
+				
+			//Crate a activemq message
+			message = 
+				"{\r\n" + 
+				"	\"alfrescoID\":\"" + actionedUponNodeRef.getId() + "\",\r\n" +
+				"	\"liferayID\":"+ liferayID + ",\r\n" +
+				"	\"action\":\""+ crud + "\"\r\n" +
+				"}";
+		}else {
+			// reset the properties
+			properties.put(QName.createQName(
+				BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
+          			BInformedModel.PROP_PUBLISHED), null);
+					
+			properties.put(QName.createQName(
+				BInformedModel.NAMESPACE_BINFORMED_CONTENT_MODEL, 
+         			BInformedModel.PROP_EXTERNALID), 0);
+				
+			message = 
+				"{\r\n" + 
+				"	\"alfrescoID\":\"" + actionedUponNodeRef.getId() + "\",\r\n" +
+				"	\"liferayID\":\""+ liferayID + "\",\r\n" +
+				"	\"action\":\"delete\"\r\n" +
+				"}";
+		}
 			
-			Sender.send(message);
+		Sender.send(message);
 ```
 
 As always this is only the main excerpt of the code.
