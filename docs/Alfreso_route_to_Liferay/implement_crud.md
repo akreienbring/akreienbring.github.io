@@ -6,7 +6,15 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 [Back to the previous chapter](prepare_crud.md)
 
 ## Chapter 7.: Implementing the C(R)UD behaviour
-As of now Alfresco sends an ActiveMQ message that contains the *create* action. But now, that we have the ID of the created Liferay document, stored as a property of the Alfresco document, we are able to do the next step.
+As of now Alfresco sends an ActiveMQ message that contains the *create* action. Such a message looks like this:
+```
+{
+	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
+	"action":"create"
+}
+```
+
+But now, that we have the ID of the created Liferay document, stored as a property of the Alfresco document, we are able to do the next step.
 
 And that is: updating / deleting the Liferay document when it's updated / deleted in Alfresco.
 
@@ -230,6 +238,31 @@ If all tests are passed then the *actionService* is used to execute the *enable-
 
 This way the logic, that we implemented in *SetWebFlag.java* will send the JSON message with the *"action": "update"* or *"action":"delete"* content to ActiveMQ.
 
+## The C(R)UD messesages Alfresco sends
+... can look like this now:
+```json
+{
+	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
+	"liferayID": 0
+	"action":"create"
+}
+```
+
+```json
+{
+	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
+	"liferayID": 32607
+	"action":"update"
+}
+```
+
+```json
+{
+	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
+	"liferayID": 32607
+	"action":"delete"
+}
+```
 
 [Back to the previous chapter](prepare_crud.md)<br>
 [Back to tutorial overview](index.md)<br>
