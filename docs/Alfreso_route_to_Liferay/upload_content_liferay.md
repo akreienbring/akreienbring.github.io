@@ -20,17 +20,33 @@ Thanks to the fact that Alfresco and Liferay both follow this defacto standard, 
 However, we still need some coding to do before we can upload our document to Liferay.
 
 ### Prepare the upload
-Looking up the specification of the Liferay REST API, that allows us to upload a document to Liferay, you'll find this:
+First of all you need to enable uploads to Liferay by changing the */WEB-INF/web.xml* as they are disabled by default. Locate the *Module Framework Servlet* and change it to the following
+```xml
+<servlet>
+	<servlet-name>Module Framework Servlet</servlet-name>
+	<servlet-class>com.liferay.portal.module.framework.ModuleFrameworkServletAdapter</servlet-class>
+	<load-on-startup>1</load-on-startup>
+	<async-supported>true</async-supported>
+        <multipart-config>
+            <location>/tmp</location>
+            <max-file-size>20848820</max-file-size>
+            <max-request-size>418018841</max-request-size>
+            <file-size-threshold>1048576</file-size-threshold>
+        </multipart-config>
+</servlet>
+```
+Back to the REST API:<br>
+Looking up the OAS3 specification of the Liferay REST API, that allows us to upload a document to Liferay, you'll find this:
 
 ![Liferay OAS](img/liferay_oas.png)
 
-Taking into account the necessary Authentication that means that we need
+Taking into account the necessary authentication that means that we need
 - The ID of a folder where our document will finally land in Liferay
 - the document file
 - a JSON with the documents name
 - a multipart/form-data body with the *file* object and the *document* JSON 
 - a header with the (basic) authentication
-- to create an url like *{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}/documents*
+- to create an url like *[myHost]:[myPort]/o/headless-delivery/v1.0/document-folders/[myDocumentFolderId]/documents*
 - to do a POST request with all this information
 
 ### Getting the FolderId
@@ -38,7 +54,7 @@ Let's make things short here. I did it like this: In Liferay I created a new fol
 
 ![Liferay OAS](img/liferay_empty_folder.png)
 
-And here's another task for you: Find the hidden folderId in the picture.
+And here's another task for you: Find the hidden *folderId* in the picture.
 
 Honestly: In a production environment there must be a better way, but hardcoding this for the tutorial is acceptable.
 
@@ -74,7 +90,7 @@ Up to this point we have two new properties on the exchange. The *FileName* and 
 ```
 Thank Camel, there is the [Freemarker Component](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html/apache_camel_component_reference/freemarker-component).
 
-Freemarker is a powerfull template engine that will create the JSON for us.
+[Freemarker](https://freemarker.apache.org/) is a powerfull template engine that will create the JSON for us.
 
 The Freemarker template needs to be on the classpath to be found by the component. So create a new file called *liferay_document.post.ftl* under ```[Your fuse integration project]/src/main/java```
 However, that is not really a good place for a resource. So if you like you can also change the classpath settings for your project and create a location like ```[Your fuse integration project]/src/main/resources```
@@ -105,7 +121,7 @@ Our 2Do list now looks like this
 - a JSON with the documents name :heavy_check_mark: (thanks to Freemarker it's in the exchange body)
 - a multipart/form-data body with the *file* object and the *document* JSON :x:
 - a header with the (basic) authentication :x:
-- to create an url like *{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}/documents* :x:
+- to create an url like *[myHost]:[myPort]/o/headless-delivery/v1.0/document-folders/[myDocumentFolderId]/documents* :x:
 - to do a POST request with all this information :x:
 
 The *CamelCMISContent* input stream is stored in an exchange property and the JSON is in the exchange body.
@@ -163,10 +179,10 @@ And all of a sudden our 2Do list now looks like this
 - a JSON with the documents name :heavy_check_mark: 
 - a multipart/form-data body with the *file* object and the *document* JSON :heavy_check_mark:
 - a header with the (basic) authentication :heavy_check_mark:
-- to create an url like *{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}/documents* :x:
+- to create an url like *[myHost]:[myPort]/o/headless-delivery/v1.0/document-folders/[myDocumentFolderId]/documents* :x:
 - to do a POST request with all this information :x:
 
-Did you notice the *exchange.getIn()* and *exchange.getOut()* statements? That is the *consumer* and *producer* pattern we already spoke about. The bean (a processor) simply consumes the exchange, has access to properties, body, header etc. and produces a new exchange object with manipulated properties, body, header etc. that is passed on to the next component in the route.
+Did you notice the *exchange.getIn()* and *exchange.getOut()* statements? That is the *consumer* and *producer* pattern we already spoke about. The bean (a Processor) simply consumes the exchange, has access to properties, body, header etc. and produces a new exchange object with manipulated properties, body, header etc. that is passed on to the next component in the route.
 
 A word on the Authentication Header: The *Basic Authentication* is created by a Base64 encryption of your Liferay credentials in the form "username:password" (e.g. ```"test@liferay.com:test```"). I got mine using Postman to test the REST services of Liferay. You can also use JAVA to encrypt your credentials or use an online tool such as [https://www.base64encode.org/](https://www.base64encode.org/). (I haven't tried that one)
 
@@ -175,7 +191,7 @@ We're almost there! Use the *Generic* Component once more to drop a [HTTP4 Compo
 
 Set the *Uri* of that component to 
 ```
-http4://{host}:{port}/o/headless-delivery/v1.0/document-folders/{documentFolderId}/documents?httpMethod=POST
+http4://[myHost]:[myPort]/o/headless-delivery/v1.0/document-folders/[myDocumentFolderId]/documents?httpMethod=POST
 ```
 and the *Id* to *_createLiferayDocument*
 
