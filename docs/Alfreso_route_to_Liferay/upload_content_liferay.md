@@ -202,7 +202,7 @@ Starting from the CMIS download, you did in the previous chapter, your route loo
 
 ![From CMIS to HTTP4](img/fuse_cmis_to_http4.png)
 
-Your document was uploaded to Liferays *Document and Media Library* in the folder you created for Whitpapers.
+Your document was uploaded to Liferays *Document and Media Library* in the folder you created for Whitepapers.
 
 And in the server log you have the JSON response of the POST request:
 ```json
