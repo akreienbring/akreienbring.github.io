@@ -104,7 +104,7 @@ prop.sc_published=Published
 prop.sc_isActive=Active?
 prop.sc_externalID=Liferay ID
 ```
-Now we are ready to store the Liferay ID in the Alfresco content mode as soon as we uploaded it.
+Now we are ready to store the Liferay ID in the Alfresco content node as soon as we uploaded the document to Liferay.
 
 ### Get the Lifray ID from the POST response
 If you look closely to the JSON response in your server log then you'll notice (shortened)
@@ -116,7 +116,7 @@ If you look closely to the JSON response in your server log then you'll notice (
 
 Thats the ID that Liferay assigned to the document when it was created. (Of course your value is different...)
 
-But before we can extract the value into a exchange, property we are facing a challenge here. The *Log* component after the *HTTP4* component consumed the response from the POST request. Because that response was a stream, it is not in the exchange body anymore. 
+But before we can extract the value into a exchange property, we are facing a challenge here. The *Log* component after the *HTTP4* component consumed the response from the POST request. Because that response was a stream, it is not in the exchange body anymore. 
 
 One way to prevent that would be to [enable stream chaching](https://camel.apache.org/manual/latest/stream-caching.html) for the route, but let me show you another way. 
 
