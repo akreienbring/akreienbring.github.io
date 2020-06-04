@@ -229,10 +229,10 @@ private boolean isExternalActionRequired(NodeRef nodeRef) {
 Some notes on the code: <br>
 The *init* method is called when Alfresco starts up. It "binds" the behaviour to the events *afterCreateVersion* and *beforeDeleteNode*. But ONLY if the type of the document is Whitepaper.
 
-The methods that implement the behaviour that happens when the corresponding event occurs both check if any action must be triggered. This depends on the question if the node has the *webable* aspect and is active. 
-Being active means: The document was published to Liferay and hence must be updated or deleted.
+The methods, that implement the behaviour that happens when the corresponding event occurs, both check if any action must be taken at all. This depends on the question, if the node has the *webable* aspect and is active. 
+Being active means: The document was published to Liferay before and hence must be updated or deleted.
 
-In case of the *beforeDeleteNode* event there is some extra work to do. This event is fired in some situations when the node is **not** finally deleted from the repository. Hence we have to check for the *working copy aspect*
+In case of the *beforeDeleteNode* event, there is some extra work to do. This event is fired in some situations when the node is **not** finally deleted from the repository (See the comment in the code). Hence we have to check for the *working copy aspect*
 
 If all tests are passed then the *actionService* is used to execute the *enable-web-flag* or *disable-web-flag* actions that you already know. These, in turn, execute the *set-web-flag* action with the *active* parameter set to *true* or *false*.
 
