@@ -93,16 +93,16 @@ Thank Camel, there is the [Freemarker Component](https://access.redhat.com/docum
 [Freemarker](https://freemarker.apache.org/) is a powerfull template engine that will create the JSON for us.
 
 The Freemarker template needs to be on the classpath to be found by the component. So create a new file called *liferay_document.post.ftl* under ```[Your fuse integration project]/src/main/java```
-However, that is not really a good place for a resource. So if you like you can also change the classpath settings for your project and create a location like ```[Your fuse integration project]/src/main/resources```
+However, that is not really a good place for a resource. So, if you like, you can also change the classpath settings for your project and create a location like ```[Your fuse integration project]/src/main/resources```
 
 In that file put **2DO The property shoud be used here!**
-```json
+```
 {
 	"title": "${body[0]["cmis:name"]}"
 }
 ```
 
-Now place a *Generic* component onto the route, like you did with *Camel-CMIS*. But this time select the *Freemarker* component.
+Now place a *Generic* component on the route, like you did with *Camel-CMIS*. But this time select the *Freemarker* component.
 
 The *Uri* setting goes to *freemarker:liferay_document.post.ftl* and the id to *_freemarker_liferay*
 
