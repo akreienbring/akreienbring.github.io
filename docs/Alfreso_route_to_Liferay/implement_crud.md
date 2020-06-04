@@ -164,7 +164,6 @@ public void init() {
 		),
 		this.beforeDeleteNode
 	);
-		
 }
 
 public void afterCreateVersion(NodeRef versionableNode, Version version){
