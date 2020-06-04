@@ -143,10 +143,10 @@ The second example is what we want. To create the body of the PUT request, we qu
 Create ```[Your fuse integration project]/src/main/java/alfresco_document.put.ftl```
 
 The content is like so
-```json
+```
 {
 	"properties":{
-		"bi:externalID":${exchange.properties.liferayID?string.computer}
+		"sc:externalID":${exchange.properties.liferayID?string.computer}
 	}
 }
 ```
