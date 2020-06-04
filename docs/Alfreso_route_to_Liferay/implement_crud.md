@@ -243,7 +243,7 @@ This way the logic, that we implemented in *SetWebFlag.java* will send the JSON 
 ```json
 {
 	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
-	"liferayID": 0
+	"liferayID":0
 	"action":"create"
 }
 ```
@@ -251,7 +251,7 @@ This way the logic, that we implemented in *SetWebFlag.java* will send the JSON 
 ```json
 {
 	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
-	"liferayID": 32607
+	"liferayID":32607
 	"action":"update"
 }
 ```
@@ -259,7 +259,7 @@ This way the logic, that we implemented in *SetWebFlag.java* will send the JSON 
 ```json
 {
 	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
-	"liferayID": 32607
+	"liferayID":32607
 	"action":"delete"
 }
 ```
