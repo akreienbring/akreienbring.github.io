@@ -34,6 +34,13 @@ But now messages can also look like this
 and the route has to make decisions.
 
 ### Routing with When - Otherwise
+The start of the route looks like this
+
+![The Start of the route](img/start_of_route.png)
+
+As we need to grap the liferayID in a new property drop a new *Set Property* component from the palette precisely on the arrow between the existing *Set Property* components. Use the *jsonPath* expression *$.liferayID* to get it and set the property name to *liferayID*
+
+
 
 [Back to the previous chapter](prepare_crud.md)<br>
 [Back to tutorial overview](index.md)<br>
