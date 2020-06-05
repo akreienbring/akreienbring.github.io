@@ -34,7 +34,7 @@ Remember that the Alfresco GUI is configured on the Share-Tier, whereas the impl
 
 As you can download the code from this repository, I will not post the whole code here. Just the main and important changes I made to the
 
-**SetWebFlag.java class**
+[**SetWebFlag.java class**](/source/platform.SetWebFlag.java)
 ```java			
 import platform.activemq.Sender;
 
@@ -85,7 +85,7 @@ I hope you already now get an idea of the potential of this pattern over the one
 
 However, we will use a Queue for our purpose and have a look on the 
 
-**Sender.java class**
+[**Sender.java class**](/source/platform/Sender.java)
 ```java
 package platform.activemq;
 
@@ -122,7 +122,7 @@ public class Sender {
 
 Because Alfresco uses ActiveMQ out-of-the-box you should not need to do any Spring XML fuddelings to be able to import the needed framework.
 
-Looks rather easy... but have a look at the *Broker* Class that does some important things for us.
+Looks rather easy... but have a look at the [*Broker*](/source/platform/Broker.java) Class that does some important things for us.
 
 ### The ActiveMQ Broker
 As ActiveMQ is a separate Server (that by default listens to incoming messages on the TCP port 61616) the Broker will set up a connection to it, create a Queue named *liferay* and, even more important, reuse things to save our ressources. 
