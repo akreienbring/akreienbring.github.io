@@ -96,6 +96,8 @@ Using Camel, this is one of the rare spots where a small JAVA bean must be writt
 The document was successfully created in Liferay. That was the "C" of C(R)UD.
 That stands for Create-Read-Update-Delete. We don't need to read the document from Liferay in this scenario, but we need to update or delete the created Liferay document when it get's updated or deleted in Alfresco. 
 
+![HTTP4 component](img/alfresco_doc_properties.png)	
+
 And a fundamental thing here: We need to store Liferay ID's in Alfresco. That needs an update of the content model!
 
 [Chapter 6: Preparations for C(R)UD](prepare_crud.md)
