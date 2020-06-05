@@ -75,7 +75,7 @@ On the top of the JAVA file I import the Sender class. So let's see what that is
 
 ActiveMQ receives, stores and transports messages using various protocols, but that is a different tutorial. The important thing here is that there are two different messaging concepts:
 
-#### The Queue
+#### Queue
 When you send a message to an ActiveMQ Queue, then it is directed to a message consumer that listens to that Queue (one-to-one)
 
 #### Topic
