@@ -44,7 +44,7 @@ The central point where all the magic of message sending happens is the ```set-w
 ### Making SetWebFlag smart
 Don't blame me for using my own package names and namespaces different from the original SomeCo tutorial. That should be easy to fix for you, if you follow on. BTW: This is a good practice of the things you learned.
 
-**SetWebFlag.java**
+[**SetWebFlag.java**](source/platform/SetWebFlag.java)
 ```java
 Boolean activeFlag = (Boolean)action.getParameterValue(PARAM_ACTIVE);
 
@@ -145,7 +145,7 @@ The same is true for the *policyComponent* which we need to bind to the mentione
 ### Writing the "behavior" code
 Create the JAVA file where the behaviour will be defined. Look at the main parts of the code here:
 
-**ExternalAction.java**
+[**ExternalAction.java**](source/platform/ExternalAction.java)
 ```java
 public void init() {
 	if (logger.isDebugEnabled()) logger.debug("Initializing external actions");
