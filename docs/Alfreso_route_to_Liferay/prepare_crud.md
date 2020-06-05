@@ -3,9 +3,9 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 
 [Leave the tutorial](../index.md)<br>
 [Back to tutorial overview](index.md)<br>
-[Back to the previous chapter](upload_content_liferay.md)
+[Back to Chapter 5: Upload content to Liferay](upload_content_liferay.md)
 
-## Chapter 6.: Preparations for C(R)UD
+## Chapter 6: Preparations for C(R)UD
 In the the previous chapter we successfully created an Alfresco document in Liferay. If the document is updated / deleted in Alfresco it must also be updated / deleted in Liferay.
 That is the idea of CRUD Create-Read-Update-Delete. 
 
@@ -213,6 +213,6 @@ The LiferayID gets now stored on the document properties.
 ![Alfresco Doc properties](img/alfresco_doc_properties.png)
 
 [Chapter 7.: Implementing the C(R)UD behaviour](implement_crud.md)<br>
-[Back to the previous chapter](upload_content_liferay.md)<br>
+[Back to Chapter 5: Upload content to Liferay](upload_content_liferay.md)<br>
 [Back to tutorial overview](index.md)<br>
 [Leave the tutorial](../index.md)
