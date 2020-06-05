@@ -26,8 +26,16 @@ So I decided to have a closer look...
 ### About this work
 Although the solution that will be build in this tutorial is finally working, it is far from being production ready and might not even always be done in the perfect way. So, if you find anything that can be done better for any reason, don't hesitate to let me know. For example you could raise an [issue](https://github.com/akreienbring/akreienbring.github.io/issues) to start a discussion.
 
-During this turorial you will<br> 
-**2DO Brief description of all sections**
+During this turorial you will learn (Quick Access)<br> 
+1. [about all the software you need for the turial](softwarestack.md)
+2. [how to send ActiveMQ messages from Alfresco to Camel](messagesending.md)
+3. [to get started with a Fuse Integration Project](getting_started_fuse.md)
+4. [what it needs to download Alfresco content with Camel-CMIS](using_cmis_download.md)
+5. [how to upload content to Liferay using REST](upload_content_liferay.md)
+6. [to plan integrations by exchanging ID, beetween applications and what CRUD is](prepare_crud.md)
+7. [that it needs a special behaviour of Alfreco to implement CRUD](implement_crud.md)
+8. [bringing logical choices to routes](making_decisions.md)
+9. [how the final route looks like](route_overview.md)
 
 ### Part 1: Now let's start working step by step
 We will first check what we need for the tutorial to work out. As I said, it absolutely depends on Jeffs [SomeCo tutorial](https://ecmarchitect.com/alfresco-developer-series). If you haven't done it, I recommend starting there and come back later. 
@@ -82,6 +90,8 @@ Using Camel, this is one of the rare spots where a small JAVA bean must be writt
 The document was successfully created in Liferay. That was the "C" of C(R)UD.
 That stands for Create-Read-Update-Delete. We don't need to read the document from Liferay in this scenario, but we need to update or delete the created Liferay document when it get's updated or deleted in Alfresco. 
 
+And a fundamental thing here: We need to store Liferay ID's in Alfresco. That needs an update of the content model!
+
 [Chapter 6: Preparations for C(R)UD](prepare_crud.md)
 
 ### Part 7: Implementing ActiveMQ Update / Delete messages in Alfresco 
@@ -97,6 +107,9 @@ Our route need's routing logic because of the new messages. Some kind of *if the
 [Chapter 8: Making decisions on the route ](making_decisions.md)
 
 ### Summary
+Congratulations! Thank you for following me on the long journey from Alfresco to Liferay. The route we made was sometimes stony. Doing it with Camel / Fuse is surely a lot easier then coding everything yourself. Let me say that the countless languages are a babylonian challenge for newbees! But, on the other hand, once you know how to handle them, this is an extremly powerfull tool!
+
+Click below to see the result of the work that was done.
 
 [Route overview](route_overview.md)
 
