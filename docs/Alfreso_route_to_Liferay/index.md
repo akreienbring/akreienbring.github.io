@@ -96,4 +96,8 @@ Our route need's routing logic because of the new messages. Some kind of *if the
 
 [Chapter 8: Making decisions on the route ](making_decisions.md)
 
+### Summary
+
+[Route overview](route_overview.md)
+
 [Leave tutorial](../index.md)
