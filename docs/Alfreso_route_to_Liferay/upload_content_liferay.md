@@ -3,9 +3,9 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 
 [Leave the tutorial](../index.md)<br>
 [Back to tutorial overview](index.md)<br>
-[Back to the previous chapter](using_cmis_download.md)
+[Back to Chapter 4: Using CMIS to download a document from Alfresco](using_cmis_download.md)
 
-## Chapter 5.: Upload content to Liferay
+## Chapter 5: Upload content to Liferay
 In the previous chapter we downloaded content from Alfresco by using the Camel-CMIS component. Now we need to upload the document to Liferay. Liferay dropped CMIS support, so this time we are going to use REST for the purpose.
 
 As I said earlier: Both, Alfresco and Liferay are following the *headless approach*. Offering an extensive REST API that makes the development of custom clients possible.
@@ -253,6 +253,6 @@ And in the server log you have the JSON response of the POST request:
 }
 ```
 [Chapter 6.: Preparations for C(R)UD](prepare_crud.md)<br>
-[Back to the previous chapter](using_cmis_download.md)<br>
+[Back to Chapter 4: Using CMIS to download a document from Alfresco](using_cmis_download.md)<br>
 [Back to tutorial overview](index.md)<br>
 [Leave the tutorial](../index.md)
