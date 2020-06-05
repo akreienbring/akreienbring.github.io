@@ -48,6 +48,8 @@ Go to the *Routing* section of the palette and place a *Choice* component on the
 
 Select the *When*, choose the simple language and set the expression to *${property.action} == 'create' || ${property.action} == 'update'*
 
+(BTW: the jsonpath language works here as well. Then the expression would be *$[?(@.action == "create" || @.action == "update")]*
+
 At this point this part of your route should look like this
 
 ![Fuse choice action](img/fuse_choice_action.png)
@@ -84,9 +86,13 @@ Now copy **everything** of the route, that is behind the closing ```</choice>```
 </choice>
 ```
 
-If you switch back to design mode (hopefully) it looks like this
+If you switch back to design mode (hopefully) you got
 
 ![Fuse choice after copy](img/fuse_choice_after_copy.png)
+
+If it doesn't restore your backup and try again.
+
+
 
 [Back to the previous chapter](prepare_crud.md)<br>
 [Back to tutorial overview](index.md)<br>
