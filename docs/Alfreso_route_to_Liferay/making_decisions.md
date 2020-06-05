@@ -98,7 +98,7 @@ If you switch back to design mode (hopefully) you got
 If it doesn't restore your backup and try again.
 
 ### Finalizing Delete
-The rest of the work you'll need to do here would be a repetition of what we allready did. Find out the REST request for the DELETE method on Liferay, setting the header, using the *HTTP4* componen, etc.
+The rest of the work you'll need to do here would be a repetition of what we already did. Find out the REST request for the DELETE method on Liferay, setting the header, using the *HTTP4* component, etc.
 
 Let's make it quick and dirty instead!
 
@@ -124,7 +124,7 @@ As that would be another repetition of all that we have learned up to this point
 
 ### Summary
 Congratulations! Thank you for following me on the long journey from Alfresco to Liferay. The route we made was sometimes stony. Doing it with Camel / Fuse is surely a lot easier then coding everything yourself. 
-Let me say that the countless languages are a *babylonian challenge* for newbees! But, on the other hand, once you know how to handle them, this is an extremly powerfull tool!
+Let me say that the countless languages (simple, jsonpath, ...) are a *babylonian challenge* for newbees! But, on the other hand, once you know how to handle them, this is an extremly powerfull tool!
 
 
 [Route overview](route_overview.md)<br>
