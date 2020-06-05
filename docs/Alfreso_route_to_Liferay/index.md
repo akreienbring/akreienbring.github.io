@@ -33,7 +33,7 @@ During this turorial you will learn (Quick Access)<br>
 4. [what it needs to download Alfresco content with Camel-CMIS](using_cmis_download.md)
 5. [how to upload content to Liferay using REST](upload_content_liferay.md)
 6. [to plan integrations by exchanging ID's beetween applications and what CRUD is](prepare_crud.md)
-7. [that it needs a special behaviour of Alfreco to implement CRUD](implement_crud.md)
+7. [that it needs a special behaviour of Alfresco to implement CRUD](implement_crud.md)
 8. [bringing logical choices to routes](making_decisions.md)
 9. [how the final route looks like](route_overview.md)
 
