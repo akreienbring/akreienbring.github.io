@@ -6,7 +6,7 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 [Back to the previous chapter](upload_content_liferay.md)
 
 ## Chapter 6.: Preparations for C(R)UD
-In the the previous chapter we successfully created a Alfresco document in Liferay. If the document is updated / deleted in Alfresco it must also be updated / deleted in Liferay.
+In the the previous chapter we successfully created an Alfresco document in Liferay. If the document is updated / deleted in Alfresco it must also be updated / deleted in Liferay.
 That is the idea of CRUD Create-Read-Update-Delete. 
 
 We don't have to read from Liferay in our scenario, but thinking about Update / Delete it gets clear, that we need to store the ID of the Liferay document in Alfresco.
@@ -44,6 +44,7 @@ public static final String PROP_EXTERNALID = "externalID";
 
 That's it for the Repository tier.
 
+### Show the Liferay ID in the GUI
 Adding the new Property on the Share tier (GUI) is not necessary but helpful during the development process.
 
 Edit your *share-config-custom.xml* 
