@@ -38,7 +38,7 @@ The start of the route looks like this
 
 ![The Start of the route](img/start_of_route.png)
 
-As we need to grap the liferayID in a new property drop a new *Set Property* component from the palette precisely on the arrow between the existing *Set Property* components. Use the *jsonPath* expression *$.liferayID* to get it, set the property name to *liferayID* and the *Id* to *_setLiferayID*
+As we need to grab the liferayID in a new property drop a new *Set Property* component from the palette precisely on the arrow between the existing *Set Property* components. Use the *jsonPath* expression *$.liferayID* to get it, set the property name to *liferayID* and the *Id* to *_setLiferayID*
 
 If we "only" want to delete an existing Liferay document then we don't need to download things with CMIS. So the route forks directly after the *Log* component you see above.
 
