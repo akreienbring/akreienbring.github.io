@@ -128,7 +128,7 @@ Looks rather easy... but have a look at the *Broker* Class that does some import
 As ActiveMQ is a separate Server (that by default listens to incoming messages on the TCP port 61616) the Broker will set up a connection to it, create a Queue named *liferay* and, even more important, reuse things to save our ressources. 
 If you look into the code, you will see that Connection, Session and MessageProducer can be reused when sending messages.
 
-### Time for a first Test
+### It's time for a first Test
 At this point, after you implemented the above code, let's get a taste of the fruits we're raising.
 You know what you need to do:
 - Deploy the Alfresco Repository Module
@@ -147,7 +147,7 @@ Recall from Jeffs tutorial that you may have to change the type of documents to 
 
 Take a deep breath and click on it.
 
-Now ActiveMQ should present you the new Queue with one message in it. Inspect the message. It should contain the *create* action and the *alfresoID*. When it all worked, then your are ready to consume this message from Camel in the next step.
+Now ActiveMQ should present you the new Queue with one message in it. Inspect the message. It should contain the *create* action and the *alfrescoID*. If it all worked, then your are ready to consume this message from Camel in the next step.
 
 ![ActiveMQ with liferay](img/activemq_with_liferay.png)
 
