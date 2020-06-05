@@ -132,7 +132,7 @@ The best thing we can do here is some coding. We will create a custom bean and a
 
 Add a new file named *myDocumentSender.java* under ```[Your fuse integration project]/src/main/java/org/test```
 
-**myDocumentSender.java class**
+[**MyDocumentSender.java class**](source/fuse/MyDocumentSender.java)
 ```java
 /* Gets the CMIS Content from the Inputstream and writes it to a local file.
  * After that the multipart/form header is constructed and put in the exchange body.
