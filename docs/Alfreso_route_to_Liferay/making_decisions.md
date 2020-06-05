@@ -3,7 +3,7 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 
 [Leave the tutorial](../index.md)<br>
 [Back to tutorial overview](index.md)<br>
-[Back to the previous chapter](implement_crud.md)
+[Back to Chapter 7: Implementing the C(R)UD behaviour](implement_crud.md)
 
 ## Chapter 8: Making decisions on the route
 Up to this point our way was straight forward. We got a message of the form
@@ -125,6 +125,6 @@ Let me say that the countless languages are a *babylonian challenge* for newbees
 
 
 [Route overview](route_overview.md)<br>
-[Back to the previous chapter](prepare_crud.md)<br>
+[Back to Chapter 7: Implementing the C(R)UD behaviour](prepare_crud.md)<br>
 [Back to tutorial overview](index.md)<br>
 [Leave the tutorial](../index.md)
