@@ -52,6 +52,42 @@ At this point this part of your route should look like this
 
 ![Fuse choice action](img/fuse_choice_action.png)
 
+Everything behind the choice now needs to go to the *When* component. I must admit here, that I didn't find a convenient way to do this with the visual Designer of Fuse.
+
+Instead look at the XML source of your route. The inserted Choice-When-Otherwise part look like this
+
+```xml
+<log id="_log2" message="Need to ${property.action} a document with id  ${property.alfrescoID}"/>
+<choice id="_choice1">
+   <when id="_when1">
+      <simple>${property.action} == 'create' || ${property.action} == 'update'</simple>
+   </when>
+   <otherwise id="_otherwise1"/>
+</choice>
+<setBody id="_setCMISQuery">
+```
+
+Now copy **everything** of the route, that is behind the closing ```</choice>``` to the ```<when>```. The result should be
+
+```xml
+<choice id="_choice1">
+   <when id="_when1">
+       <simple>${property.action} == 'create' || ${property.action} == 'update'</simple>
+        <setBody id="_setCMISQuery">
+            <simple>Select * from cmis:document WHERE cmis:objectId = '${property.alfrescoID}'</simple>
+        </setBody>
+	--- 
+	--- the rest of the route goes here
+	---   
+   </when>
+   <otherwise id="_otherwise1"/>
+</choice>
+```
+
+If you switch back to design mode (hopefully) it looks like this
+
+![Fuse choice after copy](img/fuse_choice_after_copy.png)
+
 [Back to the previous chapter](prepare_crud.md)<br>
 [Back to tutorial overview](index.md)<br>
 [Leave the tutorial](../index.md)
