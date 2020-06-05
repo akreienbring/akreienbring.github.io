@@ -39,9 +39,9 @@ Until you realize that...
 Red Hat Fuse is basically a visual designer for camel routes. Again here are more than one option to use it. I went with Eclipse 2020-3 by installing it from the latest [Red Hat Codeready Studio (formerly Developer Studio)](https://marketplace.eclipse.org/content/red-hat-codeready-studio-formerly-developer-studio).
 
 ### Get the correct Wildfly Runtime Environment
-Red Hat provides different Eclipse Runtime Environments for their Wildfly Server Versions.
+Red Hat provides different Eclipse Runtime Environments for their Wildfly server versions.
 
-Add the Server View to your Eclipse Workspace and add a new Server to it. If you can, select the Wildfly 18.0.1 Runtime. If not select another Wildfly Runtime.
+Add the Server View to your Eclipse Workspace and add a new server to it. If you can, select the Wildfly 18.0.1 Runtime. If not select another Wildfly Runtime.
 
 Doubleclick on the Server in the Server view.
 
