@@ -18,7 +18,7 @@ But now, that we have the ID of the created Liferay document, stored as a proper
 
 And that is: updating / deleting the Liferay document when it's updated / deleted in Alfresco.
 
-During the [Implementing Custom Behaviors in Alfresco](https://ecmarchitect.com/alfresco-developer-series-tutorials/behaviors/tutorial/tutorial.html) you learned what a behavior is and why it's suited for the ratings usecase.
+During the [Implementing Custom Behaviors in Alfresco](https://ecmarchitect.com/alfresco-developer-series-tutorials/behaviors/tutorial/tutorial.html) tutorial you learned what a behavior is and why it's suited for the ratings usecase.
 
 Basically a behaviour defines what code to execute when a certain event was triggered by the Alfresco platform. As behaviours can be tied to types and aspects they can literally be added to objects in Alfreso.
 
@@ -39,7 +39,7 @@ One more thought before we start coding: I first just wanted to use a simple rul
 ```disable-web-flag```
 actions. But the rule configuration in Alfresco does not provide a possibility to react on the upload of a new version out of the box.
 
-The central point where all the magic o message sending happens is the ```set-web-flag``` action. So let's revisit the code.
+The central point where all the magic of message sending happens is the ```set-web-flag``` action. So let's revisit the code.
 
 ### Making SetWebFlag smart
 Don't blame me for using my own package names and namespaces different from the original SomeCo tutorial. That should be easy to fix for you, if you follow on. BTW: This is a good practice of the things you learned.
@@ -230,7 +230,7 @@ private boolean isExternalActionRequired(NodeRef nodeRef) {
 Some notes on the code: <br>
 The *init* method is called when Alfresco starts up. It "binds" the behaviour to the events *afterCreateVersion* and *beforeDeleteNode*. But ONLY if the type of the document is Whitepaper.
 
-The methods, that implement the behaviour that happens when the corresponding event occurs, both check if any action must be taken at all. This depends on the question, if the node has the *webable* aspect and is active. 
+The methods, that implement the behaviour, that happens when the corresponding event occurs, both check if any action must be taken at all. This depends on the question, if the node has the *webable* aspect and is active. 
 Being active means: The document was published to Liferay before and hence must be updated or deleted.
 
 In case of the *beforeDeleteNode* event, there is some extra work to do. This event is fired in some situations when the node is **not** finally deleted from the repository (See the comment in the code). Hence we have to check for the *working copy aspect*
