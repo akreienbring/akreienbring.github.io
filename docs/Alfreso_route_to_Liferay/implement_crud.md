@@ -5,7 +5,7 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 [Back to tutorial overview](index.md)<br>
 [Back to the previous chapter](prepare_crud.md)
 
-## Chapter 7.: Implementing the C(R)UD behaviour
+## Chapter 7: Implementing the C(R)UD behaviour
 As of now Alfresco sends an ActiveMQ message that contains the *create* action. Such a message looks like this:
 ```
 {
@@ -265,6 +265,7 @@ This way the logic, that we implemented in *SetWebFlag.java* will send the JSON 
 }
 ```
 
+[Chapter 8: Making decisions on the route ](making_decisions.md)
 [Back to the previous chapter](prepare_crud.md)<br>
 [Back to tutorial overview](index.md)<br>
 [Leave the tutorial](../index.md)
