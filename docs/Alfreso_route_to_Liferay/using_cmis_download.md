@@ -80,7 +80,7 @@ Have you seen the HUGE list of Camel components that are available by using the 
 
 The *Uri* of the component is
 ```
-cmis:http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom?readContent=true&readCount=1&queryMode=true
+cmis:http://[yourHost]:[yourPort]/alfresco/api/-default-/cmis/versions/1.1/atom?readContent=true&readCount=1&queryMode=true
 ```
 And under *Advanced* you need to insert your Alfresco credentials on the *Security* tab.
 
