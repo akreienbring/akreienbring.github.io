@@ -6,6 +6,33 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 [Back to the previous chapter](implement_crud.md)
 
 ## Chapter 8: Making decisions on the route
+Up to this point our way was straight forward. We got a message of the form
+```
+{
+	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
+	"action":"create"
+}
+```
+
+and our route created the Alfresco document in Liferay and submitted the ID  of this document back to Alfresco.
+
+But now messages can also look like this
+```
+{
+	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
+	"liferayID":32607
+	"action":"delete"
+}
+```
+```
+{
+	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
+	"liferayID":32607
+	"action":"update"
+}
+```
+and the route has to make decisions.
+
 
 [Back to the previous chapter](prepare_crud.md)<br>
 [Back to tutorial overview](index.md)<br>
