@@ -5,9 +5,9 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 
 [Leave the tutorial](../index.md)<br>
 [Back to tutorial overview](index.md)<br>
-[Back to the previous chapter](messagesending.md)
+[Back to Chapter 2: Sending a message from Alfreso to ActiveMQ](messagesending.md)
 
-## Chapter 3.: Getting started with Fuse
+## Chapter 3: Getting started with Fuse
 In the previous chapter we learned how we make Alfreso send messages to an ActiveMQ Queue. Now they are  waiting for further processing by Camel / Fuse.
 
 We will set up a Fuse Integration Project with Eclipse and start building our route. Our first task is to cope with messages of the form
@@ -114,6 +114,6 @@ Also check the ActiveMQ *liferay* queue. After the message was consumed by Camel
 ![ActiveMQ empty Queue](img/activemq_empty_queue.png)
 
 [Chapter 4.: Using CMIS to download a document from Alfresco](using_cmis_download.md)<br>
-[Back to the previous chapter](messagesending.md)<br> 
+[Back to Chapter 2: Sending a message from Alfreso to ActiveMQ](messagesending.md)<br> 
 [Back to tutorial overview](index.md)<br> 
 [Leave the tutorial](../index.md)
