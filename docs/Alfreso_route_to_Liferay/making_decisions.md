@@ -14,7 +14,7 @@ Up to this point our way was straight forward. We got a message of the form
 }
 ```
 
-and our route created the Alfresco document in Liferay and submitted the ID  of this document back to Alfresco.
+and our route created the Alfresco document in Liferay and submitted the Liferay ID  of this document back to Alfresco.
 
 But now messages can also look like this
 ```
@@ -33,6 +33,7 @@ But now messages can also look like this
 ```
 and the route has to make decisions.
 
+### Routing with When - Otherwise
 
 [Back to the previous chapter](prepare_crud.md)<br>
 [Back to tutorial overview](index.md)<br>
