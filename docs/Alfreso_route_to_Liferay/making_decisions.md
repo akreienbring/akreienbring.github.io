@@ -114,7 +114,7 @@ Change it to
  </otherwise>
 ```
 
-To be honest: This is way quicker then fuddeling with the designer but Fuse is still a great tool to work with. And mind the IDs! If you work directly on the XML source be sure to have them unique!
+To be honest: This is way quicker then fuddeling with the designer but Fuse is still a great tool to work with. And mind the IDs! If you work directly on the XML source, be sure to have them unique!
 
 ### Finalizing Update
 I guess you already know, that we need to do another *Choice* to get the update working. 
