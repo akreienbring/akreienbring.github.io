@@ -77,12 +77,16 @@ which was created by Alfresco and send to ActiveMQ. The message contains the Alf
 ### Part 4: Retrieve a document by using Camel-CMIS
 Until now we only have the ID of an Alfresco document. The next step is getting our hands on the document object itself. We will use the Camel-CMIS component to achieve this.
 
+ ![CMIS component](img/fuse_cmis.png)	
+
 During this, it will also be shown how to add Camel components to Fuse which are not in the Fuse palette.
 
 [Chapter 4: Using CMIS to download a document from Alfresco](using_cmis_download.md)
 
 ### Part 5: Upload content to Liferay
 Using the so called *headless delivery* REST API of Liferay, we are going to upload what we downloaded via CMIS from Alfresco in this chapter.
+
+ ![HTTP4 component](img/fuse_http4.png)	
 
 Using Camel, this is one of the rare spots where a small JAVA bean must be written to achieve what we want.
 
