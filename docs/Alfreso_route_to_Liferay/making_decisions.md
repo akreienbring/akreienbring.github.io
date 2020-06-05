@@ -69,6 +69,9 @@ Instead look at the XML source of your route. The inserted Choice-When-Otherwise
    <otherwise id="_otherwise1"/>
 </choice>
 <setBody id="_setCMISQuery">
+---
+--- the rest of the route is here
+---
 ```
 
 Now copy **everything** of the route, that is behind the closing ```</choice>``` to the ```<when>```. The result should be
