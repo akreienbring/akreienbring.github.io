@@ -96,7 +96,7 @@ Using Camel, this is one of the rare spots where a small JAVA bean must be writt
 The document was successfully created in Liferay. That was the "C" of C(R)UD.
 That stands for Create-Read-Update-Delete. We don't need to read the document from Liferay in this scenario, but we need to update or delete the created Liferay document when it get's updated or deleted in Alfresco. 
 
-![HTTP4 component](img/alfresco_doc_properties.png)	
+![HTTP4 component](img/alfresco_doc_properties.png)
 
 And a fundamental thing here: We need to store Liferay ID's in Alfresco. That needs an update of the content model!
 
@@ -111,6 +111,8 @@ This will be done by teaching the platform a new behavior, when the correspondin
 
 ### Part 8: Going the last steps on the route to Liferay
 Our route need's routing logic because of the new messages. Some kind of *if then else* decisions need to be made. The visual Designer is not allways your friend. Sometimes just some good old copy & past is helpfull.
+
+![Choice component](img/fuse_choice_action_small.png)
 
 [Chapter 8: Making decisions on the route ](making_decisions.md)
 
