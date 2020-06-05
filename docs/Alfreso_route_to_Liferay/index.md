@@ -37,18 +37,18 @@ At a minimum go, get and install the tutorial code from [his github repo](https:
 
 At the very first, I will give you an overview over the main software I used in the process. Needless to say that I guarantee nothing. Nor do I support the things we will create here. It is allways a good idea to check out the respective community Forum if you get stuck.
 
-[Chapter 1.: A bunch of tools we need to get up and running](softwarestack.md)
+[Chapter 1: A bunch of tools we need to get up and running](softwarestack.md)
 
 ### Part 2: Extending the Alfreso SomeCo Module with an ActiveMQ message sender
 Now you survived the *Open Source Version Hell* you've earned a first preview to the route to Liferay.
 
-![The Start of the route](img/start_of_route.jpg)
+![The Start of the route](img/start_of_route.png)
 
 We will get back to the details later, but note the ActiveMQ Camel Component at the beginning. That's the entry point to our middleware, to our integration framework. Also note that some properties are extracted from the incoming message. 
 This all means that Alfresco has to be able to send such a message.
 
 Follow on with:<br>
-[Chapter 2.: Sending an ActiveMQ message from Alfresco](messagesending.md)
+[Chapter 2: Sending an ActiveMQ message from Alfresco](messagesending.md)
 
 ### Part 3: Consuming ActiveMQ messages with Camel / Fuse
 *Even the nicest message fails if nobody wants to hear it.* (If this is a illegal quotation, let me know)
@@ -62,34 +62,38 @@ Now on to Fuse! We will set up a *Fuse Integration Project* with Eclipse and sta
 ```
 which was created by Alfresco and send to ActiveMQ. The message holds the Alfresco document ID (of type whitepaper) and the action that we finally want to perform in Liferay.
 
-[Chapter 3.: Getting started with Fuse](getting_started_fuse.md)
+[Chapter 3: Getting started with Fuse](getting_started_fuse.md)
 
 ### Part 4: Retrieve a document by using Camel-CMIS
 Until now we only have the ID of an Alfresco document. The next step is getting our hands on the document object itself. We will use the Camel-CMIS component to achieve this.
 
 During this, it will also be shown how to add Camel components to Fuse which are not in the Fuse palette.
 
-[Chapter 4.: Using CMIS to download a document from Alfresco](using_cmis_download.md)
+[Chapter 4: Using CMIS to download a document from Alfresco](using_cmis_download.md)
 
 ### Part 5: Upload content to Liferay
 Using the so called *headless delivery* REST API of Liferay, we are going to upload what we downloaded via CMIS from Alfresco in this chapter.
 
 Using Camel, this is one of the rare spots where a small JAVA bean must be written to achieve what we want.
 
-[Chapter 5.: Upload content to Liferay](upload_content_liferay.md)
+[Chapter 5: Upload content to Liferay](upload_content_liferay.md)
 
 ### Part 6: Prepare yourself for C(R)UD
 The document was successfully created in Liferay. That was the "C" of C(R)UD.
 That stands for Create-Read-Update-Delete. We don't need to read the document from Liferay in this scenario, but we need to update or delete the created Liferay document when it get's updated or deleted in Alfresco. 
 
-[Chapter 6.: Preparations for C(R)UD](prepare_crud.md)
+[Chapter 6: Preparations for C(R)UD](prepare_crud.md)
 
 ### Part 7: Implementing ActiveMQ Update / Delete messages in Alfresco 
-It's time to tweak Alfresco to be able to send update and delete messages besides the create message we worked with until this point of the tutorial
+It's time to tweak Alfresco to be able to send update and delete messages besides the create message we worked with until this point of the tutorial.
 
 This will be done by teaching the platform a new behavior, when the corresponding events occur.
 
-[Chapter 7.: Implementing the C(R)UD behaviour](implement_crud.md)
+[Chapter 7: Implementing the C(R)UD behaviour](implement_crud.md)
 
+### Part 8: Going the last steps on the route to Liferay
+Our route need's routing logic because of the new messages. Some kind of *if then else* decisions need to be made. The visual Designer is not allways your friend. Sometimes just some good old copy & past is helpfull.
+
+[Chapter 8: Making decisions on the route ](making_decisions.md)
 
 [Leave tutorial](../index.md)
