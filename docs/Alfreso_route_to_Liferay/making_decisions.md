@@ -46,9 +46,11 @@ I recommend making a backup of the *jboss-camel-context.xml* of your Fuse Integr
 
 Go to the *Routing* section of the palette and place a *Choice* component on the arrow after the *Log*. Then drop a *When* component (same section) on the choice. Next pick a *Otherwise* and also drop it on the *Choice*
 
-Select the *When*, choose the simple language and set the expression to *${property.action} == 'create' || ${property.action} == 'update'*
+Select the *When*, choose the simple language and set the expression to 
+```${property.action} == 'create' || ${property.action} == 'update'```
 
-(BTW: the jsonpath language works here as well. Then the expression would be *$[?(@.action == "create" || @.action == "update")]*
+(BTW: the jsonpath language works here as well. Then the expression would be 
+```$[?(@.action == "create" || @.action == "update")]```
 
 At this point this part of your route should look like this
 
