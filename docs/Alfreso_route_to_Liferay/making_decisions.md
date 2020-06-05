@@ -103,17 +103,28 @@ Look again at the XML source of your route and locate the ```xml<otherwise id="_
 Change it to
 ```xml
 <otherwise id="_otherwise1">
-     <log id="_log3" message="Need to remove a document with id  ${property.alfrescoID}"/>
      <setHeader headerName="Authorization" id="_Liferay_Auth">
          <constant>Basic YWtyZWllbmJyaW5nQGdtYWlsLmNvbTphcHBsZXBpZQ==</constant>
      </setHeader>
-     <toD id="_http4_delete_document" uri="http4://localhost:8081/o/headless-delivery/v1.0/documents/${property.liferayID}?httpMethod=DELETE"/>
+     <toD id="_http4_delete_document" uri="http4://[yourHost]:[yourPort]/o/headless-delivery/v1.0/documents/${property.liferayID}?httpMethod=DELETE"/>
      <log id="_log6" message="${body}"/>
  </otherwise>
 ```
 
+To be honest: This is way quicker then fuddeling with the designer but Fuse is still a great tool to work with. And mind the IDs! If you work directly on the XML source be sure to have them unique!
+
+### Finalizing Update
+I guess you already know, that we need to do another *Choice* to get the update working. 
+Let's think about where to insert it: For an update the content must be downloaded from Alfresco again. We need to make a request to the Liferay REST API with a multipart / formdata header again.  
+So a good place to put the next *Choice* into our route is clearly directly behind the *DocumentSender* bean. But instead of a POST request we need to make a PUT request here.
+As that would be another repetition of all that we have learned up to this point, I'll would say that is a good homework for you. Or you just grap the source XML from the repo. ;-)
+
+### Summary
+Congratulations! Thank you for following me on the long journey from Alfresco to Liferay. The route we made was sometimes stony. Doing it with Camel / Fuse is surely a lot easier then coding everything yourself. 
+Let me say that the countless languages are a *babylonian challenge* for newbees! But, on the other hand, once you know how to handle them, this is an extremly powerfull tool!
 
 
+[Route overview](route_overview.md)<br>
 [Back to the previous chapter](prepare_crud.md)<br>
 [Back to tutorial overview](index.md)<br>
 [Leave the tutorial](../index.md)
