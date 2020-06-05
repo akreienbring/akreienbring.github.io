@@ -34,7 +34,7 @@ Remember that the Alfresco GUI is configured on the Share-Tier, whereas the impl
 
 As you can download the code from this repository, I will not post the whole code here. Just the main and important changes I made to the
 
-[**SetWebFlag.java class**](source/platform.SetWebFlag.java)
+[**SetWebFlag.java class**](source/platform/SetWebFlag.java)
 ```java			
 import platform.activemq.Sender;
 
