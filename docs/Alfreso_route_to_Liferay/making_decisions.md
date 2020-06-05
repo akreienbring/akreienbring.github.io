@@ -94,6 +94,24 @@ If you switch back to design mode (hopefully) you got
 
 If it doesn't restore your backup and try again.
 
+### Finalizing Delete
+The rest of the work you'll need to do here would be a repetition of what we allready did. Find out the REST request for the DELETE method on Liferay, setting the header, using the *HTTP4* componen, etc.
+
+Let's make it quick and dirty instead!
+
+Look again at the XML source of your route and locate the ```xml<otherwise id="_otherwise1"/>``` block.
+Change it to
+```xml
+<otherwise id="_otherwise1">
+     <log id="_log3" message="Need to remove a document with id  ${property.alfrescoID}"/>
+     <setHeader headerName="Authorization" id="_Liferay_Auth">
+         <constant>Basic YWtyZWllbmJyaW5nQGdtYWlsLmNvbTphcHBsZXBpZQ==</constant>
+     </setHeader>
+     <toD id="_http4_delete_document" uri="http4://localhost:8081/o/headless-delivery/v1.0/documents/${property.liferayID}?httpMethod=DELETE"/>
+     <log id="_log6" message="${body}"/>
+ </otherwise>
+```
+
 
 
 [Back to the previous chapter](prepare_crud.md)<br>
