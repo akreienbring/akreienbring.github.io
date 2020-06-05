@@ -265,7 +265,7 @@ This way the logic, that we implemented in *SetWebFlag.java* will send the JSON 
 }
 ```
 
-[Chapter 8: Making decisions on the route ](making_decisions.md)
+[Chapter 8: Making decisions on the route ](making_decisions.md)<br>
 [Back to the previous chapter](prepare_crud.md)<br>
 [Back to tutorial overview](index.md)<br>
 [Leave the tutorial](../index.md)
