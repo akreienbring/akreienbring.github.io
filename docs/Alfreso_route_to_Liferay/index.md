@@ -6,7 +6,7 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 [Leave tutorial](../index.md)
 
 ## Alfreso - Liferay integration based on Camel / Fuse
-This is a Tutorial that extends the [Alfresco Developer Series](https://ecmarchitect.com/alfresco-developer-series) from Jeff Potts which is an essential start if you try to dig into the Alfresco Customization / Developer world.
+This is a tutorial that extends the [Alfresco Developer Series](https://ecmarchitect.com/alfresco-developer-series) from Jeff Potts which is an essential start if you try to dig into the Alfresco Customization / Developer world.
 
 In that series Jeff builds a scenario where a company, called SomeCo, publishes whitepapers, stored in Alfresco, to an external website. He explains and realizes all the necessary steps on the Alfresco site without actually transporting /managing documents to / in the external repository.
 
@@ -26,6 +26,8 @@ So I decided to have a closer look...
 ### About this work
 Although the solution that will be build in this tutorial is finally working, it is far from being production ready and might not even always be done in the perfect way. So, if you find anything that can be done better for any reason, don't hesitate to let me know. For example you could raise an [issue](https://github.com/akreienbring/akreienbring.github.io/issues) to start a discussion.
 
+Prerequisites / knowledge to follow the tutorial: some JAVA, Eclipse IDE, Maven, Alfresco Development. 
+
 During this turorial you will learn (Quick Access)<br> 
 1. [about all the software you need for the turial](softwarestack.md)
 2. [how to send ActiveMQ messages from Alfresco to Camel](messagesending.md)
@@ -43,7 +45,7 @@ At a minimum go, get and install the tutorial code from [his github repo](https:
 
 ... Welcome back! 
 
-At the very first, I will give you an overview over the main software I used in the process. Needless to say that I guarantee nothing. Nor do I support the things we will create here. It is allways a good idea to check out the respective community Forum if you get stuck.
+At the very first, I will give you an overview over the main software I used in the process. Needless to say that I guarantee nothing. Nor do I support the things we will create here. It is allways a good idea to check out the respective community forum if you get stuck.
 
 [Chapter 1: A bunch of tools we need to get up and running](softwarestack.md)
 
@@ -52,7 +54,7 @@ Now you survived the *Open Source Version Hell* you've earned a first preview to
 
 ![The Start of the route](img/start_of_route.png)
 
-We will get back to the details later, but note the ActiveMQ Camel Component at the beginning. That's the entry point to our middleware, to our integration framework. Also note that some properties are extracted from the incoming message. 
+We will get back to the details later, but note the ActiveMQ Camel component at the beginning. That's the entry point to our middleware, to our integration framework. Also note that some properties are extracted from the incoming message. 
 This all means that Alfresco has to be able to send such a message.
 
 Follow on with:<br>
@@ -61,14 +63,14 @@ Follow on with:<br>
 ### Part 3: Consuming ActiveMQ messages with Camel / Fuse
 *Even the nicest message fails if nobody wants to hear it.* (If this is a illegal quotation, let me know)
 
-Now on to Fuse! We will set up a *Fuse Integration Project* with Eclipse and start building our route. Our first task is to cope with messages of the form
+Now on to Fuse! We will set up a *Fuse Integration Project* with Eclipse and start building our route. Our first task is to cope with a message of the form
 ```
 {
 	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
 	"action":"create"
 }
 ```
-which was created by Alfresco and send to ActiveMQ. The message holds the Alfresco document ID (of type whitepaper) and the action that we finally want to perform in Liferay.
+which was created by Alfresco and send to ActiveMQ. The message contains the Alfresco document ID and the action that we finally want to perform in Liferay.
 
 [Chapter 3: Getting started with Fuse](getting_started_fuse.md)
 
