@@ -5,9 +5,9 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 
 [Leave the tutorial](../index.md)<br>
 [Back to tutorial overview](index.md)<br>
-[Back to the previous chapter](softwarestack.md)
+[Back to Chapter 1: The Software Stack](softwarestack.md)
 
-## Chapter 2.: Sending a message from Alfreso to ActiveMQ
+## Chapter 2: Sending a message from Alfreso to ActiveMQ
 Our route to Liferay starts when the Camel middleware receives a ActiveMQ message. More on the route later...
 
 ![The Start of the route](img/start_of_route.jpg)
@@ -152,7 +152,7 @@ Now ActiveMQ should present you the new Queue with one message in it. Inspect th
 ![ActiveMQ with liferay](img/activemq_with_liferay.png)
 
 [Chapter 3.: Getting started with Fuse](getting_started_fuse.md)<br>
-[Back to the previous chapter](softwarestack.md)<br>
+[Back to Chapter 1: The Software Stack](softwarestack.md)<br>
 [Back to tutorial overview](index.md)<br> 
 [Leave the tutorial](../index.md)
 
