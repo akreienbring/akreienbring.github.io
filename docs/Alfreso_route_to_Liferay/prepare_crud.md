@@ -164,7 +164,7 @@ But, again, an Authorization Header must be set. Drop a *Set Header* component o
 
 ![Fuse set header](img/fuse_set_header.png)
 
-This time you need to Base64 encode your Alfresco credentials in the form ```"username:password``` to get this working.
+This time you need to Base64 encode your Alfresco credentials in the form ```"username:password"``` to get this working.
  
 The last step is to fire the request with the *HTTP4* component. Get one by using the *Generic* compontent once again and set the *Uri* to 
 *http4://[myHost]:[myPort]/alfresco/api/-default-/public/alfresco/versions/1/nodes/${property.alfrescoID}?httpMethod=PUT*
