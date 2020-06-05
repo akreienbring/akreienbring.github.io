@@ -5,11 +5,11 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 
 [Leave the tutorial](../index.md)<br>
 [Back to tutorial overview](index.md)<br>
-[Back to the previous chapter](making_decisions.md)
+[Back to Chapter 8: Making decisions on the route](making_decisions.md)
 
 ![Route overview](img/CamelContext.png)
 
 
-[Back to the previous chapter](making_decisions.md)<br> 
+[Back to Chapter 8: Making decisions on the route](making_decisions.md)<br> 
 [Back to tutorial overview](index.md)<br> 
 [Leave the tutorial](../index.md)
