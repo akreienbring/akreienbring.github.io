@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  Wildfly Camel
+  %%
+  Copyright (C) 2013 - 2015 RedHat
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring https://camel.apache.org/schema/spring/camel-spring.xsd">
+    <bean class="org.test.MyBean" id="helloBean"/>
+    <bean class="org.test.MyDocumentSender" id="DocumentSender"/>
+    <bean class="org.apache.activemq.camel.component.ActiveMQComponent" id="activemq">
+        <property name="brokerURL" value="tcp://localhost:61616"/>
+    </bean>
+    <camelContext id="spring-context" xmlns="http://camel.apache.org/schema/spring">
+        <route id="_routeLiferay">
+            <from id="_fromAlfresco" uri="activemq:queue:liferay?jmsMessageType=Text"/>
+            <log id="_log1" message="Received ${body}"/>
+            <setProperty id="_setAlfrescoID" propertyName="alfrescoID">
+                <jsonpath>$.alfrescoID</jsonpath>
+            </setProperty>
+            <setProperty id="_setLiferayID" propertyName="liferayID">
+                <jsonpath>$.liferayID</jsonpath>
+            </setProperty>
+            <setProperty id="_setAction" propertyName="action">
+                <jsonpath>$.action</jsonpath>
+            </setProperty>
+            <choice id="_choice1">
+                <when id="_action1">
+                    <jsonpath>$[?(@.action == "create" || @.action == "update")]</jsonpath>
+                    <log id="_log2" message="Need to add a document with id  ${property.alfrescoID}"/>
+                    <setBody id="_setBody1">
+                        <simple>Select cmis:name,  cmis:createdBy, cmis:description, cmis:creationDate, cmis:lastModificationDate, cmis:contentStreamMimeType, cmis:contentStreamId, cmis:contentStreamFileName, cmis:contentStreamLength, cmis:objectId, cmis:baseTypeId  from cmis:document WHERE cmis:objectId = '${property.alfrescoID}'</simple>
+                    </setBody>
+                    <setHeader headerName="CamelCMISRetrieveContent" id="_setHeader1">
+                        <constant>true</constant>
+                    </setHeader>
+                    <to id="_AlfCMIS" uri="cmis:http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom?readContent=true&amp;readCount=1&amp;queryMode=true&amp;password=admin&amp;username=admin"/>
+                    <log id="_log10" message="${body}"/>
+                    <setProperty id="_setProperty2" propertyName="CamelCMISContent">
+                        <simple>${body[0]["CamelCMISContent"]}</simple>
+                    </setProperty>
+                    <setProperty id="_setProperty3" propertyName="FileName">
+                        <simple>${body[0]["cmis:name"]}</simple>
+                    </setProperty>
+                    <to id="_freemarker_liferay" uri="freemarker:liferay_document.post.ftl"/>
+                    <log id="_log5" message="Message: ${body}"/>
+                    <bean id="_bean1" ref="DocumentSender"/>
+                    <choice id="_choice2">
+                        <when id="_when2">
+                            <simple>${property.action} == 'create'</simple>
+                            <to id="_createDocument" uri="http4://localhost:8081/o/headless-delivery/v1.0/document-folders/35711/documents?httpMethod=POST"/>
+                            <convertBodyTo id="_convertBodyTo1" type="java.lang.String"/>
+                            <log id="_log11" message="${body}"/>
+                            <setProperty id="_setProperty4" propertyName="liferayID">
+                                <jsonpath>$.id</jsonpath>
+                            </setProperty>
+                            <log id="_log7" message="Need to add liferayID (${property.liferayID}) to alfresco document with id  ${property.alfrescoID}"/>
+                            <to id="_freemarker_alfresco" uri="freemarker:alfresco_document.put.ftl"/>
+                            <log id="_log4" message="${body}"/>
+                            <setHeader headerName="Authorization" id="_Alfresco_Auth">
+                                <constant>Basic YWRtaW46YWRtaW4=</constant>
+                            </setHeader>
+                            <toD id="_alfresco_Put_LiferayID" uri="http4://localhost:8080/alfresco/api/-default-/public/alfresco/versions/1/nodes/${property.alfrescoID}?httpMethod=PUT"/>
+                            <log id="_log8" message="${body}"/>
+                        </when>
+                        <otherwise id="_otherwise2">
+                            <toD id="_http4_updateDocument" uri="http4://localhost:8081/o/headless-delivery/v1.0/documents/${property.liferayID}?httpMethod=PUT"/>
+                            <log id="_log9" message="${body}"/>
+                        </otherwise>
+                    </choice>
+                </when>
+				 <otherwise id="_otherwise1">
+				     <log id="_log3" message="Need to remove a document with id  ${property.alfrescoID}"/>
+				     <setHeader headerName="Authorization" id="_Liferay_Auth">
+				         <constant>Basic YWtyZWllbmJyaW5nQGdtYWlsLmNvbTphcHBsZXBpZQ==</constant>
+				     </setHeader>
+				     <toD id="_http4_delete_document" uri="http4://localhost:8081/o/headless-delivery/v1.0/documents/${property.liferayID}?httpMethod=DELETE"/>
+				     <log id="_log6" message="${body}"/>
+				 </otherwise>
+            </choice>
+        </route>
+    </camelContext>
+</beans>
