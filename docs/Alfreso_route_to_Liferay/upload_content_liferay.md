@@ -95,10 +95,10 @@ Thank Camel, there is the [Freemarker Component](https://access.redhat.com/docum
 The Freemarker template needs to be on the classpath to be found by the component. So create a new file called *liferay_document.post.ftl* under ```[Your fuse integration project]/src/main/java```
 However, that is not really a good place for a resource. So, if you like, you can also change the classpath settings for your project and create a location like ```[Your fuse integration project]/src/main/resources```
 
-In that file put **2DO The property shoud be used here!**
+In that file put
 ```
 {
-	"title": "${body[0]["cmis:name"]}"
+	"title": "${exchange.properties.FileName}"
 }
 ```
 
