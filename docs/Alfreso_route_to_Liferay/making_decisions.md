@@ -117,7 +117,7 @@ To be honest: This is way quicker then fuddeling with the designer but Fuse is s
 I guess you already know, that we need to do another *Choice* to get the update working. 
 Let's think about where to insert it: For an update the content must be downloaded from Alfresco again. We need to make a request to the Liferay REST API with a multipart / formdata header again.  
 So a good place to put the next *Choice* into our route is clearly directly behind the *DocumentSender* bean. But instead of a POST request we need to make a PUT request here.
-As that would be another repetition of all that we have learned up to this point, I'll would say that is a good homework for you. Or you just grap the source XML from the repo. ;-)
+As that would be another repetition of all that we have learned up to this point, I would say that is a good homework for you. Or you just grap the source XML from the repo. ;-)
 
 ### Summary
 Congratulations! Thank you for following me on the long journey from Alfresco to Liferay. The route we made was sometimes stony. Doing it with Camel / Fuse is surely a lot easier then coding everything yourself. 
