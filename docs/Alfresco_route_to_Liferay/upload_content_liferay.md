@@ -117,14 +117,12 @@ Let's look what we got until here. Your route from Camel-CMIS to Freemarker look
 
 Our 2Do list now looks like this
 - the ID of a folder where our document will finally land in Liferay :heavy_check_mark: (we know it from the Liferay url)
-- the document file :x: (we have only the input stream)
+- the document file :x: (we have only the input stream, which is a JAVA object)
 - a JSON with the documents name :heavy_check_mark: (thanks to Freemarker it's in the exchange body)
 - a multipart/form-data body with the *file* object and the *document* JSON :x:
 - a header with the (basic) authentication :x:
 - to create an url like *[myHost]:[myPort]/o/headless-delivery/v1.0/document-folders/[myDocumentFolderId]/documents* :x:
 - to do a POST request with all this information :x:
-
-The *CamelCMISContent* input stream is stored in an exchange property and the JSON is in the exchange body.
 
 Reading the [documentation of the Camel-HTTP4 component](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html/apache_camel_component_reference/http4-component), that we will use to POST the request, it's clear that the component is able to use the exchange *body* and *header* to create the request.
 
