@@ -190,7 +190,7 @@ That is exactly what we need here.
 One last *Log* component that logs the exchange body (The response of the PUT request) to the server log and you're ready to start your engines again.
 
 ### The result of our work in this chapter
-In the server log you see the JSON response (shortened):
+In the server log you see the JSON response from Alfresco (shortened):
 ```
 {"entry":
 	-- bla bla
