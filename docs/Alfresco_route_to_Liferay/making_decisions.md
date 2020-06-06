@@ -102,7 +102,7 @@ The rest of the work you'll need to do here would be a repetition of what we alr
 
 Let's make it quick and dirty instead!
 
-Look again at the XML source of your route and locate the ```xml<otherwise id="_otherwise1"/>``` block.
+Look again at the XML source of your route and locate the *<otherwise id="_otherwise1"/>* block.
 Change it to
 ```xml
 <otherwise id="_otherwise1">
