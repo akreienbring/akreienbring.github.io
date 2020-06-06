@@ -49,7 +49,7 @@ At the very first, I will give you an overview over the main software I used in 
 
 [Chapter 1: A bunch of tools we need to get up and running](softwarestack.md)
 
-### Part 2: Extending the Alfreso SomeCo Module with an ActiveMQ message sender
+### Part 2: Extending the Alfresco SomeCo Module with an ActiveMQ message sender
 Now you survived the *Open Source Version Hell* you've earned a first preview to the route to Liferay.
 
 ![The Start of the route](img/start_of_route.png)
