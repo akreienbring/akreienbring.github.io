@@ -16,7 +16,7 @@ In this chapter we will adjust the content model of Alfresco to store an externa
 ### Extend the Alfresco content model of Whitepapers
 During the development of the [SomeCo Module](https://ecmarchitect.com/alfresco-developer-series-tutorials/content/tutorial/tutorial.html) a new type "Whitepaper" was created in the Alfresco Repository tier. Also a new aspect "webable" with the properties "isActive" (boolean) and "published" (date) was added.
 
-For beeing able to store the Liferay ID with a *webable Whitepaper* this aspect needs to be extended like this:
+For being able to store the Liferay ID with a *webable Whitepaper* this aspect needs to be extended like this:
 ```xml
 <aspect name="sc:webable">
    <title>Someco Webable</title>
@@ -119,7 +119,7 @@ Thats the ID that Liferay assigned to the document when it was created. (Of cour
 
 But before we can extract the value into a exchange property, we are facing a challenge here. The *Log* component after the *HTTP4* component consumed the response from the POST request. Because that response was a stream, it is not in the exchange body anymore. 
 
-One way to prevent that would be to [enable stream chaching](https://camel.apache.org/manual/latest/stream-caching.html) for the route, but let me show you another way. 
+One way to prevent that would be to [enable stream caching](https://camel.apache.org/manual/latest/stream-caching.html) for the route, but let me show you another way. 
 
 Get a *convert Body to* component from the *Transformation* section of the palette and drop it precisely on the little arrow between the *HTTP4* and the *Log* component. Then set the *Type* property of this component to *java.lang.String*.
 
@@ -129,7 +129,7 @@ This little trick solves the mystery of the lost body!
 
 Now you're able to get the ID with a *Set Property* component by using the jsonpath expression *$.id*. Name this property *liferayID*
 
-Why not drop another *Log* in the route that prints us *Need to add liferayID (${property.liferayID}) to Alfresco document with id ${property.alfrescoID}* in the server log? It's allways helpfull to see, if everything we need is in place.
+Why not drop another *Log* in the route that prints us *Need to add liferayID (${property.liferayID}) to Alfresco document with id ${property.alfrescoID}* in the server log? It's always helpful to see, if everything we need is in place.
 
 In my case the output was:<br>
 *Need to add liferayID (36207) to Alfresco document with id 67e6252d-7b89-4bdc-ab19-82ac75b0dbf4*
@@ -158,7 +158,7 @@ If you want to know more about it, feel free to study the [Freemarker Template L
 
 Drop in another *Log* component that outputs the exchange body. Just to see if Freemarker has done what it was told to do.
 
-The PUT request is a lot easier to generate then the previous POST to Liferay, because it doesn't need a *multipart / formdata* element in the body. And remember that the Freemarker component already generated the requiered JSON in the exchange body for us.
+The PUT request is a lot easier to generate then the previous POST to Liferay, because it doesn't need a *multipart / formdata* element in the body. And remember that the Freemarker component already generated the required JSON in the exchange body for us.
 
 But, again, an Authorization Header must be set. Drop a *Set Header* component on the Freemarker component.
 
@@ -166,7 +166,7 @@ But, again, an Authorization Header must be set. Drop a *Set Header* component o
 
 This time you need to Base64 encode your Alfresco credentials in the form ```"username:password"``` to get this working.
  
-The last step is to fire the request with the *HTTP4* component. Get one by using the *Generic* compontent once again and set the *Uri* to 
+The last step is to fire the request with the *HTTP4* component. Get one by using the *Generic* component once again and set the *Uri* to 
 *http4://[myHost]:[myPort]/alfresco/api/-default-/public/alfresco/versions/1/nodes/${property.alfrescoID}?httpMethod=PUT*
 
 The *Id* goes to *_alfresco_Put_LiferayID*
