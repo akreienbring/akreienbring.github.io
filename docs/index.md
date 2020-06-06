@@ -14,7 +14,7 @@ Let's start with a Tutorial that extends the [Alfresco Developer Series](https:/
 In that series Jeff builds a scenario where a company, called SomeCo, publishes whitepapers, stored in Alfresco, to an external website. He explains and realizes all the necessary steps on the Alfresco site without actually transporting /managing documents to / in the external repository.
 
 Interested in realizing the missing Link? Read on here:<br>
-[Extending the SomeCo Example with a route to Liferay](Alfreso_route_to_Liferay/index.md)
+[Extending the SomeCo Example with a route to Liferay](Alfresco_route_to_Liferay/index.md)
 
 
 
