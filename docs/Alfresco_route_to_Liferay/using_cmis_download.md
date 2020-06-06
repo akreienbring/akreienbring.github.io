@@ -76,7 +76,7 @@ But there's a *Generic* component you can add to the route. In the dialog that p
 
 ![Generic component](img/fuse_generic_component.png)
 
-Have you seen the HUGE list of Camel components that are available by using the *Generic* component? (before you filterd it to "cmis"). To be honest: I've no clue what they're all good for, but surely one can do a lot of things with them.
+Have you seen the HUGE list of Camel components that are available by using the *Generic* component? (before you filtered it to "cmis"). To be honest: I've no clue what they're all good for, but surely one can do a lot of cool things with them.
 
 The *Uri* of the component is
 ```
