@@ -30,7 +30,7 @@ I just labeled them different (like some other things too) to make clear what we
 
 What you see in the picture enables the web flag when you (could) click on it. The latter two actions extend the *set-web-flag* ActionExecuter. So let's put the central logic that handles messages there.
 
-Remember that the Alfresco GUI is configured on the Share-Tier, whereas the implemantation of the actions was done on the Repository-Tier. Clearly we need to change the code in the respective classes of the Repository-Tier.
+Remember that the Alfresco GUI is configured on the Share-Tier, whereas the implementation of the actions was done on the Repository-Tier. Clearly we need to change the code in the respective classes of the Repository-Tier.
 
 As you can download the code from this repository, I will not post the whole code here. Just the main and important changes I made to the
 
