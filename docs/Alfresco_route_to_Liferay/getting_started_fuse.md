@@ -39,7 +39,7 @@ The reason it takes so long is probably that numerous Maven artifacts must be do
 
 This is an inportant thing to realize. Every time you add a Camel Component to your project your projects *pom.xml* eventually gets updated by the Route Designer and the artifacts are downloaded during the next Maven compile phase.
 
-After your harddrive and your network connection survived the stresstest you,ll see this:
+After your hard drive and your network connection survived the stress test you,ll see this:
 
 ![Camel example route](img/camel_example_route.png)
 
@@ -65,7 +65,7 @@ The route definition lives in a file called *jboss-context-xml* underneath the *
 
 Note that Fuse generated the XML that Camel can understand. Also JAVA beans can be parts of Camel routes. We will use this in our own route to Liferay later. Remove the bean with the id *helloBean* and switch back to *Design*.
 
-Simply hover over the two enlosed Camel components, and delete them mercilessly.
+Simply hover over the two enclosed Camel components, and delete them mercilessly.
 
 Click on the remaining blue route on the canvas and edit it's properties underneath the designer.
 
@@ -89,11 +89,11 @@ Fuse does a real good job here. In the background it manipulates your *pom.xml* 
 As a plus you can read the documentation of every component. 
 
 ### The Log Component
-You'll find out that logging is very helpfull. Camel works like this (in short):<br>
+You'll find out that logging is very helpful. Camel works like this (in short):<br>
 The object that goes through the route is called *exchange*. This object has a *body*, a *header* and it has *properties*.
 Every component you have in the route gets (consumes) the *exchange*, does something to / with it and forwards (produces) it to the next component.
 
-Drag & Drop the *Log* component from the palette directly onto the *ActiveMQ* component in your route. This connects them immediatly. In the properties of the *log* set *Message* to *Received ${body}*
+Drag & Drop the *Log* component from the palette directly onto the *ActiveMQ* component in your route. This connects them immediately. In the properties of the *log* set *Message* to *Received ${body}*
 
 ![The Log component](img/fuse_log_component.png)
 
@@ -107,7 +107,7 @@ I hope you're familiar with Eclipse, Maven and Server Runtimes. Because I'll not
 - Select the Wildfly Server that we set up in the first chapter
 - Switch to the Console view of Eclipse an watch your server starting and putting lots of stuff into the server log.
 
-If you still have a message in the ActiveMQ Queue that we generated in chapter 2, then it should be immediatly processed by the wildfly-camel subsystem and hence the JSON should be written into the servers log file. 
+If you still have a message in the ActiveMQ Queue that we generated in chapter 2, then it should be immediately processed by the wildfly-camel subsystem and hence the JSON should be written into the servers log file. 
 
 Also check the ActiveMQ *liferay* queue. After the message was consumed by Camel, it is dequeued and not pending anymore.
 
