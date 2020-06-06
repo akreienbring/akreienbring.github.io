@@ -54,26 +54,26 @@ Edit your *share-config-custom.xml*
    ---
    ---
    <field-visibility>
-      ---
-      ---
-	   <!-- sc:webable -->
-	   <show id="sc:isActive" />
-      <show id="sc:published" />
-	   <show id="sc:externalID" />
+      	---
+      	---
+	<!-- sc:webable -->
+	<show id="sc:isActive" />
+      	<show id="sc:published" />
+	<show id="sc:externalID" />
    </field-visibility>
    <appearance>
-      ---
-      ---
-		<!-- sc:webable -->
-		<field id="bi:isActive" label-id="prop.sc_isActive">
-			<control template="/org/alfresco/components/form/controls/checkbox.ftl" />
-		</field>
-		<field id="sc:published" label-id="prop.sc_published">
-			<control template="/org/alfresco/components/form/controls/daterange.ftl" />
-		</field>
-		<field id="sc:externalID" label-id="prop.sc_externalID" read-only="true">
-			<control template="/org/alfresco/components/form/controls/textfield.ftl" />
-		</field>
+      	---
+      	---
+	<!-- sc:webable -->
+	<field id="bi:isActive" label-id="prop.sc_isActive">
+		<control template="/org/alfresco/components/form/controls/checkbox.ftl" />
+	</field>
+	<field id="sc:published" label-id="prop.sc_published">
+		<control template="/org/alfresco/components/form/controls/daterange.ftl" />
+	</field>
+	<field id="sc:externalID" label-id="prop.sc_externalID" read-only="true">
+		<control template="/org/alfresco/components/form/controls/textfield.ftl" />
+	</field>
    </appearance>
    ---
    ---
