@@ -13,7 +13,7 @@ We don't have to read from Liferay in our scenario, but thinking about Update / 
 
 In this chapter we will adjust the content model of Alfresco to store an external ID with a document. After that we will get the Liferay ID from the JSON response of the upload and update the Alfresco document with this ID.
 
-Here's a little hint: Liferay doesn't like it, if you post a document with the same title twice. The result is a harsh *HTTP 409 Error*. So, until CRUD is not implemented, you'll need to delete the document manually from the Liferay Document Library.
+Here's a little hint: Liferay doesn't like it, if you post a document with the same title twice. The result is a harsh *HTTP 409 Error*. So, as long CRUD is not implemented, you'll need to delete the document manually from the Liferay Document Library.
 
 ### Extend the Alfresco content model of Whitepapers
 During the development of the [SomeCo Module](https://ecmarchitect.com/alfresco-developer-series-tutorials/content/tutorial/tutorial.html) a new type "Whitepaper" was created in the Alfresco Repository tier. Also a new aspect "webable" with the properties "isActive" (boolean) and "published" (date) was added.
