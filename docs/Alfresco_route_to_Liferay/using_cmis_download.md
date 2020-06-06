@@ -6,7 +6,7 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 [Back to Chapter 3: Getting started with Fuse](getting_started_fuse.md)
 
 ## Chapter 4: Using CMIS to download a document from Alfresco
-Having the ID of an Alsfresco document in the server log file is not yet what we want. We need to download it to be able to upload it to Liferay later on.
+Having the ID of an Alfresco document in the server log file is not yet what we want. We need to download it to be able to upload it to Liferay later on.
 
 One way to do this is the Camel-CMIS component that can be added to our route. 
 But first we need to extract the information from the JSON message.
