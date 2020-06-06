@@ -6,7 +6,7 @@ Then this place is for you.
 
 ## Digging deeper
 Looking deeper in some oh-so-fantastic new technology often leaves you with only a few unsatisfying hits doing an internet search when you try to find out how things really work or need to solve an error.
-So I though documenting my experiences and achievements here could help others.
+So I though document my experiences and achievements here could help others.
 
 ### Alfreso - Liferay integration based on Camel / Fuse
 Let's start with a Tutorial that extends the [Alfresco Developer Series](https://ecmarchitect.com/alfresco-developer-series) from Jeff Potts which is an essential start, if you try to dig into the Alfresco Customization / Developer world.
