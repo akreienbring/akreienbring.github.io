@@ -12,7 +12,7 @@ As I said earlier: Both, Alfresco and Liferay are following the *headless approa
 
 But there's even more. The [Open API Specification (formerly Swagger Specification)](https://swagger.io/docs/specification/about/) (OAS3) not only has standards for describing a REST API, but also there are a lot of tools available that can generate code from API specifications (Contract First) or vice versa API specifications from code (Code First).
 
-Thanks to the fact that Alfresco and Liferay both follow this defacto standard, it is very easy to find out what we need to do next.
+Thanks to the fact that Alfresco and Liferay both follow this de facto standard, it is very easy to find out what we need to do next.
 
 [Alfresco API on Swagger Hub](https://app.swaggerhub.com/apis/CPage/alfresco-content_services_rest_api/1)<br>
 [Liferay API on Swagger Hub](https://app.swaggerhub.com/apis/liferayinc/headless-delivery/v1.0#/)
@@ -56,7 +56,7 @@ Let's make things short here. I did it like this: In Liferay I created a new fol
 
 And here's another task for you: Find the hidden *folderId* in the picture.
 
-Honestly: In a production environment there must be a better way, but hardcoding this for the tutorial is acceptable.
+Honestly: In a production environment there must be a better way, but hard coding this for the tutorial is acceptable.
 
 ### Getting the document / file name
 Do you remember the CMIS download from the last chapter? (shortened)
@@ -128,7 +128,7 @@ The *CamelCMISContent* input stream is stored in an exchange property and the JS
 
 Reading the [documentation of the Camel-HTTP4 component](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html/apache_camel_component_reference/http4-component), that we will use to POST the request, it's clear that the component is able to use the exchange *body* and *header* to create the request.
 
-The best thing we can do here is some coding. We will create a custom bean and add it to the route. This is called a *Processor*. It simply gives us the possibiliy to do several things in one component.
+The best thing we can do here is some coding. We will create a custom bean and add it to the route. This is called a *Processor*. It simply gives us the possibility to do several things in one component.
 
 Add a new file named *myDocumentSender.java* under ```[Your fuse integration project]/src/main/java/org/test```
 
