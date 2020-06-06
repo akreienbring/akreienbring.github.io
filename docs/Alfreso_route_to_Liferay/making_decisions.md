@@ -74,7 +74,7 @@ Instead look at the XML source of your route. The inserted Choice-When-Otherwise
 ---
 ```
 
-Now copy **everything** of the route, that is behind the closing ```</choice>``` to the ```<when>```. The result should be
+Now copy **everything** of the route, that is behind the closing ```</choice>```, to the ```<when>```. The result should be
 
 ```xml
 <choice id="_choice1">
@@ -95,7 +95,7 @@ If you switch back to design mode (hopefully) you got
 
 ![Fuse choice after copy](img/fuse_choice_after_copy.png)
 
-If it doesn't restore your backup and try again.
+If it doesn't, restore your backup and try again.
 
 ### Finalizing Delete
 The rest of the work you'll need to do here would be a repetition of what we already did. Find out the REST request for the DELETE method on Liferay, setting the header, using the *HTTP4* component, etc.
@@ -114,17 +114,21 @@ Change it to
  </otherwise>
 ```
 
-To be honest: This is way quicker then fuddeling with the designer but Fuse is still a great tool to work with. And mind the IDs! If you work directly on the XML source, be sure to have them unique!
+To be honest: This is way quicker then fuddeling with the designer. But Fuse is still a great tool to work with. And mind the IDs! If you work directly on the XML source, be sure to have them unique!
 
 ### Finalizing Update
 I guess you already know, that we need to do another *Choice* to get the update working. 
-Let's think about where to insert it: For an update the content must be downloaded from Alfresco again. We need to make a request to the Liferay REST API with a multipart / formdata header again.  
-So a good place to put the next *Choice* into our route is clearly directly behind the *DocumentSender* bean. But instead of a POST request we need to make a PUT request here.
+Let's think about where to insert it: For an update the content must be downloaded from Alfresco again. We need to make a request to the Liferay REST API with a *multipart / formdata* header again.  
+So a good place to insert the next *Choice* into our route is clearly directly behind the *DocumentSender* bean. But instead of a POST request we need to make a PUT request here.
 As that would be another repetition of all that we have learned up to this point, I would say that is a good homework for you. Or you just grap the [source XML](source/fuse/jboss-camel-context.xml) from the repo. ;-)
 
 ### Summary
 Congratulations! Thank you for following me on the long journey from Alfresco to Liferay. The route we made was sometimes stony. Doing it with Camel / Fuse is surely a lot easier then coding everything yourself. 
 Let me say that the countless languages (simple, jsonpath, ...) are a *babylonian challenge* for newbees! But, on the other hand, once you know how to handle them, this is an extremly powerfull tool!
+
+This Alfresco - Liferay integration was achieved by writing only 20 lines of JAVA Code (on the route) because Camel did the rest of the work. The route can easily be reused, or at least be the base, for different solutions that follow the CRUD pattern.
+
+Now that's what I would call *Low-Coding* and the right way to invest time in.
 
 
 [Route overview](route_overview.md)<br>
