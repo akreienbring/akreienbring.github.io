@@ -18,7 +18,7 @@ It doesn't matter for the tutorial, but I installed Alfresco on PostGres 11.7.2.
 
 ### Liferay and what Application Server to use
 As the time of this writing I've installed [Liferay 7.3.2 GA3](https://sourceforge.net/projects/lportal/files/Liferay%20Portal/7.3.2%20GA3/). This version is compatible with Tomcat 9. And it was **not** a good idea to run Alfresco on Tomcat 9. (Took me hours to find out, that it is simply not working...)
-Liferay 7.3.2 is also compatible with Wildfly 16.0.0. Being brave-hearted I installed it on [Wildfly 18.0.1](https://wildfly.org/downloads/) and luckily until now it did not complain.
+Liferay 7.3.2 is also compatible with Wildfly 16.0.0. Being bravehearted I installed it on [Wildfly 18.0.1](https://wildfly.org/downloads/) and luckily until now it did not complain.
 BTW: I'm running Liferay on MySQL 8.
 
 If you look at the [Liferay installation documentation for Wildfly](https://help.liferay.com/hc/en-us/articles/360018175031-Installing-Liferay-DXP-on-Wildfly) there are a view things to mention.
@@ -29,7 +29,7 @@ If you look at the [Liferay installation documentation for Wildfly](https://help
 ### Wildfly-Camel Subsystem
 There are numerous ways to run Camel. Standalone, with Springboot... and with the [Wildfly-Camel Patch](https://github.com/wildfly-extras/wildfly-camel/releases). I decided for the latter because the Version 11.0.1 is suited for Wildfly 18.0.1. and comes with Camel 2.25.0
 
-You may think *You're faint-hearted. There's this new and shiny version 11.1.0 that even supports Camel 3.1.0!*
+You may think *You're fainthearted. There's this new and shiny version 11.1.0 that even supports Camel 3.1.0!*
 
 Until you realize that...
 
