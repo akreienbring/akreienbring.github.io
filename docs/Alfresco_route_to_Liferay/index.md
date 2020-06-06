@@ -110,7 +110,7 @@ This will be done by teaching the platform a new behavior, when the correspondin
 [Chapter 7: Implementing the C(R)UD behaviour](implement_crud.md)
 
 ### Part 8: Going the last steps on the route to Liferay
-Our route need's routing logic because of the new messages. Some kind of *if then else* decisions need to be made. The visual Designer is not always your friend. Sometimes just some good old copy & past is helpful.
+Our route needs routing logic because of the new messages. Some kind of *if then else* decisions need to be made. The visual Designer is not always your friend. Sometimes just some good old copy & past is helpful.
 
 ![Choice component](img/fuse_choice_action_small.png)
 
