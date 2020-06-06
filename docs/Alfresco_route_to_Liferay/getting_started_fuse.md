@@ -17,7 +17,7 @@ We will set up a Fuse Integration Project with Eclipse and start building our ro
 	"action":"create"
 }
 ```
-The message holds the Alfresco document ID (of type whitepaper) and the action that we finally want to perform in Liferay.
+The message contains the Alfresco document ID (of type whitepaper) and the action that we finally want to perform in Liferay.
 
 ### A new Fuse Integration Project
 Start your Eclipse IDE and create a new Fuse Integration Project in the workspace.
