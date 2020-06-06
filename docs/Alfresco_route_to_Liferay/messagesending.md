@@ -26,7 +26,7 @@ That gave us 3 new actions in Alfreso
 2. *enable-web-flag*
 3. *disable-web-flag*
 
-I just relabled them (like some other things too) to make clear what we are here for.
+I just labeled them different (like some other things too) to make clear what we are here for.
 
 What you see in the picture enables the web flag when you (could) click on it. The latter two actions extend the *set-web-flag* ActionExecuter. So let's put the central logic that handles messages there.
 
@@ -79,7 +79,7 @@ ActiveMQ receives, stores and transports messages using various protocols, but t
 When you send a message to an ActiveMQ Queue, then it is directed to a message consumer that listens to that Queue (one-to-one)
 
 #### Topic
-When you send a message to an ActiveMQ Topic, then it may be consumed by all consumers that subcribed to the topic (publish-subscribe or one-to-many)
+When you send a message to an ActiveMQ Topic, then it may be consumed by all consumers that subscribed to the topic (publish-subscribe or one-to-many)
 
 I hope you already now get an idea of the potential of this pattern over the one-to-one REST approach we discussed in the beginning.
 
@@ -120,12 +120,12 @@ public class Sender {
 }
 ```
 
-Because Alfresco uses ActiveMQ out-of-the-box you should not need to do any Spring XML fuddelings to be able to import the needed framework.
+Because Alfresco uses ActiveMQ out-of-the-box you should not need to do any Spring XML fumblings to be able to import the needed framework.
 
 Looks rather easy... but have a look at the [*Broker* class](source/platform/Broker.java) that does some important things for us.
 
 ### The ActiveMQ Broker
-As ActiveMQ is a separate Server (that by default listens to incoming messages on the TCP port 61616) the Broker will set up a connection to it, create a Queue named *liferay* and, even more important, reuse things to save our ressources. 
+As ActiveMQ is a separate Server (that by default listens to incoming messages on the TCP port 61616) the Broker will set up a connection to it, create a Queue named *liferay* and, even more important, reuse things to save our resources. 
 If you look into the code, you will see that Connection, Session and MessageProducer can be reused when sending messages.
 
 ### It's time for a first Test
