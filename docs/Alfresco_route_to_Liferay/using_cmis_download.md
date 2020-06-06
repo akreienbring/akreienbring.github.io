@@ -72,7 +72,7 @@ With this little preparation, we can...
 
 #### Challenge 3
 The CMIS component is not in the palette. 
-But there's a *Generic* component you can add to the route. In the dialog that pops up, uncheck *show only palette components* 
+But there's a *Generic* component you can add to the route. In the dialog that pops up, uncheck *Show only palette components* 
 
 ![Generic component](img/fuse_generic_component.png)
 
