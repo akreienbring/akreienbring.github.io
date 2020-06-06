@@ -98,7 +98,7 @@ If you switch back to design mode (hopefully) you got
 If it doesn't, restore your backup and try again.
 
 ### Finalizing Delete
-The rest of the work you'll need to do here would be a repetition of what we already did. Find out the REST request for the DELETE method on Liferay, setting the header, using the *HTTP4* component, etc.
+The rest of the work, you'll need to do here, would be a repetition of what we already did. Find out the REST request for the DELETE method on Liferay, setting the header, using the *HTTP4* component, etc.
 
 Let's make it quick and dirty instead!
 
