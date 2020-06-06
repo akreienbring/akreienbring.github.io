@@ -126,7 +126,7 @@ As that would be another repetition of all that we have learned up to this point
 Congratulations! Thank you for following me on the long journey from Alfresco to Liferay. The route we made was sometimes stony. Doing it with Camel / Fuse is surely a lot easier then coding everything yourself. 
 Let me say that the countless languages (simple, jsonpath, ...) are a *babylonian challenge* for newbees! But, on the other hand, once you know how to handle them, this is an extremly powerfull tool!
 
-This Alfresco - Liferay integration was achieved by writing only 20 lines of JAVA Code (on the route) because Camel did the rest of the work. The route can easily be reused, or at least be the base, for different solutions that follow the CRUD pattern.
+This Alfresco - Liferay integration was achieved by writing **only 20 lines of JAVA Code** (on the route), because Camel did the rest of the work. The route can easily be reused, or at least be the base, for different solutions that follow the CRUD pattern.
 
 Now that's what I would call *Low-Coding* and the right way to invest time in.
 
