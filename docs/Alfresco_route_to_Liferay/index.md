@@ -11,7 +11,7 @@ This is a tutorial that extends the [Alfresco Developer Series](https://ecmarchi
 In that series Jeff builds a scenario where a company, called SomeCo, publishes whitepapers, stored in Alfresco, to an external website. He explains and realizes all the necessary steps on the Alfresco site without actually transporting /managing documents to / in the external repository.
 
 ### The route to Liferay
-Thinking of [Alfresco](https://en.wikipedia.org/wiki/Alfresco_Software) as the leading Open Source ECM System and [Liferay](https://en.wikipedia.org/wiki/Liferay) as the leading Portal Server in the JAVA world, an integration of the two is worth thinking about. Actually it has been done many times. For example by using [CMIS](https://en.wikipedia.org/wiki/Content_Management_Interoperability_Services). But CMIS seems not to be a rising star anymore and Liferay dropped the CMIS store for a reason.
+Thinking of [Alfresco](https://en.wikipedia.org/wiki/Alfresco_Software) as the leading Open Source ECM System and [Liferay](https://en.wikipedia.org/wiki/Liferay) as the leading Open Source Portal Server in the JAVA world, an integration of the two is worth thinking about. Actually it has been done many times. For example by using [CMIS](https://en.wikipedia.org/wiki/Content_Management_Interoperability_Services). But CMIS seems not to be a rising star anymore and Liferay dropped the CMIS store for a reason.
 
 Both systems follow the "Headless" approach. That means that the GUI and the server logic are getting decoupled and the core functionality is offered by REST services.
 
