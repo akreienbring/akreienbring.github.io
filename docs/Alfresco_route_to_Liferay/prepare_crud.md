@@ -121,7 +121,7 @@ But before we can extract the value into a exchange property, we are facing a ch
 
 One way to prevent that would be to [enable stream caching](https://camel.apache.org/manual/latest/stream-caching.html) for the route, but let me show you another way. 
 
-Get a *convert Body to* component from the *Transformation* section of the palette and drop it precisely on the little arrow between the *HTTP4* and the *Log* component. Then set the *Type* property of this component to *java.lang.String*.
+Get a *Convert Body To* component from the *Transformation* section of the palette and drop it precisely on the little arrow between the *HTTP4* and the *Log* component. Then set the *Type* property of this component to *java.lang.String*.
 
 ![Convert Body](img/fuse_convert_body.png)
 
