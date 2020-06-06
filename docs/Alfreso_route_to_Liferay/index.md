@@ -5,7 +5,7 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 
 [Leave tutorial](../index.md)
 
-## Alfreso - Liferay integration based on Camel / Fuse
+## Alfresco - Liferay integration based on Camel / Fuse
 This is a tutorial that extends the [Alfresco Developer Series](https://ecmarchitect.com/alfresco-developer-series) from Jeff Potts, which is an essential start, if you try to dig into the Alfresco Customization / Developer world.
 
 In that series Jeff builds a scenario where a company, called SomeCo, publishes whitepapers, stored in Alfresco, to an external website. He explains and realizes all the necessary steps on the Alfresco site without actually transporting /managing documents to / in the external repository.
