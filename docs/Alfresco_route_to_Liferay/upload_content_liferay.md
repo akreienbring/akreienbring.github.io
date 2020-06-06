@@ -70,7 +70,7 @@ If you look at this a little bit closer, it is a JAVA Array with only one entry.
 
 As this is still available in the exchange body, let's quickly put the *cmis:name* in a exchange property: Add a *Set Property* component to the route. Set the expression language to *simple*, the simple expression to *${body[0]["cmis:name"]}* and the Property Name to *FileName*
 
-Was that to quick? You want a picture here? Come on! You've done that before! 
+Was that too quick? You want a picture here? Come on! You've done that before! 
 
 What's noteworthy is the simple language that is used here. If you want to find out why this expression works, have a look at [the documentation of the simple language](https://camel.apache.org/components/latest/languages/simple-language.html)
 
@@ -90,7 +90,7 @@ Up to this point we have two new properties on the exchange. The *FileName* and 
 ```
 Thank Camel, there is the [Freemarker Component](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html/apache_camel_component_reference/freemarker-component).
 
-[Freemarker](https://freemarker.apache.org/) is a powerfull template engine that will create the JSON for us.
+[Freemarker](https://freemarker.apache.org/) is a powerful template engine that will create the JSON for us.
 
 The Freemarker template needs to be on the classpath to be found by the component. So create a new file called *liferay_document.post.ftl* under ```[Your fuse integration project]/src/main/java```
 However, that is not really a good place for a resource. So, if you like, you can also change the classpath settings for your project and create a location like ```[Your fuse integration project]/src/main/resources```
