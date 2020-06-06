@@ -117,7 +117,12 @@ Our route need's routing logic because of the new messages. Some kind of *if the
 [Chapter 8: Making decisions on the route ](making_decisions.md)
 
 ### Summary
-Congratulations! Thank you for following me on the long journey from Alfresco to Liferay. The route we made was sometimes stony. Doing it with Camel / Fuse is surely a lot easier then coding everything yourself. Let me say that the countless languages are a babylonian challenge for newbees! But, on the other hand, once you know how to handle them, this is an extremly powerfull tool!
+Congratulations! Thank you for following me on the long journey from Alfresco to Liferay. The route we made was sometimes stony. Doing it with Camel / Fuse is surely a lot easier then coding everything yourself. 
+Let me say that the countless languages (simple, jsonpath, ...) are a *babylonian challenge* for newbees! But, on the other hand, once you know how to handle them, this is an extremly powerfull tool!
+
+This Alfresco - Liferay integration was achieved by writing **only 20 lines of JAVA Code** (on the route), because Camel did the rest of the work. The route can easily be reused, or at least be the base, for different solutions that follow the CRUD pattern.
+
+Now that's what I would call *Low-Coding* and the right way to invest time in.
 
 Click below to see the result of the work that was done.
 
