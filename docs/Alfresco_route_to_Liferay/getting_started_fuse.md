@@ -37,7 +37,7 @@ Red Hat requires you to *verify* the settings. After that you can click on *fini
 
 The reason it takes so long is probably that numerous Maven artifacts must be downloaded. Camel consists of countless so called [Enterprise Integration Points (EIP) or Components](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html/apache_camel_component_reference/components-overvew) and I guess a few of them are preloaded.
 
-This is an important thing to realize. Every time you add a Camel Component to your project your projects *pom.xml* eventually gets updated by the Route Designer and the artifacts are downloaded during the next Maven compile phase.
+This is an important thing to realize. Every time you add a Camel Component to your project your Maven *pom.xml* eventually gets updated by the Route Designer and the artifacts are downloaded during the next Maven compile phase.
 
 After your hard drive and your network connection survived the stress test you,ll see this:
 
