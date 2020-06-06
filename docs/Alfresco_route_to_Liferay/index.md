@@ -26,7 +26,7 @@ So I decided to have a closer look...
 ### About this work
 Although the solution that will be build in this tutorial is finally working, it is far from being production ready and might not even always be done in the perfect way. So, if you find anything that can be done better for any reason, don't hesitate to let me know. For example you could raise an [issue](https://github.com/akreienbring/akreienbring.github.io/issues) to start a discussion.
 
-Prerequisites / knowledge to follow the tutorial: some JAVA, Eclipse IDE, Maven, Alfresco Development. 
+Prerequisites / knowledge to follow the tutorial: some JAVA, Eclipse IDE, Maven, Alfresco Development, a bit REST. 
 
 During this tutorial you will learn (Quick Access)<br> 
 1. [about all the software you need for the tutorial](softwarestack.md)
