@@ -237,8 +237,8 @@ And in the server log you have the JSON response of the POST request:
     "profileURL" : "/web/whatever"
   },
   "customFields" : [ ],
-  "dateCreated" : "2020-06-04T07:50:52Z",
-  "dateModified" : "2020-06-04T07:50:53Z",
+  "dateCreated" : "2020-06-04T20:50:52Z",
+  "dateModified" : "2020-06-04T20:50:53Z",
   "description" : "",
   "documentFolderId" : 35711,
   "encodingFormat" : "application/pdf",
