@@ -27,9 +27,9 @@ Go back to the Design mode of your route and drop a *Set Property* component on 
 
 As we need also the action from the message, drop another *Set Property* on the first one and adjust the settings accordingly.
 
-The result here is, that we have set two properties on the *exchange* object that is passed through the whole route. The *body* of the exchange object holds the message that we got from ActiveMQ.
+The result here is, that we have set two properties on the *exchange* object that is passed through the whole route. The *body* of the exchange object contains the message that we got from ActiveMQ.
 
-Note: I recommend setting properties, you'll need later, as early as possible in the route. The reason is that some components manipulate / delete the *exchange body*. This is for example the case, if the *body* holds data that was streamed from somewhere. Like the response of a REST request. Streamed content can only be accessed once and hence will be "lost" after the first access.
+Note: I recommend setting properties, you'll need later, as early as possible in the route. The reason is that some components manipulate / delete the *exchange body*. This is for example the case, if the *body* contains data that was streamed from somewhere. Like the response of a REST request. Streamed content can only be accessed once and hence will be "lost" after the first access.
 
 Drop another *Log* component and set the message to:
 *Need to ${property.action} a document with id  ${property.alfrescoID}
@@ -37,7 +37,7 @@ Drop another *Log* component and set the message to:
 Here you see how the properties can be retrieved from the exchange object. What's not so obvious is that the so called *simple* language is used here. Camel supports a couple of languages and sometimes it's not so easy to decide which one to use and how to apply them exactly.
 
 ### Using the Camel-CMIS component
-I had a hard fight with this component until it did what it was made for. At first it looks harmless:
+I had a hard fight with this component until it did what it was made for. At first, it looks harmless:
 
 ![CMIS1](img/fuse_cmis1.png)
 
