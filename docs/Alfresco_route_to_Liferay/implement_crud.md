@@ -20,9 +20,9 @@ And that is: updating / deleting the Liferay document when it's updated / delete
 
 During the [Implementing Custom Behaviors in Alfresco](https://ecmarchitect.com/alfresco-developer-series-tutorials/behaviors/tutorial/tutorial.html) tutorial you learned what a behavior is and why it's suited for the ratings usecase.
 
-Basically a behaviour defines what code to execute when a certain event was triggered by the Alfresco platform. As behaviours can be tied to types and aspects they can literally be added to objects in Alfreso.
+Basically a behaviour defines what code to execute when a certain event was triggered by the Alfresco platform. As behaviours can be tied to types and aspects they can literally be added to objects in Alfresco.
 
-If you think about it: thats exactly what we need to implement the update and delete behaviors of our Whitepapers.
+If you think about it: that's exactly what we need to implement the update and delete behavior of our Whitepapers.
 
 Looking through the [list of available events](https://docs.alfresco.com/6.2/references/dev-extension-points-behaviors.html) I picked this two for implementing the update and delete behaviours
 
@@ -115,7 +115,7 @@ Sender.send(message);
 
 As always this is only the main excerpt of the code.
 
-What has changed is that we send ActiveMQ messages with the action set to "delete" or "update" depending on the *isActive* flag and the *published* properties. Clearly if the document has a publish date, the it needs to be updated. If it has not, it needs to be created.
+What has changed is that we send ActiveMQ messages with the action set to "delete" or "update" depending on the *isActive* flag and the *published* properties. If the document has a publish date, then it needs to be updated. If it has not, it needs to be created.
 
 And that the *liferayID* is now included in the message.
 
