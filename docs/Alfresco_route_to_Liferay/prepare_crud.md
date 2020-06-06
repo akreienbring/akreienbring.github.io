@@ -197,7 +197,7 @@ In the server log you see the JSON response from Alfresco (shortened):
 	-- bla bla
 	"properties":{
 		"sc:isActive":true,
-		"sc:published":"2020-06-04T11:26:30.913+0000",
+		"sc:published":"2020-06-04T23:26:30.913+0000",
 		"sc:externalID":36207
 	}
 }
