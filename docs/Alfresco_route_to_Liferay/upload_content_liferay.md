@@ -185,7 +185,7 @@ And all of a sudden our 2Do list now looks like this
 - to do a POST request with all this information :x:
 
 ### Post the request with Camel-HTTP4
-We're almost there! Use the *Generic* Component once more to drop a [HTTP4 Component](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html/apache_camel_component_reference/http4-component) onto the *Document Sender* bean.
+We're almost there! Use the *Generic* Component once more to drop a *HTTP4 Component* onto the *Document Sender* bean.
 
 Set the *Uri* of that component to 
 ```
