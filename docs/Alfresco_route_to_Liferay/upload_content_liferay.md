@@ -77,7 +77,7 @@ What's noteworthy is the simple language that is used here. If you want to find 
 ### Getting the file object
 Did you notice the *CamelCMISContent=java.io.BufferedInputStream@53ad0d89* in the CMIS response? That's our file. 
 
-What we learn here is that the Camel exchange object can transport JAVA objects! That's amazing, if you think about it. POJOs (Plain old JAVA objects) in the exchange. WOW! We come back to this in a minute.
+What we learn here is that the Camel exchange object can transport JAVA objects! That's amazing, if you think about it. POJOs (Plain old JAVA objects) in the exchange. WOW! We'll come back to this in a minute.
 
 Just put the *CamelCMISContent* into another property. Like above: Set the expression language to *simple*, the simple expression to *${body[0]["CamelCMISContent"]}* and the Property Name to *CamelCMISContent*
 
