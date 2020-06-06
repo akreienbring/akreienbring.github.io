@@ -17,7 +17,7 @@ Both systems follow the "Headless" approach. That means that the GUI and the ser
 
 Having said that you might think: *OK, let's use these services and connect Alfresco with Liferay. That's no rocket science!*
 
-You surely could. But thinking a little bit further you might want to reuse your connection components. You might want to have some system-independent businesslogic or workflow tooling to make everything part of a business process. Or you may have the need to connect more than two systems to build the solution.
+You surely could. But thinking a little bit further you might want to reuse your connection components. You might want to have some system-independent business logic or workflow tooling to make everything part of a business process. Or you may have the need to connect more than two systems to build the solution.
 
 That's where [Apache Camel](https://en.wikipedia.org/wiki/Apache_Camel) and [Red Hat Fuse](https://en.wikipedia.org/wiki/Fuse_ESB) come into the game for designing a shiny middleware.
 
@@ -34,7 +34,7 @@ During this tutorial you will learn (Quick Access)<br>
 3. [to get started with a Fuse Integration Project](getting_started_fuse.md)
 4. [what it needs to download Alfresco content with Camel-CMIS](using_cmis_download.md)
 5. [how to upload content to Liferay using REST](upload_content_liferay.md)
-6. [to plan integrations by exchanging ID's between applications and what CRUD is](prepare_crud.md)
+6. [to do integrations by exchanging ID's between applications and what CRUD is](prepare_crud.md)
 7. [that it needs a special behaviour of Alfresco to implement CRUD](implement_crud.md)
 8. [bringing logical choices to routes](making_decisions.md)
 9. [how the final route looks like](route_overview.md)
@@ -94,7 +94,7 @@ Using Camel, this is one of the rare spots where a small JAVA bean must be writt
 
 ### Part 6: Prepare yourself for C(R)UD
 The document was successfully created in Liferay. That was the "C" of C(R)UD.
-That stands for Create-Read-Update-Delete. We don't need to read the document from Liferay in this scenario, but we need to update or delete the created Liferay document when it get's updated or deleted in Alfresco. 
+That stands for Create-Read-Update-Delete. We don't need to read the document from Liferay in this scenario, but we need to update or delete the created Liferay document when it gets updated or deleted in Alfresco. 
 
 ![HTTP4 component](img/alfresco_doc_properties.png)
 
@@ -117,8 +117,8 @@ Our route need's routing logic because of the new messages. Some kind of *if the
 [Chapter 8: Making decisions on the route ](making_decisions.md)
 
 ### Summary
-Congratulations! Thank you for following me on the long journey from Alfresco to Liferay. The route we made was sometimes stony. Doing it with Camel / Fuse is surely a lot easier then coding everything yourself. 
-Let me say that the countless languages (simple, jsonpath, ...) are a *babylonian challenge* for newbees! But, on the other hand, once you know how to handle them, this is an extremely powerful tool!
+Congratulations! Thank you for following me on the long journey from Alfresco to Liferay. The route we made was sometimes stony. Doing it with Camel / Fuse is surely a lot easier than coding everything yourself. 
+Let me say that the countless languages (simple, jsonpath, ...) are a *babylonian challenge* for newbies! But, on the other hand, once you know how to handle them, this is an extremely powerful tool!
 
 This Alfresco - Liferay integration was achieved by writing **only 20 lines of JAVA Code** (on the route), because Camel did the rest of the work. The route can easily be reused, or at least be the base, for different solutions that follow the CRUD pattern.
 
