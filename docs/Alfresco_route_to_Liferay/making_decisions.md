@@ -123,7 +123,7 @@ So a good place to insert the next *Choice* into our route is clearly directly b
 As that would be another repetition of all that we have learned up to this point, I would say that is a good homework for you. Or you just grab the [source XML](source/fuse/jboss-camel-context.xml) from the repo. ;-)
 
 ### Summary
-Congratulations! Thank you for following me on the long journey from Alfresco to Liferay. The route we made was sometimes stony. Doing it with Camel / Fuse is surely a lot easier then coding everything yourself. 
+Congratulations! Thank you for following me on the long journey from Alfresco to Liferay. The route we made was sometimes stony. Doing it with Camel / Fuse is surely a lot easier than coding everything yourself. 
 Let me say that the countless languages (simple, jsonpath, ...) are a *babylonian challenge* for newbies! But, on the other hand, once you know how to handle them, this is an extremely powerful tool!
 
 This Alfresco - Liferay integration was achieved by writing **only 20 lines of JAVA Code** (on the route), because Camel did the rest of the work. The route can easily be reused, or at least be the base, for different solutions that follow the CRUD pattern.
