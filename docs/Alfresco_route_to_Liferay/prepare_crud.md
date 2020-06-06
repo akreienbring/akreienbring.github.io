@@ -107,7 +107,7 @@ prop.sc_externalID=Liferay ID
 ```
 Now we are ready to store the Liferay ID in the Alfresco content node as soon as we uploaded the document to Liferay.
 
-### Get the Lifray ID from the POST response
+### Get the Liferay ID from the POST response
 If you look closely to the JSON response in your server log then you'll notice (shortened)
 ```json
 {
@@ -115,7 +115,7 @@ If you look closely to the JSON response in your server log then you'll notice (
 }
 ```
 
-Thats the ID that Liferay assigned to the document when it was created. (Of course your value is different...)
+That's the ID that Liferay assigned to the document when it was created. (Of course your value is different...)
 
 But before we can extract the value into a exchange property, we are facing a challenge here. The *Log* component after the *HTTP4* component consumed the response from the POST request. Because that response was a stream, it is not in the exchange body anymore. 
 
@@ -185,7 +185,7 @@ The [Camel documentation of *toD*](https://camel.apache.org/components/latest/ei
 
 *There is a new ```.toD / <toD>``` that allows to send a message to a dynamic computed Endpoint using one or more Expression that are concat together. By default the Simple language is used to compute the endpoint.*
 	
-which is what we need here.
+That is exactly what we need here.
 
 One last *Log* component that logs the exchange body (The response of the PUT request) to the server log and you're ready to start your engines again.
 
