@@ -28,13 +28,13 @@ Although the solution that will be build in this tutorial is finally working, it
 
 Prerequisites / knowledge to follow the tutorial: some JAVA, Eclipse IDE, Maven, Alfresco Development. 
 
-During this turorial you will learn (Quick Access)<br> 
-1. [about all the software you need for the turial](softwarestack.md)
+During this tutorial you will learn (Quick Access)<br> 
+1. [about all the software you need for the tutorial](softwarestack.md)
 2. [how to send ActiveMQ messages from Alfresco to Camel](messagesending.md)
 3. [to get started with a Fuse Integration Project](getting_started_fuse.md)
 4. [what it needs to download Alfresco content with Camel-CMIS](using_cmis_download.md)
 5. [how to upload content to Liferay using REST](upload_content_liferay.md)
-6. [to plan integrations by exchanging ID's beetween applications and what CRUD is](prepare_crud.md)
+6. [to plan integrations by exchanging ID's between applications and what CRUD is](prepare_crud.md)
 7. [that it needs a special behaviour of Alfresco to implement CRUD](implement_crud.md)
 8. [bringing logical choices to routes](making_decisions.md)
 9. [how the final route looks like](route_overview.md)
@@ -45,7 +45,7 @@ At a minimum go, get and install the tutorial code from [his github repo](https:
 
 ... Welcome back! 
 
-At the very first, I will give you an overview over the main software I used in the process. Needless to say that I guarantee nothing. Nor do I support the things we will create here. It is allways a good idea to check out the respective community forum if you get stuck.
+At the very first, I will give you an overview over the main software I used in the process. Needless to say that I guarantee nothing. Nor do I support the things we will create here. It is always a good idea to check out the respective community forum if you get stuck.
 
 [Chapter 1: A bunch of tools we need to get up and running](softwarestack.md)
 
@@ -110,7 +110,7 @@ This will be done by teaching the platform a new behavior, when the correspondin
 [Chapter 7: Implementing the C(R)UD behaviour](implement_crud.md)
 
 ### Part 8: Going the last steps on the route to Liferay
-Our route need's routing logic because of the new messages. Some kind of *if then else* decisions need to be made. The visual Designer is not allways your friend. Sometimes just some good old copy & past is helpfull.
+Our route need's routing logic because of the new messages. Some kind of *if then else* decisions need to be made. The visual Designer is not always your friend. Sometimes just some good old copy & past is helpful.
 
 ![Choice component](img/fuse_choice_action_small.png)
 
@@ -118,7 +118,7 @@ Our route need's routing logic because of the new messages. Some kind of *if the
 
 ### Summary
 Congratulations! Thank you for following me on the long journey from Alfresco to Liferay. The route we made was sometimes stony. Doing it with Camel / Fuse is surely a lot easier then coding everything yourself. 
-Let me say that the countless languages (simple, jsonpath, ...) are a *babylonian challenge* for newbees! But, on the other hand, once you know how to handle them, this is an extremly powerfull tool!
+Let me say that the countless languages (simple, jsonpath, ...) are a *babylonian challenge* for newbees! But, on the other hand, once you know how to handle them, this is an extremely powerful tool!
 
 This Alfresco - Liferay integration was achieved by writing **only 20 lines of JAVA Code** (on the route), because Camel did the rest of the work. The route can easily be reused, or at least be the base, for different solutions that follow the CRUD pattern.
 
