@@ -5,7 +5,7 @@ Thinking in business processes with human and automatic tasks while information 
 Then this place is for you.
 
 ## Digging deeper
-Looking deeper in some oh-so-fantastic new technology often leaves you with only a few unsatisfying hits doing an internet search when you try to find out how things really work or need to solve an error.
+Looking deeper in some oh-so-fantastic new technology often leaves you with only a few unsatisfying hits doing an internet search when you try to find out how things really work or need to troubleshoot an error.
 So I though document my experiences and achievements here could help others.
 
 ### Alfreso - Liferay integration based on Camel / Fuse
