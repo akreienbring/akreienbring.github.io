@@ -76,7 +76,7 @@ On the top of the JAVA file I import the Sender class. So let's see what that is
 ActiveMQ receives, stores and transports messages using various protocols, but that is a different tutorial. The important thing here is that there are two different messaging concepts:
 
 #### Queue
-When you send a message to an ActiveMQ Queue, then it is directed to a message consumer that listens to that Queue (one-to-one)
+When you send a message to an ActiveMQ Queue, then it is directed to exactly *one* message consumer that listens to that Queue (one-to-one)
 
 #### Topic
 When you send a message to an ActiveMQ Topic, then it may be consumed by all consumers that subscribed to the topic (publish-subscribe or one-to-many)
@@ -122,13 +122,13 @@ public class Sender {
 
 Because Alfresco uses ActiveMQ out-of-the-box you should not need to do any Spring XML fumblings to be able to import the needed framework.
 
-Looks rather easy... but have a look at the [*Broker* class](source/platform/Broker.java) that does some important things for us.
+Looks rather easy... but have a look at the [*Broker*](source/platform/Broker.java) that does some important things for us.
 
 ### The ActiveMQ Broker
 As ActiveMQ is a separate Server (that by default listens to incoming messages on the TCP port 61616) the Broker will set up a connection to it, create a Queue named *liferay* and, even more important, reuse things to save our resources. 
 If you look into the code, you will see that Connection, Session and MessageProducer can be reused when sending messages.
 
-### It's time for a first Test
+### It's time for a first test
 At this point, after you implemented the above code, let's get a taste of the fruits we're raising.
 You know what you need to do:
 - Deploy the Alfresco Repository Module
