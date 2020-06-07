@@ -149,14 +149,15 @@ Take a deep breath and click on it.
 
 Now ActiveMQ should present you the new Queue with one message in it. Inspect the message. It should contain the *create* action and the *alfrescoID*. If it all worked, then your are ready to consume this message from Camel in the next step.
 
+
+![ActiveMQ with liferay](img/activemq_with_liferay.png)
+
 ```
 {
 	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
 	"action":"create"
 }
 ```
-
-![ActiveMQ with liferay](img/activemq_with_liferay.png)
 
 [Chapter 3.: Getting started with Fuse](getting_started_fuse.md)<br>
 [Back to Chapter 1: The Software Stack](softwarestack.md)<br>
