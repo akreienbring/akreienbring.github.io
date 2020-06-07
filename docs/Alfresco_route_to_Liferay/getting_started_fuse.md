@@ -10,7 +10,7 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unpo
 ## Chapter 3: Getting started with Fuse
 In the previous chapter we learned how we make Alfresco send messages to an ActiveMQ Queue. Now they are  waiting for further processing by Camel / Fuse.
 
-We will set up a Fuse Integration Project with Eclipse and start building our route. Our first task is to cope with messages of the form
+We will set up a Fuse Integration Project with Eclipse and start building our route. Our first task is to cope with JSON messages of the form
 ```
 {
 	"alfrescoID":"8d03bfbc-ed24-4f96-8c4a-fc8f333b7b37",
