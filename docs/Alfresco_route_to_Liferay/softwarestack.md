@@ -59,6 +59,8 @@ Here you can install the *Wildfly 18.0.1 Runtime* if it's missing on your system
 
 Note the *Configuration File* setting. *standalone-camel.xml* came with the mentioned *Wildfly-Camel subsystem* and must be selected here.
 
+I had serious trouble with the Hot-Deploy (re-publish) of the Fuse project. Which caused numerous restarts of the server. If you experience the same, have a look [at this issue and way I found to resolve it](https://github.com/wildfly-extras/wildfly-camel/issues/2964).
+
 ### A word on the JAVA Version
 The most basic thing to have for everything we do here.
 I worked with OpenJDK 1.8 and 11 and had no notable problems.
